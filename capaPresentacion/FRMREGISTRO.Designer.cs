@@ -230,6 +230,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(264, 22);
             this.dateTimePicker1.TabIndex = 32;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // txtEmail
             // 
@@ -511,6 +512,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "FRMREGISTRO";
             this.Text = "FRMREGISTRO";
+            this.Load += new System.EventHandler(this.FRMREGISTRO_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.panel5.ResumeLayout(false);

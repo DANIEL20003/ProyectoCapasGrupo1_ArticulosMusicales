@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static capaPresentacion.FRMREGISTRO;
 namespace capaPresentacion
 {
     public partial class Form1 : Form
@@ -64,13 +65,20 @@ namespace capaPresentacion
 
         private void btnregistrarse_Click(object sender, EventArgs e)
         {
-           
+            FRMREGISTRO objRegistro = new FRMREGISTRO();
+            objRegistro.ShowDialog();  
         }
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
             try
             {
+                string usuarioIngresado = txtusuario.Text.Trim(); //Revisar
+                string contraseniaIngresada = txtcontrasenia.Text.Trim();//Revisar
+
+                bool usuarioTemporalValido = UsuarioManager.listaUsuarios.Any(u =>//Revisar
+                u.UsuarioNombre == usuarioIngresado && u.Contraseña == contraseniaIngresada);//Revisar
+
                 if (txtusuario.Text == usuario1 || txtusuario.Text == usuario2 || txtusuario.Text == usuario3 || txtusuario.Text == usuario4 || txtusuario.Text == usuario5 || txtusuario.Text == usuario6 || txtusuario.Text == usuario7 || txtusuario.Text == usuario8 || txtusuario.Text == usuario9 || txtusuario.Text == contra)
                 {
                     FRMMENUADMINISTRADOR objetopin = new FRMMENUADMINISTRADOR();
@@ -79,23 +87,30 @@ namespace capaPresentacion
 
                     // Pasar la información al segundo formulario
                     objetopin.RecibirInformacion(informacion);
+                    this.Hide(); // Oculta el login mientras se abre el nuevo form
                     objetopin.ShowDialog();
-                    txtusuario.Clear();
-                    txtcontrasenia.Clear();
-                    txtusuario.Focus();
+                    this.Show(); // Muestra el login otra vez cuando se cierra el otro form
                 }
-                else
+                else if (usuarioTemporalValido)
+                {
+                    FRMMENUCLIENTE objMenuCliente = new FRMMENUCLIENTE();
+                    string informacion = txtusuario.Text; // Obtener el texto del TextBox
+                    this.Hide();
+                    objMenuCliente.ShowDialog();
+                    this.Show();
+                } else
                 {
                     MessageBox.Show("Usuario o contraseña incorrecta");
-                    txtusuario.Clear();
-                    txtcontrasenia.Clear();
-                    txtusuario.Focus();
                 }
+                txtusuario.Clear();
+                txtcontrasenia.Clear();
+                txtusuario.Focus();
+
             }
             catch
             {
                 MessageBox.Show("Ha ocurrido un error, intente de nuevo");
-            }
+            } 
         }
     }
 }
