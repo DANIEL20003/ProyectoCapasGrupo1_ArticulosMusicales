@@ -34,7 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmb_tipo = new System.Windows.Forms.ComboBox();
+            this.cmb_categoria = new System.Windows.Forms.ComboBox();
             this.cmb_intrumento = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -104,9 +104,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label2.Location = new System.Drawing.Point(19, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 22);
+            this.label2.Size = new System.Drawing.Size(84, 22);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Tipo:";
+            this.label2.Text = "Categoía:";
             // 
             // label3
             // 
@@ -130,20 +130,20 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Visualización del instrumento";
             // 
-            // cmb_tipo
+            // cmb_categoria
             // 
-            this.cmb_tipo.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_tipo.FormattingEnabled = true;
-            this.cmb_tipo.Items.AddRange(new object[] {
+            this.cmb_categoria.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_categoria.FormattingEnabled = true;
+            this.cmb_categoria.Items.AddRange(new object[] {
             "Cuerda",
             "Viento",
             "Percusión",
             "Teclado",
             "Electrónico"});
-            this.cmb_tipo.Location = new System.Drawing.Point(23, 115);
-            this.cmb_tipo.Name = "cmb_tipo";
-            this.cmb_tipo.Size = new System.Drawing.Size(159, 30);
-            this.cmb_tipo.TabIndex = 6;
+            this.cmb_categoria.Location = new System.Drawing.Point(23, 115);
+            this.cmb_categoria.Name = "cmb_categoria";
+            this.cmb_categoria.Size = new System.Drawing.Size(159, 30);
+            this.cmb_categoria.TabIndex = 6;
             // 
             // cmb_intrumento
             // 
@@ -167,7 +167,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(76, 73);
+            this.pictureBox2.Location = new System.Drawing.Point(109, 73);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(41, 36);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -452,7 +452,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmb_intrumento);
-            this.Controls.Add(this.cmb_tipo);
+            this.Controls.Add(this.cmb_categoria);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -480,7 +480,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmb_tipo;
+        private System.Windows.Forms.ComboBox cmb_categoria;
         private System.Windows.Forms.ComboBox cmb_intrumento;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;

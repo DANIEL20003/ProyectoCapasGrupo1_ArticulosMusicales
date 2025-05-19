@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace capaEntidades
 {
-    internal class Categoria
+    public class Categoria
     {
     }
 }
