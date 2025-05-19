@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace capaPresentacion
 {
-    public partial class FRMCLIENTE : Form
+    public partial class FRMCARRITO : Form
     {
-        public FRMCLIENTE()
+        public FRMCARRITO()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FRMCLIENTE_Load(object sender, EventArgs e)
-        {
-            nud_cantidad.Maximum = 200;
         }
     }
 }

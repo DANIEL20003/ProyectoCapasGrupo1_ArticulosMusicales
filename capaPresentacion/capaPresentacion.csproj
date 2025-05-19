@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -66,6 +66,12 @@
     <Compile Include="FRMBUSCARPRODUCTO.Designer.cs">
       <DependentUpon>FRMBUSCARPRODUCTO.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMCARRITO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMCARRITO.Designer.cs">
+      <DependentUpon>FRMCARRITO.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMCLIENTE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMBUSCARPRODUCTO.resx">
       <DependentUpon>FRMBUSCARPRODUCTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMCARRITO.resx">
+      <DependentUpon>FRMCARRITO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMCLIENTE.resx">
       <DependentUpon>FRMCLIENTE.cs</DependentUpon>

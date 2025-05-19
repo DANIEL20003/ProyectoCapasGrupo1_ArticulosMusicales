@@ -41,7 +41,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_stock = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dud_cantidad = new System.Windows.Forms.DomainUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_total_instru = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -60,9 +59,11 @@
             this.lbl_marca = new System.Windows.Forms.Label();
             this.lbl_modelo = new System.Windows.Forms.Label();
             this.lbl_aniofabrica = new System.Windows.Forms.Label();
+            this.nud_cantidad = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -205,19 +206,6 @@
             this.label6.Size = new System.Drawing.Size(161, 22);
             this.label6.TabIndex = 12;
             this.label6.Text = "Cantidad a escoger:";
-            // 
-            // dud_cantidad
-            // 
-            this.dud_cantidad.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dud_cantidad.Items.Add("1");
-            this.dud_cantidad.Items.Add("2");
-            this.dud_cantidad.Items.Add("3");
-            this.dud_cantidad.Location = new System.Drawing.Point(186, 203);
-            this.dud_cantidad.Name = "dud_cantidad";
-            this.dud_cantidad.Size = new System.Drawing.Size(114, 29);
-            this.dud_cantidad.TabIndex = 13;
-            this.dud_cantidad.Text = "2";
-            this.dud_cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -424,12 +412,22 @@
             this.lbl_aniofabrica.TabIndex = 31;
             this.lbl_aniofabrica.Text = "2010";
             // 
+            // nud_cantidad
+            // 
+            this.nud_cantidad.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nud_cantidad.Location = new System.Drawing.Point(186, 203);
+            this.nud_cantidad.Name = "nud_cantidad";
+            this.nud_cantidad.Size = new System.Drawing.Size(114, 29);
+            this.nud_cantidad.TabIndex = 32;
+            this.nud_cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // FRMCLIENTE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.ClientSize = new System.Drawing.Size(800, 460);
+            this.Controls.Add(this.nud_cantidad);
             this.Controls.Add(this.lbl_aniofabrica);
             this.Controls.Add(this.lbl_modelo);
             this.Controls.Add(this.lbl_marca);
@@ -448,7 +446,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lbl_total_instru);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dud_cantidad);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbl_stock);
             this.Controls.Add(this.label5);
@@ -464,10 +461,12 @@
             this.Name = "FRMCLIENTE";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRMCLIENTE";
+            this.Load += new System.EventHandler(this.FRMCLIENTE_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -488,7 +487,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_stock;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DomainUpDown dud_cantidad;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbl_total_instru;
         private System.Windows.Forms.Label label8;
@@ -507,5 +505,6 @@
         private System.Windows.Forms.Label lbl_marca;
         private System.Windows.Forms.Label lbl_modelo;
         private System.Windows.Forms.Label lbl_aniofabrica;
+        private System.Windows.Forms.NumericUpDown nud_cantidad;
     }
 }

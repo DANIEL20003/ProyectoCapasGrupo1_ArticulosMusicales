@@ -22,5 +22,11 @@ namespace capaPresentacion
             FRMCLIENTE objCli = new FRMCLIENTE();
             objCli.ShowDialog();
         }
+
+        private void pcb_carrito_Click(object sender, EventArgs e)
+        {
+            FRMCARRITO objtcarrito = new FRMCARRITO();
+           objtcarrito.ShowDialog();
+        }
     }
 }

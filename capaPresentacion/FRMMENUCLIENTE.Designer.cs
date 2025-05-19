@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,15 +51,6 @@
             this.panel1.Size = new System.Drawing.Size(715, 89);
             this.panel1.TabIndex = 0;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Indigo;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 377);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(715, 38);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -70,6 +61,15 @@
             this.label1.Size = new System.Drawing.Size(434, 57);
             this.label1.TabIndex = 2;
             this.label1.Text = "Bienvenido a Harmony";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Indigo;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 377);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(715, 38);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // label2
             // 
@@ -116,6 +116,7 @@
             this.pcb_carrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_carrito.TabIndex = 3;
             this.pcb_carrito.TabStop = false;
+            this.pcb_carrito.Click += new System.EventHandler(this.pcb_carrito_Click);
             // 
             // pcb_catalogo
             // 
