@@ -64,7 +64,7 @@ namespace capaDatos
         {
             objConec.Abrir();
             DataTable dt = new DataTable();
-            String consulta = @"SELECT id_cliente, codigo_producto, nombre_producto, marca, modelo, precio_producto, cantidad, fecha_agregado FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto";
+            String consulta = @"SELECT C.id_cliente, C.codigo_producto, P.nombre_producto, P.marca, P.modelo, P.precio_producto, C.cantidad, C.fecha_agregado FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto";
             SqlCommand sqlC = new SqlCommand(consulta, objConec.conectar);
             SqlDataAdapter da = new SqlDataAdapter(sqlC);
             da.Fill(dt);
