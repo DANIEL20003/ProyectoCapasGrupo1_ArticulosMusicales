@@ -191,6 +191,14 @@
   <ItemGroup>
     <Content Include="obj\Debug\capaPresentacion.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <None Include="Resources\iva.png" />
+    <None Include="Resources\.jpg" />
+    <None Include="Resources\modificariva.png" />
+    <None Include="Resources\Reportes.png" />
+    <None Include="Resources\buscar.png" />
+    <None Include="Resources\EliminarP.png" />
+    <None Include="Resources\IngresarP.png" />
+    <None Include="Resources\ModificarP.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
