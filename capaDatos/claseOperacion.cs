@@ -74,5 +74,58 @@ namespace capaDatos
         }
 
 
+        public List<string> listCodInstrumento(string busInstru)
+        {
+            List<string> VarDatos = new List<string>();
+            try
+            {
+                objConec.Abrir();
+                string sentencia = $"SELECT * FROM Productos WHERE nombre_producto = '{busInstru}'";
+                SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
+                SqlDataReader reader = sqlC.ExecuteReader();
+                while (reader.Read())
+                {
+                    string codigos = Convert.ToString(reader["codigo_producto"]);
+                    VarDatos.Add(codigos);
+                }
+            }
+            catch
+            {
+                VarDatos = null;
+            }
+            objConec.Cerrar();
+            return VarDatos;
+        }
+
+        public Instrumento objetoInstrumento(string busIdInstru)
+        {
+            objConec.Abrir();
+            string sentencia = $"SELECT * FROM Productos WHERE codigo_producto = {busIdInstru}";
+            SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
+            SqlDataReader reader = sqlC.ExecuteReader();
+
+            if (reader.Read())
+            {
+                Instrumento objInstru = new Instrumento
+                {
+                    codInstru = Convert.ToString(reader["codigo_producto"]),
+                    nombre = Convert.ToString(reader["nombre_producto"]),
+                    cantidad = Convert.ToInt64(reader["cantidad"]),
+                    precio = Convert.ToDouble(reader["precio_producto"]),
+                    marca = Convert.ToString(reader["marca"]),
+                    modelo = Convert.ToString(reader["modelo"]),
+                    anioFabrica = Convert.ToInt32(reader["anio_fabricacion"]),
+                    idIva = Convert.ToInt32(reader["id_iva"])
+                };
+                objConec.Cerrar();
+                return objInstru;
+            }
+            else
+            {
+                objConec.Cerrar();
+                return null;
+            }
+        }
+
     }
 }

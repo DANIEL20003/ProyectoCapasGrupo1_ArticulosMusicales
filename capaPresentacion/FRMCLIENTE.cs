@@ -56,12 +56,52 @@ namespace capaPresentacion
                 {
                     cmb_instrumento.Items.Add(item);
                 }
+                cmb_instrumento.Enabled = true;
+            }
+            else
+            {
+                cmb_instrumento.Items.Clear();
+                cmb_instrumento.Enabled = false;
+                cmb_codigos.Items.Clear();
+                cmb_categoria.Enabled = false;
+            }
+        }
+
+        private void cmb_instrumento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_instrumento.SelectedItem != null)
+            {
+                string instru = cmb_instrumento.SelectedItem.ToString();
+                List<string> listaCodigos =  objP.listarCodInstrumento(instru);
+                foreach (string item in listaCodigos)
+                {
+                    cmb_codigos.Items.Add(item);
+                }
+                cmb_codigos.Enabled = true;
+            }
+            else
+            {
+                cmb_codigos.Items.Clear();
+                cmb_categoria.Enabled = false;
+            }
+        }
+
+        private void cmb_codigos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_codigos.SelectedItem != null)
+            {
+                string idInstru = cmb_codigos.SelectedItem.ToString();
+                objInstru = objP.infoInstrumento(idInstru);
+
+                lbl_stock.Text = objInstru.cantidad.ToString();
+                lbl_precio_unidad.Text = objInstru.precio.ToString("F2");
+                lbl_marca.Text = objInstru.marca;
+
 
             }
             else
             {
-                cmb_categoria.Items.Clear();
-                cmb_categoria.Enabled = false;
+                
             }
         }
     }

@@ -61,6 +61,8 @@
             this.lbl_aniofabrica = new System.Windows.Forms.Label();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.txt_cantidad = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cmb_codigos = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -113,7 +115,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(205, 79);
+            this.label3.Location = new System.Drawing.Point(179, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 22);
             this.label3.TabIndex = 4;
@@ -124,7 +126,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(492, 79);
+            this.label4.Location = new System.Drawing.Point(532, 79);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(245, 22);
             this.label4.TabIndex = 5;
@@ -142,7 +144,7 @@
             "Electrónico"});
             this.cmb_categoria.Location = new System.Drawing.Point(23, 115);
             this.cmb_categoria.Name = "cmb_categoria";
-            this.cmb_categoria.Size = new System.Drawing.Size(159, 30);
+            this.cmb_categoria.Size = new System.Drawing.Size(136, 30);
             this.cmb_categoria.TabIndex = 6;
             this.cmb_categoria.SelectedIndexChanged += new System.EventHandler(this.cmb_categoria_SelectedIndexChanged);
             // 
@@ -151,15 +153,16 @@
             this.cmb_instrumento.Enabled = false;
             this.cmb_instrumento.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_instrumento.FormattingEnabled = true;
-            this.cmb_instrumento.Location = new System.Drawing.Point(209, 115);
+            this.cmb_instrumento.Location = new System.Drawing.Point(183, 115);
             this.cmb_instrumento.Name = "cmb_instrumento";
-            this.cmb_instrumento.Size = new System.Drawing.Size(217, 30);
+            this.cmb_instrumento.Size = new System.Drawing.Size(171, 30);
             this.cmb_instrumento.TabIndex = 7;
+            this.cmb_instrumento.SelectedIndexChanged += new System.EventHandler(this.cmb_instrumento_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(496, 104);
+            this.pictureBox1.Location = new System.Drawing.Point(536, 104);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(214, 160);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -279,7 +282,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(492, 267);
+            this.label10.Location = new System.Drawing.Point(532, 267);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(134, 22);
             this.label10.TabIndex = 20;
@@ -290,7 +293,7 @@
             this.lbl_precio_unidad.AutoSize = true;
             this.lbl_precio_unidad.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_precio_unidad.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_precio_unidad.Location = new System.Drawing.Point(632, 267);
+            this.lbl_precio_unidad.Location = new System.Drawing.Point(672, 267);
             this.lbl_precio_unidad.Name = "lbl_precio_unidad";
             this.lbl_precio_unidad.Size = new System.Drawing.Size(58, 22);
             this.lbl_precio_unidad.TabIndex = 21;
@@ -352,7 +355,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(492, 313);
+            this.label11.Location = new System.Drawing.Point(532, 313);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(74, 22);
             this.label11.TabIndex = 26;
@@ -363,7 +366,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label12.Location = new System.Drawing.Point(492, 289);
+            this.label12.Location = new System.Drawing.Point(532, 289);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(66, 22);
             this.label12.TabIndex = 27;
@@ -374,7 +377,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label13.Location = new System.Drawing.Point(492, 337);
+            this.label13.Location = new System.Drawing.Point(532, 337);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(154, 22);
             this.label13.TabIndex = 28;
@@ -385,7 +388,7 @@
             this.lbl_marca.AutoSize = true;
             this.lbl_marca.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_marca.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_marca.Location = new System.Drawing.Point(564, 289);
+            this.lbl_marca.Location = new System.Drawing.Point(604, 289);
             this.lbl_marca.Name = "lbl_marca";
             this.lbl_marca.Size = new System.Drawing.Size(65, 22);
             this.lbl_marca.TabIndex = 29;
@@ -396,7 +399,7 @@
             this.lbl_modelo.AutoSize = true;
             this.lbl_modelo.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_modelo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_modelo.Location = new System.Drawing.Point(572, 313);
+            this.lbl_modelo.Location = new System.Drawing.Point(612, 313);
             this.lbl_modelo.Name = "lbl_modelo";
             this.lbl_modelo.Size = new System.Drawing.Size(57, 22);
             this.lbl_modelo.TabIndex = 30;
@@ -407,7 +410,7 @@
             this.lbl_aniofabrica.AutoSize = true;
             this.lbl_aniofabrica.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_aniofabrica.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_aniofabrica.Location = new System.Drawing.Point(652, 337);
+            this.lbl_aniofabrica.Location = new System.Drawing.Point(692, 337);
             this.lbl_aniofabrica.Name = "lbl_aniofabrica";
             this.lbl_aniofabrica.Size = new System.Drawing.Size(42, 22);
             this.lbl_aniofabrica.TabIndex = 31;
@@ -435,12 +438,36 @@
             this.txt_cantidad.TabIndex = 34;
             this.txt_cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label14.Location = new System.Drawing.Point(368, 79);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(69, 22);
+            this.label14.TabIndex = 35;
+            this.label14.Text = "Código:";
+            // 
+            // cmb_codigos
+            // 
+            this.cmb_codigos.Enabled = false;
+            this.cmb_codigos.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_codigos.FormattingEnabled = true;
+            this.cmb_codigos.Location = new System.Drawing.Point(372, 115);
+            this.cmb_codigos.Name = "cmb_codigos";
+            this.cmb_codigos.Size = new System.Drawing.Size(114, 30);
+            this.cmb_codigos.TabIndex = 36;
+            this.cmb_codigos.SelectedIndexChanged += new System.EventHandler(this.cmb_codigos_SelectedIndexChanged);
+            // 
             // FRMCLIENTE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.ClientSize = new System.Drawing.Size(800, 460);
+            this.Controls.Add(this.cmb_codigos);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.txt_cantidad);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.lbl_aniofabrica);
@@ -521,5 +548,7 @@
         private System.Windows.Forms.Label lbl_aniofabrica;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.TextBox txt_cantidad;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cmb_codigos;
     }
 }
