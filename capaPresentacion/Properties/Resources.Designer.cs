@@ -73,6 +73,26 @@ namespace capaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap facebook {
+            get {
+                object obj = ResourceManager.GetObject("facebook", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap instagram {
+            get {
+                object obj = ResourceManager.GetObject("instagram", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Instru_Cuerda {
             get {
                 object obj = ResourceManager.GetObject("Instru_Cuerda", resourceCulture);
@@ -126,6 +146,26 @@ namespace capaPresentacion.Properties {
         internal static System.Drawing.Bitmap Instrumentos {
             get {
                 object obj = ResourceManager.GetObject("Instrumentos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2025_05_17_at_11_58_Photoroom {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2025-05-17 at 11.58-Photoroom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2025_05_18_at_10_33_Photoroom {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2025-05-18 at 10.33-Photoroom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
