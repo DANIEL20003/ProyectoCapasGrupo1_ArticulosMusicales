@@ -74,6 +74,7 @@
             this.btnlogin.TabIndex = 81;
             this.btnlogin.Text = "Login";
             this.btnlogin.UseVisualStyleBackColor = false;
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // txtcontrasenia
             // 
@@ -99,6 +100,7 @@
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(279, 22);
             this.txtusuario.TabIndex = 78;
+            this.txtusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtusuario_KeyPress);
             // 
             // label4
             // 
@@ -165,7 +167,7 @@
             this.pictureBox11.Location = new System.Drawing.Point(426, 59);
             this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(24, 340);
+            this.pictureBox11.Size = new System.Drawing.Size(10, 340);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 84;
             this.pictureBox11.TabStop = false;
@@ -217,10 +219,11 @@
             this.btnregistrarse.ForeColor = System.Drawing.Color.Gold;
             this.btnregistrarse.Location = new System.Drawing.Point(707, 339);
             this.btnregistrarse.Name = "btnregistrarse";
-            this.btnregistrarse.Size = new System.Drawing.Size(114, 36);
+            this.btnregistrarse.Size = new System.Drawing.Size(141, 36);
             this.btnregistrarse.TabIndex = 85;
             this.btnregistrarse.Text = "Registrarse";
             this.btnregistrarse.UseVisualStyleBackColor = false;
+            this.btnregistrarse.Click += new System.EventHandler(this.btnregistrarse_Click);
             // 
             // Form1
             // 
@@ -245,7 +248,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();

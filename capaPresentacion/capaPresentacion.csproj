@@ -59,6 +59,12 @@
     <Compile Include="FRMCLIENTE.Designer.cs">
       <DependentUpon>FRMCLIENTE.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMMENUADMINISTRADOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMMENUADMINISTRADOR.Designer.cs">
+      <DependentUpon>FRMMENUADMINISTRADOR.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMMENUCLIENTE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMCLIENTE.resx">
       <DependentUpon>FRMCLIENTE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMMENUADMINISTRADOR.resx">
+      <DependentUpon>FRMMENUADMINISTRADOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMMENUCLIENTE.resx">
       <DependentUpon>FRMMENUCLIENTE.cs</DependentUpon>
