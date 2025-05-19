@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace capaDatos
 {
-    internal class claseConexion
+    public class claseConexion
     {
         string cadena = "Data Source = NICOLEIVONNE\\DANIELQ; Initial Catalog = BDUtilesEscolares; Integrated Security = True";
         //el error esta en el localhost es poner el inicio  y poner nombre del dbms o base

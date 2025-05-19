@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace capaDatos
 {
-    internal class claseOperacion
+    public class claseOperacion
     {
+
     }
 }
