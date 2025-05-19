@@ -59,11 +59,11 @@
             this.lbl_marca = new System.Windows.Forms.Label();
             this.lbl_modelo = new System.Windows.Forms.Label();
             this.lbl_aniofabrica = new System.Windows.Forms.Label();
-            this.nud_cantidad = new System.Windows.Forms.NumericUpDown();
+            this.btn_guardar = new System.Windows.Forms.Button();
+            this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -412,14 +412,27 @@
             this.lbl_aniofabrica.TabIndex = 31;
             this.lbl_aniofabrica.Text = "2010";
             // 
-            // nud_cantidad
+            // btn_guardar
             // 
-            this.nud_cantidad.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_cantidad.Location = new System.Drawing.Point(186, 203);
-            this.nud_cantidad.Name = "nud_cantidad";
-            this.nud_cantidad.Size = new System.Drawing.Size(114, 29);
-            this.nud_cantidad.TabIndex = 32;
-            this.nud_cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_guardar.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_guardar.ForeColor = System.Drawing.Color.White;
+            this.btn_guardar.Location = new System.Drawing.Point(321, 200);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(105, 32);
+            this.btn_guardar.TabIndex = 33;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.UseVisualStyleBackColor = false;
+            // 
+            // txt_cantidad
+            // 
+            this.txt_cantidad.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_cantidad.Location = new System.Drawing.Point(186, 202);
+            this.txt_cantidad.Name = "txt_cantidad";
+            this.txt_cantidad.Size = new System.Drawing.Size(117, 29);
+            this.txt_cantidad.TabIndex = 34;
+            this.txt_cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FRMCLIENTE
             // 
@@ -427,7 +440,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.ClientSize = new System.Drawing.Size(800, 460);
-            this.Controls.Add(this.nud_cantidad);
+            this.Controls.Add(this.txt_cantidad);
+            this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.lbl_aniofabrica);
             this.Controls.Add(this.lbl_modelo);
             this.Controls.Add(this.lbl_marca);
@@ -466,7 +480,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,6 +518,7 @@
         private System.Windows.Forms.Label lbl_marca;
         private System.Windows.Forms.Label lbl_modelo;
         private System.Windows.Forms.Label lbl_aniofabrica;
-        private System.Windows.Forms.NumericUpDown nud_cantidad;
+        private System.Windows.Forms.Button btn_guardar;
+        private System.Windows.Forms.TextBox txt_cantidad;
     }
 }
