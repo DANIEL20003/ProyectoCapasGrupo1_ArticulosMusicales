@@ -83,9 +83,29 @@ namespace capaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap facebook1 {
+            get {
+                object obj = ResourceManager.GetObject("facebook1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap instagram {
             get {
                 object obj = ResourceManager.GetObject("instagram", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap instagram1 {
+            get {
+                object obj = ResourceManager.GetObject("instagram1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +183,39 @@ namespace capaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2025_05_17_at_111 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2025-05-17 at 111", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2025_05_18_at_10_33_03_PM {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2025-05-18 at 10.33.03 PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WhatsApp_Image_2025_05_18_at_10_33_Photoroom {
             get {
                 object obj = ResourceManager.GetObject("WhatsApp Image 2025-05-18 at 10.33-Photoroom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2025_05_18_at_101 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2025-05-18 at 101", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
