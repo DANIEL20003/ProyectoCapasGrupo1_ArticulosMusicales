@@ -63,6 +63,16 @@ namespace capaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Carrito_instrumentos {
+            get {
+                object obj = ResourceManager.GetObject("Carrito_instrumentos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Instru_Cuerda {
             get {
                 object obj = ResourceManager.GetObject("Instru_Cuerda", resourceCulture);
@@ -106,6 +116,16 @@ namespace capaPresentacion.Properties {
         internal static System.Drawing.Bitmap Instru_Viento {
             get {
                 object obj = ResourceManager.GetObject("Instru_Viento", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Instrumentos {
+            get {
+                object obj = ResourceManager.GetObject("Instrumentos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -461,6 +461,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Name = "FRMCLIENTE";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRMCLIENTE";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
