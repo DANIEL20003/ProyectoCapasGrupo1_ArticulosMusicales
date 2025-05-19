@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace capaLogica
 {
-    internal class clasePuente
+    public class clasePuente
     {
     }
 }
