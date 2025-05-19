@@ -113,5 +113,10 @@ namespace capaPresentacion
                 MessageBox.Show("Ha ocurrido un error, intente de nuevo");
             } 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

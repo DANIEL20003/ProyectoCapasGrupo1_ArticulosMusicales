@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 //
 using capaEntidades;
 using capaDatos;
+using System.Data;
 
 namespace capaLogica
 {
@@ -18,8 +19,26 @@ namespace capaLogica
             return objOpera.listCategorias();
         }
 
+        public List<string> listarInstruCatego(string catego)
+        {
+            return objOpera.listInstrumentoCategoria(catego);
+        }
 
+        public DataTable objetenercarrito()
+        {
+            DataTable datos = objOpera.GetDatosCarrito();
+            return datos;
+        }
 
+        public List<string> listarCodInstrumento(string instru)
+        {
+            return objOpera.listCodInstrumento(instru);
+        }
+
+        public Instrumento infoInstrumento(string idInstrumento)
+        {
+            return objOpera.objetoInstrumento(idInstrumento);
+        }
 
     }
 }
