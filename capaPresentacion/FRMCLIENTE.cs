@@ -16,7 +16,6 @@ namespace capaPresentacion
 {
     public partial class FRMCLIENTE : Form
     {
-        Categoria objCate = new Categoria();
         Instrumento objInstru = new Instrumento();
         Carrito objCar = new Carrito();
 
@@ -30,11 +29,11 @@ namespace capaPresentacion
 
         public void cargar_categoria()
         {
-            /*List<Categoria> listaCategorias = objP.listCategoria();
-            foreach (Categoria item in listaCategorias)
+            List<string> listaCategorias = objP.listarCategoria();
+            foreach (string item in listaCategorias)
             {
                 cmb_categoria.Items.Add(item);
-            }*/
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
