@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -58,6 +59,20 @@ namespace capaDatos
             objConec.Cerrar();
             return VarDatos;
         }
+
+        public DataTable GetDatosCarrito()
+        {
+            objConec.Abrir();
+            DataTable dt = new DataTable();
+            String consulta = @"SELECT id_cliente, codigo_producto, nombre_producto, marca, modelo, precio_producto, cantidad, fecha_agregado FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto";
+            SqlCommand sqlC = new SqlCommand(consulta, objConec.conectar);
+            SqlDataAdapter da = new SqlDataAdapter(sqlC);
+            da.Fill(dt);
+
+            objConec.Cerrar();
+            return dt;
+        }
+
 
     }
 }

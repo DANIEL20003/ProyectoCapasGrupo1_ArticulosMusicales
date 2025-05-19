@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 //
 using capaEntidades;
 using capaDatos;
+using System.Data;
 
 namespace capaLogica
 {
@@ -22,6 +23,13 @@ namespace capaLogica
         {
             return objOpera.listInstrumentoCategoria(catego);
         }
+
+        public DataTable objetenercarrito()
+        {
+            DataTable datos = objOpera.GetDatosCarrito();
+            return datos;
+        }
+
 
 
     }
