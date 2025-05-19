@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace capaPresentacion
 {
-    public partial class FRMAGREGARPRODUCTO : Form
+    public partial class FRMMODIFICARPRODUCTO : Form
     {
-        public FRMAGREGARPRODUCTO()
+        public FRMMODIFICARPRODUCTO()
         {
             InitializeComponent();
-        }
-
-        private void FRMAGREGARPRODUCTO_Load(object sender, EventArgs e)
-        {
-            nudAño.Maximum = DateTime.Now.Year;
-            nudAño.Value = DateTime.Now.Year;
         }
     }
 }

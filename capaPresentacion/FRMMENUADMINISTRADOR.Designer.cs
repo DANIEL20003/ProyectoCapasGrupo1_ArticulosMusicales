@@ -33,29 +33,28 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.linkAyuda = new System.Windows.Forms.LinkLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.ptbVerReportes = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.ptbModificarIVA = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.ptbBuscar = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.ptbEliminar = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.ptbAgregar = new System.Windows.Forms.PictureBox();
+            this.ptbModificar = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblsaludo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbVerReportes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbModificarIVA)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAgregar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbModificar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,9 +100,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.pictureBox4);
+            this.groupBox2.Controls.Add(this.ptbVerReportes);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.pictureBox5);
+            this.groupBox2.Controls.Add(this.ptbModificarIVA);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(524, 78);
@@ -113,14 +112,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Otros procesos";
             // 
-            // pictureBox4
+            // ptbVerReportes
             // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Location = new System.Drawing.Point(48, 169);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox4.TabIndex = 15;
-            this.pictureBox4.TabStop = false;
+            this.ptbVerReportes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbVerReportes.Location = new System.Drawing.Point(48, 169);
+            this.ptbVerReportes.Name = "ptbVerReportes";
+            this.ptbVerReportes.Size = new System.Drawing.Size(100, 100);
+            this.ptbVerReportes.TabIndex = 15;
+            this.ptbVerReportes.TabStop = false;
+            this.ptbVerReportes.Click += new System.EventHandler(this.ptbVerReportes_Click);
             // 
             // label7
             // 
@@ -133,14 +133,15 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Ver reportes";
             // 
-            // pictureBox5
+            // ptbModificarIVA
             // 
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Location = new System.Drawing.Point(48, 28);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
+            this.ptbModificarIVA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbModificarIVA.Location = new System.Drawing.Point(48, 28);
+            this.ptbModificarIVA.Name = "ptbModificarIVA";
+            this.ptbModificarIVA.Size = new System.Drawing.Size(100, 100);
+            this.ptbModificarIVA.TabIndex = 3;
+            this.ptbModificarIVA.TabStop = false;
+            this.ptbModificarIVA.Click += new System.EventHandler(this.ptbModificarIVA_Click);
             // 
             // label9
             // 
@@ -155,13 +156,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBox8);
+            this.groupBox1.Controls.Add(this.ptbBuscar);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.pictureBox7);
+            this.groupBox1.Controls.Add(this.ptbEliminar);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.pictureBox3);
+            this.groupBox1.Controls.Add(this.ptbAgregar);
+            this.groupBox1.Controls.Add(this.ptbModificar);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(73, 78);
@@ -171,14 +172,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos musicales";
             // 
-            // pictureBox8
+            // ptbBuscar
             // 
-            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox8.Location = new System.Drawing.Point(227, 169);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox8.TabIndex = 17;
-            this.pictureBox8.TabStop = false;
+            this.ptbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbBuscar.Location = new System.Drawing.Point(227, 169);
+            this.ptbBuscar.Name = "ptbBuscar";
+            this.ptbBuscar.Size = new System.Drawing.Size(100, 100);
+            this.ptbBuscar.TabIndex = 17;
+            this.ptbBuscar.TabStop = false;
+            this.ptbBuscar.Click += new System.EventHandler(this.ptbBuscar_Click);
             // 
             // label4
             // 
@@ -191,14 +193,15 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "Buscar";
             // 
-            // pictureBox7
+            // ptbEliminar
             // 
-            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox7.Location = new System.Drawing.Point(48, 169);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox7.TabIndex = 15;
-            this.pictureBox7.TabStop = false;
+            this.ptbEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbEliminar.Location = new System.Drawing.Point(48, 169);
+            this.ptbEliminar.Name = "ptbEliminar";
+            this.ptbEliminar.Size = new System.Drawing.Size(100, 100);
+            this.ptbEliminar.TabIndex = 15;
+            this.ptbEliminar.TabStop = false;
+            this.ptbEliminar.Click += new System.EventHandler(this.ptbEliminar_Click);
             // 
             // label3
             // 
@@ -222,23 +225,25 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Modificar";
             // 
-            // pictureBox1
+            // ptbAgregar
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(48, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.ptbAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbAgregar.Location = new System.Drawing.Point(48, 28);
+            this.ptbAgregar.Name = "ptbAgregar";
+            this.ptbAgregar.Size = new System.Drawing.Size(100, 100);
+            this.ptbAgregar.TabIndex = 3;
+            this.ptbAgregar.TabStop = false;
+            this.ptbAgregar.Click += new System.EventHandler(this.ptbAgregar_Click);
             // 
-            // pictureBox3
+            // ptbModificar
             // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Location = new System.Drawing.Point(227, 28);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
+            this.ptbModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbModificar.Location = new System.Drawing.Point(227, 28);
+            this.ptbModificar.Name = "ptbModificar";
+            this.ptbModificar.Size = new System.Drawing.Size(100, 100);
+            this.ptbModificar.TabIndex = 5;
+            this.ptbModificar.TabStop = false;
+            this.ptbModificar.Click += new System.EventHandler(this.ptbModificar_Click);
             // 
             // label6
             // 
@@ -251,17 +256,6 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Agregar";
             // 
-            // lblsaludo
-            // 
-            this.lblsaludo.AutoSize = true;
-            this.lblsaludo.Font = new System.Drawing.Font("Monotype Corsiva", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsaludo.ForeColor = System.Drawing.Color.Black;
-            this.lblsaludo.Location = new System.Drawing.Point(67, 390);
-            this.lblsaludo.Name = "lblsaludo";
-            this.lblsaludo.Size = new System.Drawing.Size(76, 33);
-            this.lblsaludo.TabIndex = 73;
-            this.lblsaludo.Text = "saludo";
-            // 
             // FRMMENUADMINISTRADOR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,7 +267,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblsaludo);
             this.Name = "FRMMENUADMINISTRADOR";
             this.Text = "FRMMENUADMINISTRADOR";
             this.Load += new System.EventHandler(this.FRMMENUADMINISTRADOR_Load);
@@ -281,14 +274,14 @@
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbVerReportes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbModificarIVA)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAgregar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbModificar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,19 +294,18 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.LinkLabel linkAyuda;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox ptbVerReportes;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox ptbModificarIVA;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox ptbBuscar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox ptbEliminar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox ptbAgregar;
+        private System.Windows.Forms.PictureBox ptbModificar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblsaludo;
     }
 }

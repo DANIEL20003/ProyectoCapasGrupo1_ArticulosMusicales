@@ -96,11 +96,23 @@
     <Compile Include="FRMMODIFICARIVA.Designer.cs">
       <DependentUpon>FRMMODIFICARIVA.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMMODIFICARPRODUCTO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMMODIFICARPRODUCTO.Designer.cs">
+      <DependentUpon>FRMMODIFICARPRODUCTO.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMREGISTRO.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FRMREGISTRO.Designer.cs">
       <DependentUpon>FRMREGISTRO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMVERREPORTES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMVERREPORTES.Designer.cs">
+      <DependentUpon>FRMVERREPORTES.cs</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
