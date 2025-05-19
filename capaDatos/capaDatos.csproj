@@ -43,7 +43,23 @@
   <ItemGroup>
     <Compile Include="claseConexion.cs" />
     <Compile Include="claseOperacion.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\capaDatos.dll" />
+    <Content Include="bin\Debug\capaDatos.pdb" />
+    <Content Include="obj\Debug\capaDatos.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\capaDatos.dll" />
+    <Content Include="obj\Debug\capaDatos.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\capaDatos.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\capaDatos.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
