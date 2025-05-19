@@ -54,75 +54,82 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRMBUSCARPRODUCTO.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRMBUSCARPRODUCTO.Designer.cs">
-      <DependentUpon>FRMBUSCARPRODUCTO.cs</DependentUpon>
-    </Compile>
+	  <Compile Include="FRMAGREGARPRODUCTO.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="FRMAGREGARPRODUCTO.Designer.cs">
+		  <DependentUpon>FRMAGREGARPRODUCTO.cs</DependentUpon>
+	  </Compile>
+	  <Compile Include="FRMBUSCARPRODUCTO.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="FRMBUSCARPRODUCTO.Designer.cs">
+		  <DependentUpon>FRMBUSCARPRODUCTO.cs</DependentUpon>
+	  </Compile>
     <Compile Include="FRMCLIENTE.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FRMCLIENTE.Designer.cs">
       <DependentUpon>FRMCLIENTE.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRMELIMINARPRODUCTO.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRMELIMINARPRODUCTO.Designer.cs">
-      <DependentUpon>FRMELIMINARPRODUCTO.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FRMMENUADMINISTRADOR.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRMMENUADMINISTRADOR.Designer.cs">
-      <DependentUpon>FRMMENUADMINISTRADOR.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FRMMENUCLIENTE.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRMMENUCLIENTE.Designer.cs">
-      <DependentUpon>FRMMENUCLIENTE.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FRMMODIFICARIVA.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRMMODIFICARIVA.Designer.cs">
-      <DependentUpon>FRMMODIFICARIVA.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FRMREGISTRO.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRMREGISTRO.Designer.cs">
-      <DependentUpon>FRMREGISTRO.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+
+	  <Compile Include="FRMELIMINARPRODUCTO.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="FRMELIMINARPRODUCTO.Designer.cs">
+		  <DependentUpon>FRMELIMINARPRODUCTO.cs</DependentUpon>
+	  </Compile>
+	  <Compile Include="FRMMENUADMINISTRADOR.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="FRMMENUADMINISTRADOR.Designer.cs">
+		  <DependentUpon>FRMMENUADMINISTRADOR.cs</DependentUpon>
+	  </Compile>
+	  <Compile Include="FRMMENUCLIENTE.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="FRMMENUCLIENTE.Designer.cs">
+		  <DependentUpon>FRMMENUCLIENTE.cs</DependentUpon>
+	  </Compile>
+	  <Compile Include="FRMMODIFICARIVA.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="FRMMODIFICARIVA.Designer.cs">
+		  <DependentUpon>FRMMODIFICARIVA.cs</DependentUpon>
+	  </Compile>
+	  <Compile Include="FRMREGISTRO.cs">
+		  <SubType>Form</SubType>
+	  </Compile>
+	  <Compile Include="FRMREGISTRO.Designer.cs">
+		  <DependentUpon>FRMREGISTRO.cs</DependentUpon>
+	  </Compile>
+	<Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuario.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FRMBUSCARPRODUCTO.resx">
-      <DependentUpon>FRMBUSCARPRODUCTO.cs</DependentUpon>
-    </EmbeddedResource>
+	  <Compile Include="Usuario.cs" />
+	  <EmbeddedResource Include="Form1.resx">
+		  <DependentUpon>Form1.cs</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="FRMBUSCARPRODUCTO.resx">
+		  <DependentUpon>FRMBUSCARPRODUCTO.cs</DependentUpon>
+	  </EmbeddedResource>
     <EmbeddedResource Include="FRMCLIENTE.resx">
       <DependentUpon>FRMCLIENTE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRMELIMINARPRODUCTO.resx">
-      <DependentUpon>FRMELIMINARPRODUCTO.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FRMMENUADMINISTRADOR.resx">
-      <DependentUpon>FRMMENUADMINISTRADOR.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FRMMENUCLIENTE.resx">
-      <DependentUpon>FRMMENUCLIENTE.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FRMMODIFICARIVA.resx">
-      <DependentUpon>FRMMODIFICARIVA.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FRMREGISTRO.resx">
-      <DependentUpon>FRMREGISTRO.cs</DependentUpon>
-    </EmbeddedResource>
+	  <EmbeddedResource Include="FRMELIMINARPRODUCTO.resx">
+		  <DependentUpon>FRMELIMINARPRODUCTO.cs</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="FRMMENUADMINISTRADOR.resx">
+		  <DependentUpon>FRMMENUADMINISTRADOR.cs</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="FRMMENUCLIENTE.resx">
+		  <DependentUpon>FRMMENUCLIENTE.cs</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="FRMMODIFICARIVA.resx">
+		  <DependentUpon>FRMMODIFICARIVA.cs</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="FRMREGISTRO.resx">
+		  <DependentUpon>FRMREGISTRO.cs</DependentUpon>
+	  </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

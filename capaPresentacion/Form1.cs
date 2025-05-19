@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static capaPresentacion.FRMREGISTRO;
+//esta es una pequeña prueba
 namespace capaPresentacion
 {
     public partial class Form1 : Form
