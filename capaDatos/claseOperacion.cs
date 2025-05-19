@@ -24,8 +24,8 @@ namespace capaDatos
                 SqlDataReader reader = sqlC.ExecuteReader();
                 while (reader.Read())
                 {
-                    string objEnt = Convert.ToString(reader["Nombre"]); 
-                    VarDatos.Add(objEnt);
+                    string categoria = Convert.ToString(reader["Nombre"]); 
+                    VarDatos.Add(categoria);
                 }
             }
             catch
@@ -35,5 +35,29 @@ namespace capaDatos
             objConec.Cerrar();
             return VarDatos;
         }
+
+        public List<string> listInstrumentoCategoria(string busCatego)
+        {
+            List<string> VarDatos = new List<string>();
+            try
+            {
+                objConec.Abrir();
+                string sentencia = $"SELECT nombre_producto FROM Productos P INNER JOIN Categoria C ON P.id_categoriaYo = C.id_categoria WHERE C.Nombre = '{busCatego}'";
+                SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
+                SqlDataReader reader = sqlC.ExecuteReader();
+                while (reader.Read())
+                {
+                    string instrumento = Convert.ToString(reader["nombre_producto"]);
+                    VarDatos.Add(instrumento);
+                }
+            }
+            catch
+            {
+                VarDatos = null;
+            }
+            objConec.Cerrar();
+            return VarDatos;
+        }
+
     }
 }

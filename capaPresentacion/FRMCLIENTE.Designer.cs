@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmb_categoria = new System.Windows.Forms.ComboBox();
-            this.cmb_intrumento = new System.Windows.Forms.ComboBox();
+            this.cmb_instrumento = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -144,16 +144,17 @@
             this.cmb_categoria.Name = "cmb_categoria";
             this.cmb_categoria.Size = new System.Drawing.Size(159, 30);
             this.cmb_categoria.TabIndex = 6;
+            this.cmb_categoria.SelectedIndexChanged += new System.EventHandler(this.cmb_categoria_SelectedIndexChanged);
             // 
-            // cmb_intrumento
+            // cmb_instrumento
             // 
-            this.cmb_intrumento.Enabled = false;
-            this.cmb_intrumento.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_intrumento.FormattingEnabled = true;
-            this.cmb_intrumento.Location = new System.Drawing.Point(209, 115);
-            this.cmb_intrumento.Name = "cmb_intrumento";
-            this.cmb_intrumento.Size = new System.Drawing.Size(217, 30);
-            this.cmb_intrumento.TabIndex = 7;
+            this.cmb_instrumento.Enabled = false;
+            this.cmb_instrumento.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_instrumento.FormattingEnabled = true;
+            this.cmb_instrumento.Location = new System.Drawing.Point(209, 115);
+            this.cmb_instrumento.Name = "cmb_instrumento";
+            this.cmb_instrumento.Size = new System.Drawing.Size(217, 30);
+            this.cmb_instrumento.TabIndex = 7;
             // 
             // pictureBox1
             // 
@@ -465,7 +466,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.cmb_intrumento);
+            this.Controls.Add(this.cmb_instrumento);
             this.Controls.Add(this.cmb_categoria);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -494,7 +495,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmb_categoria;
-        private System.Windows.Forms.ComboBox cmb_intrumento;
+        private System.Windows.Forms.ComboBox cmb_instrumento;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label5;

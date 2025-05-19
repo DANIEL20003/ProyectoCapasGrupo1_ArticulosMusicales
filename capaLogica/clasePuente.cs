@@ -18,7 +18,10 @@ namespace capaLogica
             return objOpera.listCategorias();
         }
 
-
+        public List<string> listarInstruCatego(string catego)
+        {
+            return objOpera.listInstrumentoCategoria(catego);
+        }
 
 
     }
