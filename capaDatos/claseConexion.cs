@@ -20,25 +20,18 @@ namespace capaDatos
         {
             //cadena de coneccion, comando que permite conectar y aqui estan unidas las dos , mediante el constructor
             conectar.ConnectionString = cadena;
-
-
         }
 
         public void Abrir()
         {
             try
             {
-
                 conectar.Open();
                 Console.WriteLine("Conexión abierta correctamente.");
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error al abrir la conexión: " + ex.Message);
-
-
-
-
             }
         }
 

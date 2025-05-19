@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//
+using capaEntidades;
+using capaLogica;
+
 
 namespace capaPresentacion
 {

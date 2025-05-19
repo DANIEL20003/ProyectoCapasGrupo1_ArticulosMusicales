@@ -196,5 +196,15 @@
     <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\capaEntidades\capaEntidades.csproj">
+      <Project>{e3932f36-c901-4786-ad52-f17e471e6b4d}</Project>
+      <Name>capaEntidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\capaLogica\capaLogica.csproj">
+      <Project>{a9756b74-a385-45e1-b59e-9f25cb564c70}</Project>
+      <Name>capaLogica</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

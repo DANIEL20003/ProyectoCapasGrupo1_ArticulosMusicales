@@ -61,5 +61,11 @@
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\capaEntidades\capaEntidades.csproj">
+      <Project>{e3932f36-c901-4786-ad52-f17e471e6b4d}</Project>
+      <Name>capaEntidades</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
