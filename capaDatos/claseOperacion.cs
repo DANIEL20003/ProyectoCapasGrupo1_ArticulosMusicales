@@ -110,12 +110,17 @@ namespace capaDatos
                 {
                     codInstru = Convert.ToString(reader["codigo_producto"]),
                     nombre = Convert.ToString(reader["nombre_producto"]),
-                    cantidad = Convert.ToInt64(reader["cantidad"]),
-                    precio = Convert.ToDouble(reader["precio_producto"]),
                     marca = Convert.ToString(reader["marca"]),
                     modelo = Convert.ToString(reader["modelo"]),
+                    precio = Convert.ToDouble(reader["precio_producto"]),
                     anioFabrica = Convert.ToInt32(reader["anio_fabricacion"]),
-                    idIva = Convert.ToInt32(reader["id_iva"])
+                    idIva = Convert.ToInt32(reader["id_iva"]),
+                    cantidad = Convert.ToInt64(reader["cantidad"]),
+                    idCatego = Convert.ToInt32(reader["id_categoriaYo"]),
+                    idProvee = Convert.ToInt32(reader["id_Proveedor"]),
+                    color = Convert.ToString(reader["color"]),
+                    material = Convert.ToString(reader["material"]),
+                    dimension = Convert.ToString(reader["dimension"])
                 };
                 objConec.Cerrar();
                 return objInstru;
