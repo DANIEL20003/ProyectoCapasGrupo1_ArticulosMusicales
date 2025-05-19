@@ -71,5 +71,10 @@ namespace capaPresentacion
             FRMVERREPORTES objReportes = new FRMVERREPORTES();
             objReportes.ShowDialog();
         }
+
+        private void linkAyuda_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

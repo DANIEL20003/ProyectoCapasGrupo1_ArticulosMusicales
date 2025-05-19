@@ -101,6 +101,7 @@
             this.linkAyuda.TabIndex = 23;
             this.linkAyuda.TabStop = true;
             this.linkAyuda.Text = "Ayuda";
+            this.linkAyuda.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAyuda_LinkClicked);
             // 
             // groupBox2
             // 
