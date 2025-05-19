@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace capaEntidades
 {
-    public class Entidades
+    internal class Carrito
     {
     }
 }

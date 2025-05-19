@@ -16,9 +16,17 @@ namespace capaPresentacion
 {
     public partial class FRMCLIENTE : Form
     {
+        
+
         public FRMCLIENTE()
         {
             InitializeComponent();
+            cargar_categoria();
+        }
+
+        public void cargar_categoria()
+        {
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -28,7 +36,7 @@ namespace capaPresentacion
 
         private void FRMCLIENTE_Load(object sender, EventArgs e)
         {
-            nud_cantidad.Maximum = 200;
+            
         }
     }
 }
