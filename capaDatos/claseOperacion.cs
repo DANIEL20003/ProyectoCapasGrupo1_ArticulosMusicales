@@ -195,7 +195,7 @@ namespace capaDatos
 
             foreach(Carrito c in newCarrito)
             {
-                string sentencia = $"INSERT INTO Carrito VALUES ({c.idCli}, '{c.codigoInstru}',{c.cantidad}, '{c.fecha}')";
+                string sentencia = $"INSERT INTO Carrito (id_cliente, codigo_producto, cantidad, fecha_agregado) VALUES ({c.idCli}, '{c.codigoInstru}',{c.cantidad}, '{c.fecha}')";
                 SqlCommand insertarP = new SqlCommand(sentencia, objConec.conectar);
                 insertarP.ExecuteNonQuery();
             }
