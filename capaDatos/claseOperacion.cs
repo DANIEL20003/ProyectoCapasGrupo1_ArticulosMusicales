@@ -161,5 +161,14 @@ namespace capaDatos
             objConec.Cerrar();
         }
 
+        public void actualizarIva(int valorI)
+        {
+            objConec.Abrir();
+
+            SqlCommand actualizarI = new SqlCommand($"Update IVA set valor_iva={valorI} where id_iva=1", objConec.conectar);
+            actualizarI.ExecuteNonQuery();
+
+            objConec.Cerrar();
+        }
     }
 }

@@ -49,5 +49,10 @@ namespace capaLogica
         {
             objOpera.eliminarProducto(producto);
         }
+
+        public void actualizarIv(int newValor)
+        {
+            objOpera.actualizarIva(newValor);
+        }
     }
 }

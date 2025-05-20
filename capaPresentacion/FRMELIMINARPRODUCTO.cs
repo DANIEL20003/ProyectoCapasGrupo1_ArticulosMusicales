@@ -77,6 +77,14 @@ namespace capaPresentacion
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             operacion.eliminarProd(codigoProducto);
+            MessageBox.Show("El instrumento se ha eliminado con exito" +
+                " de la base de datos","Registro eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            limpiar();
+        }
+
+        public void limpiar()
+        {
+            TB_codigoProducto.Clear();
         }
     }
 }
