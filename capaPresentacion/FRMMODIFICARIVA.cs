@@ -16,5 +16,17 @@ namespace capaPresentacion
         {
             InitializeComponent();
         }
+
+        private void TB_codigoProducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public double getiva()
+        {
+            double ivac;
+            ivac = double.Parse(TB_codigoProducto.Text);
+            return ivac;
+        }
     }
 }

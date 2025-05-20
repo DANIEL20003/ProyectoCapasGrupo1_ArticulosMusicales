@@ -24,12 +24,6 @@ namespace capaLogica
             return objOpera.listInstrumentoCategoria(catego);
         }
 
-        public DataTable objetenercarrito()
-        {
-            DataTable datos = objOpera.GetDatosCarrito();
-            return datos;
-        }
-
         public List<string> listarCodInstrumento(string instru)
         {
             return objOpera.listCodInstrumento(instru);
@@ -39,6 +33,18 @@ namespace capaLogica
         {
             return objOpera.objetoInstrumento(idInstrumento);
         }
+
+        public DataTable objetenercarrito()
+        {
+            DataTable datos = objOpera.GetDatosCarrito();
+            return datos;
+        }
+        
+        public Carrito obtenerpreciototal()
+        {
+            return objOpera.Precio_Total();
+        }
+
 
     }
 }
