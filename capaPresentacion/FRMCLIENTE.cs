@@ -10,6 +10,7 @@ using System.Windows.Forms;
 //
 using capaEntidades;
 using capaLogica;
+using capaPresentacion.Properties;
 
 
 namespace capaPresentacion
@@ -56,6 +57,26 @@ namespace capaPresentacion
                 {
                     cmb_instrumento.Items.Add(item);
                 }
+
+                switch (categoria)
+                {
+                    case "Cuerda":
+                        pcb_categoria.Image = Resources.Instru_Cuerda;
+                        break;
+                    case "Viento":
+                        pcb_categoria.Image = Resources.Instru_Viento;
+                        break;
+                    case "Percusión":
+                        pcb_categoria.Image = Resources.Instru_Percus;
+                        break;
+                    case "Teclado":
+                        pcb_categoria.Image = Resources.Instru_Teclado;
+                        break;
+                    case "Electrónico":
+                        pcb_categoria.Image = Resources.Instru_Electro;
+                        break;
+                }
+
                 cmb_instrumento.Enabled = true;
             }
             else
@@ -103,6 +124,46 @@ namespace capaPresentacion
             else
             {
                 
+            }
+        }
+
+        private void btn_volver_Click(object sender, EventArgs e)
+        {
+            DialogResult respuesta = MessageBox.Show(
+                "¿Está seguro que desea salir de la ventana actual? Los instrumentos seleccionados se perderán.",
+                "Aviso",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+                );
+
+            if (respuesta == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else if (respuesta == DialogResult.No)
+            {
+                MessageBox.Show("Salida cancelada.", "Información", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult respuesta = MessageBox.Show(
+                "¿Está seguro que desea cancelar la selección de instrumentos?",
+                "Aviso",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+                );
+
+            if (respuesta == DialogResult.Yes)
+            {
+                
+            }
+            else if (respuesta == DialogResult.No)
+            {
+                MessageBox.Show("La cancelación no se ha llevado a cabo.", "Información",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

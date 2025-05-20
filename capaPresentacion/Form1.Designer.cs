@@ -72,7 +72,7 @@
             this.btnlogin.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogin.ForeColor = System.Drawing.Color.Gold;
             this.btnlogin.Location = new System.Drawing.Point(444, 236);
-            this.btnlogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnlogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(67, 29);
             this.btnlogin.TabIndex = 81;
@@ -83,10 +83,11 @@
             // txtcontrasenia
             // 
             this.txtcontrasenia.Location = new System.Drawing.Point(379, 203);
-            this.txtcontrasenia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtcontrasenia.Margin = new System.Windows.Forms.Padding(2);
             this.txtcontrasenia.Name = "txtcontrasenia";
             this.txtcontrasenia.Size = new System.Drawing.Size(210, 20);
             this.txtcontrasenia.TabIndex = 80;
+            this.txtcontrasenia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcontrasenia_KeyPress);
             // 
             // label5
             // 
@@ -103,7 +104,7 @@
             // txtusuario
             // 
             this.txtusuario.Location = new System.Drawing.Point(379, 154);
-            this.txtusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtusuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(210, 20);
             this.txtusuario.TabIndex = 78;
@@ -161,7 +162,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Indigo;
             this.panel2.Location = new System.Drawing.Point(-8, 321);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(654, 48);
             this.panel2.TabIndex = 69;
@@ -170,7 +171,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Indigo;
             this.panel1.Location = new System.Drawing.Point(-2, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(647, 48);
             this.panel1.TabIndex = 68;
@@ -183,7 +184,7 @@
             this.btnregistrarse.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnregistrarse.ForeColor = System.Drawing.Color.Gold;
             this.btnregistrarse.Location = new System.Drawing.Point(530, 275);
-            this.btnregistrarse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnregistrarse.Margin = new System.Windows.Forms.Padding(2);
             this.btnregistrarse.Name = "btnregistrarse";
             this.btnregistrarse.Size = new System.Drawing.Size(106, 29);
             this.btnregistrarse.TabIndex = 85;
@@ -269,6 +270,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();

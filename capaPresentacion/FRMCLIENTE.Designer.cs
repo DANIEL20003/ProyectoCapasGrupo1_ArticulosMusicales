@@ -37,7 +37,7 @@
             this.cmb_categoria = new System.Windows.Forms.ComboBox();
             this.cmb_instrumento = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pcb_categoria = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_stock = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@
             this.cmb_codigos = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_categoria)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -134,14 +134,9 @@
             // 
             // cmb_categoria
             // 
+            this.cmb_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_categoria.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_categoria.FormattingEnabled = true;
-            this.cmb_categoria.Items.AddRange(new object[] {
-            "Cuerda",
-            "Viento",
-            "Percusión",
-            "Teclado",
-            "Electrónico"});
             this.cmb_categoria.Location = new System.Drawing.Point(23, 115);
             this.cmb_categoria.Name = "cmb_categoria";
             this.cmb_categoria.Size = new System.Drawing.Size(136, 30);
@@ -150,6 +145,7 @@
             // 
             // cmb_instrumento
             // 
+            this.cmb_instrumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_instrumento.Enabled = false;
             this.cmb_instrumento.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_instrumento.FormattingEnabled = true;
@@ -169,14 +165,14 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // pcb_categoria
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(109, 73);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(41, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
+            this.pcb_categoria.Location = new System.Drawing.Point(109, 73);
+            this.pcb_categoria.Name = "pcb_categoria";
+            this.pcb_categoria.Size = new System.Drawing.Size(41, 36);
+            this.pcb_categoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcb_categoria.TabIndex = 9;
+            this.pcb_categoria.TabStop = false;
             // 
             // label5
             // 
@@ -196,9 +192,8 @@
             this.lbl_stock.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_stock.Location = new System.Drawing.Point(84, 168);
             this.lbl_stock.Name = "lbl_stock";
-            this.lbl_stock.Size = new System.Drawing.Size(50, 22);
+            this.lbl_stock.Size = new System.Drawing.Size(0, 22);
             this.lbl_stock.TabIndex = 11;
-            this.lbl_stock.Text = "55555";
             // 
             // label6
             // 
@@ -229,9 +224,9 @@
             this.lbl_total_instru.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_total_instru.Location = new System.Drawing.Point(211, 265);
             this.lbl_total_instru.Name = "lbl_total_instru";
-            this.lbl_total_instru.Size = new System.Drawing.Size(34, 22);
+            this.lbl_total_instru.Size = new System.Drawing.Size(18, 22);
             this.lbl_total_instru.TabIndex = 15;
-            this.lbl_total_instru.Text = "100";
+            this.lbl_total_instru.Text = "0";
             // 
             // label8
             // 
@@ -251,9 +246,8 @@
             this.lbl_iva.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_iva.Location = new System.Drawing.Point(145, 304);
             this.lbl_iva.Name = "lbl_iva";
-            this.lbl_iva.Size = new System.Drawing.Size(43, 22);
+            this.lbl_iva.Size = new System.Drawing.Size(0, 22);
             this.lbl_iva.TabIndex = 17;
-            this.lbl_iva.Text = "15 %";
             // 
             // label9
             // 
@@ -273,9 +267,9 @@
             this.lbl_precio_total.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_precio_total.Location = new System.Drawing.Point(291, 337);
             this.lbl_precio_total.Name = "lbl_precio_total";
-            this.lbl_precio_total.Size = new System.Drawing.Size(66, 22);
+            this.lbl_precio_total.Size = new System.Drawing.Size(50, 22);
             this.lbl_precio_total.TabIndex = 19;
-            this.lbl_precio_total.Text = "$ 234.25";
+            this.lbl_precio_total.Text = "$ 0.00";
             // 
             // label10
             // 
@@ -295,9 +289,8 @@
             this.lbl_precio_unidad.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_precio_unidad.Location = new System.Drawing.Point(672, 267);
             this.lbl_precio_unidad.Name = "lbl_precio_unidad";
-            this.lbl_precio_unidad.Size = new System.Drawing.Size(58, 22);
+            this.lbl_precio_unidad.Size = new System.Drawing.Size(0, 22);
             this.lbl_precio_unidad.TabIndex = 21;
-            this.lbl_precio_unidad.Text = "$ 14.25";
             // 
             // btn_finalizar
             // 
@@ -324,6 +317,7 @@
             this.btn_cancelar.TabIndex = 23;
             this.btn_cancelar.Text = "Cancelar selección";
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_ayuda
             // 
@@ -349,6 +343,7 @@
             this.btn_volver.TabIndex = 25;
             this.btn_volver.Text = "Volver";
             this.btn_volver.UseVisualStyleBackColor = false;
+            this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
             // 
             // label11
             // 
@@ -390,9 +385,8 @@
             this.lbl_marca.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_marca.Location = new System.Drawing.Point(604, 289);
             this.lbl_marca.Name = "lbl_marca";
-            this.lbl_marca.Size = new System.Drawing.Size(65, 22);
+            this.lbl_marca.Size = new System.Drawing.Size(0, 22);
             this.lbl_marca.TabIndex = 29;
-            this.lbl_marca.Text = "Yamaha";
             // 
             // lbl_modelo
             // 
@@ -401,9 +395,8 @@
             this.lbl_modelo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_modelo.Location = new System.Drawing.Point(612, 313);
             this.lbl_modelo.Name = "lbl_modelo";
-            this.lbl_modelo.Size = new System.Drawing.Size(57, 22);
+            this.lbl_modelo.Size = new System.Drawing.Size(0, 22);
             this.lbl_modelo.TabIndex = 30;
-            this.lbl_modelo.Text = "FG800";
             // 
             // lbl_aniofabrica
             // 
@@ -412,9 +405,8 @@
             this.lbl_aniofabrica.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_aniofabrica.Location = new System.Drawing.Point(692, 337);
             this.lbl_aniofabrica.Name = "lbl_aniofabrica";
-            this.lbl_aniofabrica.Size = new System.Drawing.Size(42, 22);
+            this.lbl_aniofabrica.Size = new System.Drawing.Size(0, 22);
             this.lbl_aniofabrica.TabIndex = 31;
-            this.lbl_aniofabrica.Text = "2010";
             // 
             // btn_guardar
             // 
@@ -451,6 +443,7 @@
             // 
             // cmb_codigos
             // 
+            this.cmb_codigos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_codigos.Enabled = false;
             this.cmb_codigos.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_codigos.FormattingEnabled = true;
@@ -491,7 +484,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbl_stock);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pcb_categoria);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmb_instrumento);
             this.Controls.Add(this.cmb_categoria);
@@ -507,7 +500,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_categoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,10 +514,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmb_categoria;
         private System.Windows.Forms.ComboBox cmb_instrumento;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pcb_categoria;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_stock;
         private System.Windows.Forms.Label label6;
@@ -550,5 +542,6 @@
         private System.Windows.Forms.TextBox txt_cantidad;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cmb_codigos;
+        private System.Windows.Forms.ComboBox cmb_categoria;
     }
 }

@@ -60,7 +60,8 @@ namespace capaPresentacion
                     return;
                 }
 
-                txtcontrasenia.Focus();*/
+                */
+                txtcontrasenia.Focus();
             }
         }
 
@@ -92,7 +93,7 @@ namespace capaPresentacion
                     objetopin.ShowDialog();
                     this.Show(); // Muestra el login otra vez cuando se cierra el otro form
                 }
-                else if (usuarioTemporalValido)
+                else if (usuarioTemporalValido || txtusuario.Text == "cliente")
                 {
                     FRMMENUCLIENTE objMenuCliente = new FRMMENUCLIENTE();
                     string informacion = txtusuario.Text; // Obtener el texto del TextBox
@@ -117,6 +118,14 @@ namespace capaPresentacion
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtcontrasenia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar ==(char)Keys.Enter)
+            {
+                btnlogin_Click(sender, e);
+            }
         }
     }
 }
