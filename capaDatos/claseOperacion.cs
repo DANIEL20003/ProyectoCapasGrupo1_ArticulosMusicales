@@ -170,24 +170,50 @@ namespace capaDatos
             objConec.Cerrar();
         }
 
-        public decimal obtenerIva()
+        public decimal obtenerIva(int idIva)
         {
-            objConec.Abrir();
-            string sentencia = $"SELECT * FROM IVA WHERE id_iva = {1}";
-            SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
-            SqlDataReader reader = sqlC.ExecuteReader();
-            if (reader.Read())
+            decimal valorIva = 0;
+            try
             {
-                decimal iva = Convert.ToDecimal(reader["valor_iva"]);
+                objConec.Abrir();
+
+
+                string sentencia = "SELECT valor_iva FROM IVA WHERE id_iva = @idIva";
+                SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
+                sqlC.Parameters.AddWithValue("@idIva", idIva);
+
+                SqlDataReader reader = sqlC.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+                    if (!reader.IsDBNull(reader.GetOrdinal("valor_iva")))
+                    {
+                        valorIva = Convert.ToDecimal(reader["valor_iva"]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("valor_iva es NULL para el id_iva: " + idIva);
+                        valorIva = 0;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No se encontró valor_iva para el id_iva: " + idIva);
+                    valorIva = 0;
+                }
+
                 objConec.Cerrar();
-                return iva;
             }
-            else
+            catch (Exception ex)
             {
-                objConec.Cerrar();
-                return 0;
+                Console.WriteLine("Error en ObtenerValorIva: " + ex.Message);
+                valorIva = 0;
             }
+
+            return valorIva;
         }
+        
 
         public void insertarCarrito(List<Carrito> newCarrito)
         {
