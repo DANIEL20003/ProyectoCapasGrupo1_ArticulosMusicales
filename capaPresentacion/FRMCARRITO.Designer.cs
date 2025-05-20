@@ -80,7 +80,7 @@
             // 
             this.DGVcarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVcarrito.Location = new System.Drawing.Point(35, 196);
-            this.DGVcarrito.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DGVcarrito.Margin = new System.Windows.Forms.Padding(4);
             this.DGVcarrito.Name = "DGVcarrito";
             this.DGVcarrito.RowHeadersWidth = 51;
             this.DGVcarrito.Size = new System.Drawing.Size(625, 286);
@@ -92,7 +92,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1067, 123);
             this.panel1.TabIndex = 8;
@@ -114,7 +114,7 @@
             this.panel2.BackColor = System.Drawing.Color.Indigo;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 512);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1067, 42);
             this.panel2.TabIndex = 9;
@@ -126,12 +126,13 @@
             this.btn_volver.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_volver.ForeColor = System.Drawing.Color.White;
             this.btn_volver.Location = new System.Drawing.Point(695, 442);
-            this.btn_volver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_volver.Margin = new System.Windows.Forms.Padding(4);
             this.btn_volver.Name = "btn_volver";
             this.btn_volver.Size = new System.Drawing.Size(140, 39);
             this.btn_volver.TabIndex = 26;
             this.btn_volver.Text = "Volver";
             this.btn_volver.UseVisualStyleBackColor = false;
+            this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
             // 
             // lbl_precio_total
             // 
@@ -151,9 +152,9 @@
             this.lbl_iva.Location = new System.Drawing.Point(857, 238);
             this.lbl_iva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_iva.Name = "lbl_iva";
-            this.lbl_iva.Size = new System.Drawing.Size(55, 28);
+            this.lbl_iva.Size = new System.Drawing.Size(0, 28);
             this.lbl_iva.TabIndex = 28;
-            this.lbl_iva.Text = "15 %";
+            this.lbl_iva.Click += new System.EventHandler(this.lbl_iva_Click);
             // 
             // FRMCARRITO
             // 
@@ -170,7 +171,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FRMCARRITO";
             this.Text = "FRMCARRITO";
             this.Load += new System.EventHandler(this.FRMCARRITO_Load);

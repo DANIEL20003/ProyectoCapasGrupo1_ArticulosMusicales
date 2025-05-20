@@ -73,6 +73,25 @@ namespace capaDatos
             return dt;
         }
 
+        public Carrito Precio_Total()
+        {
+            objConec.Abrir();
+            SqlCommand sqlC = new SqlCommand("SELECT SUM(P.precio_producto * C.cantidad) AS totalP FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto", objConec.conectar);
+            SqlDataReader reader = sqlC.ExecuteReader();
+            Carrito objtC = new Carrito();
+            if (reader.Read())
+            {
+                objtC.precioT = Convert.ToDecimal(reader["totalP"]);
+                objConec.Cerrar();
+                return objtC;
+            }
+            else
+            {
+                objConec.Cerrar();
+                return null;
+            }
+        }
+
 
         public List<string> listCodInstrumento(string busInstru)
         {
