@@ -27,7 +27,7 @@ namespace capaPresentacion
 
         List<Carrito> carritos = new List<Carrito>();
 
-        Form1 obj = new Form1;
+        //Form1 obj = new Form1;
 
         public FRMCLIENTE()
         {
@@ -196,7 +196,7 @@ namespace capaPresentacion
                 {
                     carritos.Add(new Carrito
                     {
-                        idCli = obj.idCliente,
+                        //idCli = obj.idCliente,
                         codigoInstru = cmb_codigos.SelectedItem.ToString(),
                         cantidad = Convert.ToInt32(txt_cantidad.Text),
                         fecha = DateTime.Now

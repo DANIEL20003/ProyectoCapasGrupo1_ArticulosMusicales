@@ -18,7 +18,6 @@ namespace capaPresentacion
     {
         clasePuente operacion=new clasePuente();
         string codigoProducto;
-        Instrumento instrumento;
         public FRMELIMINARPRODUCTO()
         {
             InitializeComponent();
@@ -53,21 +52,21 @@ namespace capaPresentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            instrumento=operacion.infoInstrumento(codigoProducto);
+            Instrumento instrumentoA=operacion.infoInstrumento(codigoProducto);
 
-            lblCodigo.Text = instrumento.codInstru.ToString();
-            lblNombre.Text = instrumento.nombre.ToString();
-            lblMarca.Text = instrumento.marca.ToString();
-            lblModelo.Text = instrumento.modelo.ToString();
-            lblPrecio.Text = instrumento.precio.ToString();
-            lblaFab.Text = instrumento.anioFabrica.ToString();
-            lblIdIva.Text = instrumento.idIva.ToString();
-            lblCantidad.Text = instrumento.cantidad.ToString();
-            lblCategoria.Text = instrumento.idCatego.ToString();
-            lblProveedor.Text = instrumento.idProvee.ToString();
-            lblColor.Text = instrumento.color.ToString();
-            lblMaterial.Text = instrumento.material.ToString();
-            lblDimension.Text = instrumento.dimension.ToString();
+            lblCodigo.Text = instrumentoA.codInstru.ToString();
+            lblNombre.Text = instrumentoA.nombre.ToString();
+            lblMarca.Text = instrumentoA.marca.ToString();
+            lblModelo.Text = instrumentoA.modelo.ToString();
+            lblPrecio.Text = instrumentoA.precio.ToString();
+            lblaFab.Text = instrumentoA.anioFabrica.ToString();
+            lblIdIva.Text = instrumentoA.idIva.ToString();
+            lblCantidad.Text = instrumentoA.cantidad.ToString();
+            lblCategoria.Text = instrumentoA.idCatego.ToString();
+            lblProveedor.Text = instrumentoA.idProvee.ToString();
+            lblColor.Text = instrumentoA.color.ToString();
+            lblMaterial.Text = instrumentoA.material.ToString();
+            lblDimension.Text = instrumentoA.dimension.ToString();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
