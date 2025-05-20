@@ -369,6 +369,7 @@
             this.TB_codigoProducto.Name = "TB_codigoProducto";
             this.TB_codigoProducto.Size = new System.Drawing.Size(261, 20);
             this.TB_codigoProducto.TabIndex = 9;
+            this.TB_codigoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_codigoProducto_KeyPress);
             // 
             // LBLT_codigo
             // 
