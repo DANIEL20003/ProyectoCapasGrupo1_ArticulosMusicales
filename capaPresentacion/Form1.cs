@@ -37,7 +37,7 @@ namespace capaPresentacion
         {
             if (e.KeyChar == (Char)Keys.Enter)
             {
-                if (string.IsNullOrWhiteSpace(txtusuario.Text))
+                /*if (string.IsNullOrWhiteSpace(txtusuario.Text))
                 {
                     MessageBox.Show("El campo de usuario no puede estar vacío.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtusuario.Focus();
@@ -60,7 +60,7 @@ namespace capaPresentacion
                     return;
                 }
 
-                txtcontrasenia.Focus();
+                txtcontrasenia.Focus();*/
             }
         }
 
@@ -92,7 +92,7 @@ namespace capaPresentacion
                     objetopin.ShowDialog();
                     this.Show(); // Muestra el login otra vez cuando se cierra el otro form
                 }
-                else if (usuarioTemporalValido || txtusuario.Text == "cliente")
+                else if (usuarioTemporalValido)
                 {
                     FRMMENUCLIENTE objMenuCliente = new FRMMENUCLIENTE();
                     string informacion = txtusuario.Text; // Obtener el texto del TextBox
