@@ -94,7 +94,7 @@ namespace capaPresentacion
                 objInstru = objP.infoInstrumento(idInstru);
 
                 lbl_stock.Text = objInstru.cantidad.ToString();
-                lbl_precio_unidad.Text = objInstru.precio.ToString("F2");
+                lbl_precio_unidad.Text = "$ " + objInstru.precio.ToString("F2");
                 lbl_marca.Text = objInstru.marca;
                 lbl_modelo.Text = objInstru.modelo;
                 lbl_aniofabrica.Text = objInstru.anioFabrica.ToString();

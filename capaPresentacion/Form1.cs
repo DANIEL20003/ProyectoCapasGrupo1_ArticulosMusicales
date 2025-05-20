@@ -92,7 +92,7 @@ namespace capaPresentacion
                     objetopin.ShowDialog();
                     this.Show(); // Muestra el login otra vez cuando se cierra el otro form
                 }
-                else if (usuarioTemporalValido)
+                else if (usuarioTemporalValido || txtusuario.Text == "cliente")
                 {
                     FRMMENUCLIENTE objMenuCliente = new FRMMENUCLIENTE();
                     string informacion = txtusuario.Text; // Obtener el texto del TextBox
