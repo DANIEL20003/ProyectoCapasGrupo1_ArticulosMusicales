@@ -126,6 +126,7 @@
             this.TB_codigoProducto.Name = "TB_codigoProducto";
             this.TB_codigoProducto.Size = new System.Drawing.Size(261, 20);
             this.TB_codigoProducto.TabIndex = 4;
+            this.TB_codigoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_codigoProducto_KeyPress);
             // 
             // btnBuscar
             // 
@@ -140,6 +141,7 @@
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // groupBox1
             // 
