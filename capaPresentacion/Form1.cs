@@ -15,6 +15,7 @@ namespace capaPresentacion
 {
     public partial class Form1 : Form
     {
+        public int idCliente;
 
         private SoundPlayer soundPlayer;
         String usuario4 = "Erik Yumi";

@@ -40,7 +40,7 @@ namespace capaLogica
             return datos;
         }
         
-        public Carrito obtenerpreciototal()
+        public double obtenerpreciototal()
         {
             return objOpera.Precio_Total();
         }
@@ -53,6 +53,16 @@ namespace capaLogica
         public void actualizarIv(int newValor)
         {
             objOpera.actualizarIva(newValor);
+        }
+
+        public decimal getIva()
+        {
+            return objOpera.obtenerIva();
+        }
+
+        public void insertCarrito(List<Carrito> listCarritos)
+        {
+            objOpera.insertarCarrito(listCarritos);
         }
     }
 }

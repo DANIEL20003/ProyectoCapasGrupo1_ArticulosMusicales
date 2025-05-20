@@ -8,6 +8,9 @@ namespace capaEntidades
 {
     public class Carrito
     {
-        public decimal precioT { get; set; }
+        public int idCli { get; set; }
+        public string codigoInstru { get; set; }
+        public int cantidad { get; set; }
+        public DateTime fecha { get; set; }
     }
 }
