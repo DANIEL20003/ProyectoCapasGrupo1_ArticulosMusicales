@@ -24,6 +24,16 @@ namespace capaLogica
             return objOpera.listInstrumentoCategoria(catego);
         }
 
+        public List<string> listarCodInstrumento(string instru)
+        {
+            return objOpera.listCodInstrumento(instru);
+        }
+
+        public Instrumento infoInstrumento(string idInstrumento)
+        {
+            return objOpera.objetoInstrumento(idInstrumento);
+        }
+
         public DataTable objetenercarrito()
         {
             DataTable datos = objOpera.GetDatosCarrito();
