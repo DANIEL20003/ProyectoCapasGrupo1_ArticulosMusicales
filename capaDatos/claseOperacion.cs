@@ -127,5 +127,49 @@ namespace capaDatos
             }
         }
 
+        public decimal ObtenerValorIva(int idIva)
+        {
+            decimal valorIva = 0;
+            try
+            {
+                objConec.Abrir();
+
+                
+                string sentencia = "SELECT valor_iva FROM IVA WHERE id_iva = @idIva";
+                SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
+                sqlC.Parameters.AddWithValue("@idIva", idIva);
+
+                SqlDataReader reader = sqlC.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    
+                    if (!reader.IsDBNull(reader.GetOrdinal("valor_iva")))
+                    {
+                        valorIva = Convert.ToDecimal(reader["valor_iva"]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("valor_iva es NULL para el id_iva: " + idIva);
+                        valorIva = 0; 
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No se encontró valor_iva para el id_iva: " + idIva);
+                    valorIva = 0; 
+                }
+
+                objConec.Cerrar();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error en ObtenerValorIva: " + ex.Message);
+                valorIva = 0;
+            }
+
+            return valorIva;
+        }
+
     }
 }

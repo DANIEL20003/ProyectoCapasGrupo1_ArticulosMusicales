@@ -22,5 +22,7 @@ namespace capaEntidades
         public string material { get; set; }
         public string dimension { get; set; }
 
+        public decimal valorIva { get; set; }
+
     }
 }
