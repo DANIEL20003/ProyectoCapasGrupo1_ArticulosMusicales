@@ -52,6 +52,7 @@
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnActualizarIva
             // 
@@ -66,6 +67,7 @@
             this.btnActualizarIva.TabIndex = 19;
             this.btnActualizarIva.Text = "Actualizar";
             this.btnActualizarIva.UseVisualStyleBackColor = false;
+            this.btnActualizarIva.Click += new System.EventHandler(this.btnActualizarIva_Click);
             // 
             // TB_codigoProducto
             // 
@@ -73,6 +75,8 @@
             this.TB_codigoProducto.Name = "TB_codigoProducto";
             this.TB_codigoProducto.Size = new System.Drawing.Size(192, 20);
             this.TB_codigoProducto.TabIndex = 16;
+            this.TB_codigoProducto.TextChanged += new System.EventHandler(this.TB_codigoProducto_TextChanged);
+            this.TB_codigoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_codigoProducto_KeyPress);
             // 
             // LBLT_codigo
             // 

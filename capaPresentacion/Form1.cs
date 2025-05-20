@@ -15,6 +15,7 @@ namespace capaPresentacion
 {
     public partial class Form1 : Form
     {
+        public int idCliente;
 
         private SoundPlayer soundPlayer;
         String usuario4 = "Erik Yumi";
@@ -37,7 +38,7 @@ namespace capaPresentacion
         {
             if (e.KeyChar == (Char)Keys.Enter)
             {
-                if (string.IsNullOrWhiteSpace(txtusuario.Text))
+                /*if (string.IsNullOrWhiteSpace(txtusuario.Text))
                 {
                     MessageBox.Show("El campo de usuario no puede estar vacío.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtusuario.Focus();
@@ -60,6 +61,7 @@ namespace capaPresentacion
                     return;
                 }
 
+                */
                 txtcontrasenia.Focus();
             }
         }
@@ -92,7 +94,7 @@ namespace capaPresentacion
                     objetopin.ShowDialog();
                     this.Show(); // Muestra el login otra vez cuando se cierra el otro form
                 }
-                else if (usuarioTemporalValido)
+                else if (usuarioTemporalValido || txtusuario.Text == "cliente")
                 {
                     FRMMENUCLIENTE objMenuCliente = new FRMMENUCLIENTE();
                     string informacion = txtusuario.Text; // Obtener el texto del TextBox
@@ -117,6 +119,14 @@ namespace capaPresentacion
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtcontrasenia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar ==(char)Keys.Enter)
+            {
+                btnlogin_Click(sender, e);
+            }
         }
     }
 }

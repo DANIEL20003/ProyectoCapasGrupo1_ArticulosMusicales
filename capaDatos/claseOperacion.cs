@@ -73,6 +73,24 @@ namespace capaDatos
             return dt;
         }
 
+        public double Precio_Total()
+        {
+            objConec.Abrir();
+            SqlCommand sqlC = new SqlCommand("SELECT SUM(P.precio_producto * C.cantidad) AS totalP FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto", objConec.conectar);
+            SqlDataReader reader = sqlC.ExecuteReader();
+            if (reader.Read())
+            {
+                double precioT = Convert.ToDouble(reader["totalP"]);
+                objConec.Cerrar();
+                return precioT;
+            }
+            else
+            {
+                objConec.Cerrar();
+                return 0;
+            }
+        }
+
 
         public List<string> listCodInstrumento(string busInstru)
         {
@@ -100,7 +118,7 @@ namespace capaDatos
         public Instrumento objetoInstrumento(string busIdInstru)
         {
             objConec.Abrir();
-            string sentencia = $"SELECT * FROM Productos WHERE codigo_producto = {busIdInstru}";
+            string sentencia = $"SELECT * FROM Productos WHERE codigo_producto = '{busIdInstru}'";
             SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
             SqlDataReader reader = sqlC.ExecuteReader();
 
@@ -110,12 +128,17 @@ namespace capaDatos
                 {
                     codInstru = Convert.ToString(reader["codigo_producto"]),
                     nombre = Convert.ToString(reader["nombre_producto"]),
-                    cantidad = Convert.ToInt64(reader["cantidad"]),
-                    precio = Convert.ToDouble(reader["precio_producto"]),
                     marca = Convert.ToString(reader["marca"]),
                     modelo = Convert.ToString(reader["modelo"]),
+                    precio = Convert.ToDecimal(reader["precio_producto"]),
                     anioFabrica = Convert.ToInt32(reader["anio_fabricacion"]),
-                    idIva = Convert.ToInt32(reader["id_iva"])
+                    idIva = Convert.ToInt32(reader["id_iva"]),
+                    cantidad = Convert.ToInt64(reader["cantidad"]),
+                    idCatego = Convert.ToInt32(reader["id_categoriaYo"]),
+                    idProvee = Convert.ToInt32(reader["id_Proveedor"]),
+                    color = Convert.ToString(reader["color"]),
+                    material = Convert.ToString(reader["material"]),
+                    dimension = Convert.ToString(reader["dimension"])
                 };
                 objConec.Cerrar();
                 return objInstru;
@@ -127,49 +150,58 @@ namespace capaDatos
             }
         }
 
-        public decimal ObtenerValorIva(int idIva)
+        public void eliminarProducto(string codProducto)
         {
-            decimal valorIva = 0;
-            try
-            {
-                objConec.Abrir();
+            objConec.Abrir();
 
-                
-                string sentencia = "SELECT valor_iva FROM IVA WHERE id_iva = @idIva";
-                SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
-                sqlC.Parameters.AddWithValue("@idIva", idIva);
+            SqlCommand eliminarP=new SqlCommand($"Delete from Productos where codigo_producto='{codProducto}'", objConec.conectar);
+            eliminarP.ExecuteNonQuery();
 
-                SqlDataReader reader = sqlC.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    
-                    if (!reader.IsDBNull(reader.GetOrdinal("valor_iva")))
-                    {
-                        valorIva = Convert.ToDecimal(reader["valor_iva"]);
-                    }
-                    else
-                    {
-                        Console.WriteLine("valor_iva es NULL para el id_iva: " + idIva);
-                        valorIva = 0; 
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("No se encontró valor_iva para el id_iva: " + idIva);
-                    valorIva = 0; 
-                }
-
-                objConec.Cerrar();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error en ObtenerValorIva: " + ex.Message);
-                valorIva = 0;
-            }
-
-            return valorIva;
+            objConec.Cerrar();
         }
 
+        public void actualizarIva(int valorI)
+        {
+            objConec.Abrir();
+
+            SqlCommand actualizarI = new SqlCommand($"Update IVA set valor_iva={valorI} where id_iva=1", objConec.conectar);
+            actualizarI.ExecuteNonQuery();
+
+            objConec.Cerrar();
+        }
+
+        public decimal obtenerIva()
+        {
+            objConec.Abrir();
+            string sentencia = $"SELECT * FROM IVA WHERE id_iva = {1}";
+            SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
+            SqlDataReader reader = sqlC.ExecuteReader();
+            if (reader.Read())
+            {
+                decimal iva = Convert.ToDecimal(reader["valor_iva"]);
+                objConec.Cerrar();
+                return iva;
+            }
+            else
+            {
+                objConec.Cerrar();
+                return 0;
+            }
+        }
+
+        public void insertarCarrito(List<Carrito> newCarrito)
+        {
+            objConec.Abrir();
+
+            foreach(Carrito c in newCarrito)
+            {
+                string sentencia = $"INSERT INTO Carrito (id_cliente, codigo_producto, cantidad, fecha_agregado) VALUES ({c.idCli}, '{c.codigoInstru}',{c.cantidad}, '{c.fecha}')";
+                SqlCommand insertarP = new SqlCommand(sentencia, objConec.conectar);
+                insertarP.ExecuteNonQuery();
+            }
+            objConec.Cerrar();
+
+        }
+        
     }
 }

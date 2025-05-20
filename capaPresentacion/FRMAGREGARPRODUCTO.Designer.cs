@@ -44,18 +44,24 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.nudAño = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.ptbImagenInstrumento = new System.Windows.Forms.PictureBox();
+            this.txbCodigo = new System.Windows.Forms.TextBox();
+            this.txbNombre = new System.Windows.Forms.TextBox();
+            this.txbMarca = new System.Windows.Forms.TextBox();
+            this.txbModelo = new System.Windows.Forms.TextBox();
+            this.txbPrecio = new System.Windows.Forms.TextBox();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.cmbProveedor = new System.Windows.Forms.ComboBox();
+            this.cmbColor = new System.Windows.Forms.ComboBox();
+            this.cmbMaterial = new System.Windows.Forms.ComboBox();
+            this.cmbDimension = new System.Windows.Forms.ComboBox();
+            this.btnAgregarFoto = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.txbAñoFabricacion = new System.Windows.Forms.TextBox();
+            this.txbCantidad = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAño)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagenInstrumento)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -104,7 +110,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(24, 131);
+            this.label3.Location = new System.Drawing.Point(23, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 22);
             this.label3.TabIndex = 6;
@@ -115,7 +121,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(24, 178);
+            this.label4.Location = new System.Drawing.Point(23, 178);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 22);
             this.label4.TabIndex = 7;
@@ -126,7 +132,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(26, 226);
+            this.label5.Location = new System.Drawing.Point(23, 223);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 22);
             this.label5.TabIndex = 8;
@@ -137,7 +143,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(26, 271);
+            this.label6.Location = new System.Drawing.Point(23, 264);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 22);
             this.label6.TabIndex = 9;
@@ -148,7 +154,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(27, 358);
+            this.label7.Location = new System.Drawing.Point(23, 356);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 22);
             this.label7.TabIndex = 10;
@@ -159,7 +165,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(27, 312);
+            this.label8.Location = new System.Drawing.Point(23, 308);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(162, 22);
             this.label8.TabIndex = 11;
@@ -181,7 +187,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(389, 131);
+            this.label10.Location = new System.Drawing.Point(389, 128);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(93, 22);
             this.label10.TabIndex = 13;
@@ -203,7 +209,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label12.Location = new System.Drawing.Point(389, 226);
+            this.label12.Location = new System.Drawing.Point(389, 223);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(85, 22);
             this.label12.TabIndex = 15;
@@ -214,7 +220,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label13.Location = new System.Drawing.Point(389, 271);
+            this.label13.Location = new System.Drawing.Point(389, 264);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(99, 22);
             this.label13.TabIndex = 16;
@@ -225,104 +231,209 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label14.Location = new System.Drawing.Point(389, 312);
+            this.label14.Location = new System.Drawing.Point(389, 308);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 22);
             this.label14.TabIndex = 17;
             this.label14.Text = "Foto:";
             // 
-            // pictureBox1
+            // ptbImagenInstrumento
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(522, 312);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
+            this.ptbImagenInstrumento.Location = new System.Drawing.Point(509, 308);
+            this.ptbImagenInstrumento.Name = "ptbImagenInstrumento";
+            this.ptbImagenInstrumento.Size = new System.Drawing.Size(100, 100);
+            this.ptbImagenInstrumento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbImagenInstrumento.TabIndex = 18;
+            this.ptbImagenInstrumento.TabStop = false;
             // 
-            // textBox1
+            // txbCodigo
             // 
-            this.textBox1.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(109, 86);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 29);
-            this.textBox1.TabIndex = 19;
+            this.txbCodigo.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCodigo.Location = new System.Drawing.Point(129, 86);
+            this.txbCodigo.Name = "txbCodigo";
+            this.txbCodigo.Size = new System.Drawing.Size(176, 29);
+            this.txbCodigo.TabIndex = 19;
+            this.txbCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCodigo_KeyPress);
             // 
-            // textBox2
+            // txbNombre
             // 
-            this.textBox2.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(109, 128);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 29);
-            this.textBox2.TabIndex = 20;
+            this.txbNombre.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNombre.Location = new System.Drawing.Point(129, 128);
+            this.txbNombre.Name = "txbNombre";
+            this.txbNombre.Size = new System.Drawing.Size(176, 29);
+            this.txbNombre.TabIndex = 20;
+            this.txbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbNombre_KeyPress);
             // 
-            // textBox3
+            // txbMarca
             // 
-            this.textBox3.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(109, 178);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 29);
-            this.textBox3.TabIndex = 21;
+            this.txbMarca.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMarca.Location = new System.Drawing.Point(129, 178);
+            this.txbMarca.Name = "txbMarca";
+            this.txbMarca.Size = new System.Drawing.Size(176, 29);
+            this.txbMarca.TabIndex = 21;
+            this.txbMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbMarca_KeyPress);
             // 
-            // textBox4
+            // txbModelo
             // 
-            this.textBox4.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(109, 223);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 29);
-            this.textBox4.TabIndex = 22;
+            this.txbModelo.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbModelo.Location = new System.Drawing.Point(129, 223);
+            this.txbModelo.Name = "txbModelo";
+            this.txbModelo.Size = new System.Drawing.Size(176, 29);
+            this.txbModelo.TabIndex = 22;
+            this.txbModelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbModelo_KeyPress);
             // 
-            // textBox5
+            // txbPrecio
             // 
-            this.textBox5.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(109, 264);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 29);
-            this.textBox5.TabIndex = 23;
+            this.txbPrecio.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPrecio.Location = new System.Drawing.Point(129, 264);
+            this.txbPrecio.Name = "txbPrecio";
+            this.txbPrecio.Size = new System.Drawing.Size(176, 29);
+            this.txbPrecio.TabIndex = 23;
+            this.txbPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrecio_KeyPress);
             // 
-            // nudAño
+            // cmbCategoria
             // 
-            this.nudAño.AllowDrop = true;
-            this.nudAño.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudAño.Location = new System.Drawing.Point(195, 308);
-            this.nudAño.Maximum = new decimal(new int[] {
-            1900,
-            0,
-            0,
-            0});
-            this.nudAño.Minimum = new decimal(new int[] {
-            1900,
-            0,
-            0,
-            0});
-            this.nudAño.Name = "nudAño";
-            this.nudAño.ReadOnly = true;
-            this.nudAño.Size = new System.Drawing.Size(120, 29);
-            this.nudAño.TabIndex = 25;
-            this.nudAño.Value = new decimal(new int[] {
-            1900,
-            0,
-            0,
-            0});
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Items.AddRange(new object[] {
+            "Cuerdas",
+            "Percusión",
+            "Viento",
+            "Teclados",
+            "Electrónica musical"});
+            this.cmbCategoria.Location = new System.Drawing.Point(509, 86);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(176, 30);
+            this.cmbCategoria.TabIndex = 27;
+            this.cmbCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCategoria_KeyPress);
             // 
-            // numericUpDown1
+            // cmbProveedor
             // 
-            this.numericUpDown1.AllowDrop = true;
-            this.numericUpDown1.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(129, 356);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            1900,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.ReadOnly = true;
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 29);
-            this.numericUpDown1.TabIndex = 26;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1900,
-            0,
-            0,
-            0});
+            this.cmbProveedor.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProveedor.FormattingEnabled = true;
+            this.cmbProveedor.Location = new System.Drawing.Point(509, 127);
+            this.cmbProveedor.Name = "cmbProveedor";
+            this.cmbProveedor.Size = new System.Drawing.Size(176, 30);
+            this.cmbProveedor.TabIndex = 28;
+            this.cmbProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbProveedor_KeyPress);
+            // 
+            // cmbColor
+            // 
+            this.cmbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbColor.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbColor.FormattingEnabled = true;
+            this.cmbColor.Items.AddRange(new object[] {
+            "Negro",
+            "Blanco",
+            "Natural",
+            "Marrón",
+            "Rojo",
+            "Azul",
+            "Verde",
+            "Gris",
+            "Plateado",
+            "Dorado",
+            "Amarillo",
+            "Naranja",
+            "Violeta",
+            "Personalizado"});
+            this.cmbColor.Location = new System.Drawing.Point(509, 175);
+            this.cmbColor.Name = "cmbColor";
+            this.cmbColor.Size = new System.Drawing.Size(176, 30);
+            this.cmbColor.TabIndex = 29;
+            this.cmbColor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbColor_KeyPress);
+            // 
+            // cmbMaterial
+            // 
+            this.cmbMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMaterial.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMaterial.FormattingEnabled = true;
+            this.cmbMaterial.Items.AddRange(new object[] {
+            "Madera",
+            "Metal",
+            "Plástico / Polímero",
+            "Fibra de carbono",
+            "Cuero / Piel",
+            "Nylon",
+            "Cerámica",
+            "Vidrio",
+            "Otros / Combinado"});
+            this.cmbMaterial.Location = new System.Drawing.Point(509, 223);
+            this.cmbMaterial.Name = "cmbMaterial";
+            this.cmbMaterial.Size = new System.Drawing.Size(176, 30);
+            this.cmbMaterial.TabIndex = 30;
+            this.cmbMaterial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMaterial_KeyPress);
+            // 
+            // cmbDimension
+            // 
+            this.cmbDimension.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDimension.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDimension.FormattingEnabled = true;
+            this.cmbDimension.Items.AddRange(new object[] {
+            "Pequeño",
+            "Mediano",
+            "Grande",
+            "Muy grande"});
+            this.cmbDimension.Location = new System.Drawing.Point(509, 264);
+            this.cmbDimension.Name = "cmbDimension";
+            this.cmbDimension.Size = new System.Drawing.Size(176, 30);
+            this.cmbDimension.TabIndex = 31;
+            this.cmbDimension.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbDimension_KeyPress);
+            // 
+            // btnAgregarFoto
+            // 
+            this.btnAgregarFoto.BackColor = System.Drawing.Color.White;
+            this.btnAgregarFoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarFoto.FlatAppearance.BorderSize = 0;
+            this.btnAgregarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarFoto.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarFoto.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregarFoto.Location = new System.Drawing.Point(393, 341);
+            this.btnAgregarFoto.Name = "btnAgregarFoto";
+            this.btnAgregarFoto.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAgregarFoto.Size = new System.Drawing.Size(87, 44);
+            this.btnAgregarFoto.TabIndex = 33;
+            this.btnAgregarFoto.Text = "Subir foto";
+            this.btnAgregarFoto.UseVisualStyleBackColor = false;
+            this.btnAgregarFoto.Click += new System.EventHandler(this.btnAgregarFoto_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.Indigo;
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.Gold;
+            this.btnAgregar.Location = new System.Drawing.Point(650, 341);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(105, 32);
+            this.btnAgregar.TabIndex = 34;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // txbAñoFabricacion
+            // 
+            this.txbAñoFabricacion.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbAñoFabricacion.Location = new System.Drawing.Point(201, 305);
+            this.txbAñoFabricacion.Name = "txbAñoFabricacion";
+            this.txbAñoFabricacion.Size = new System.Drawing.Size(104, 29);
+            this.txbAñoFabricacion.TabIndex = 35;
+            this.txbAñoFabricacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbAñoFabricacion_KeyPress);
+            // 
+            // txbCantidad
+            // 
+            this.txbCantidad.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCantidad.Location = new System.Drawing.Point(201, 353);
+            this.txbCantidad.Name = "txbCantidad";
+            this.txbCantidad.Size = new System.Drawing.Size(104, 29);
+            this.txbCantidad.TabIndex = 36;
+            this.txbCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCantidad_KeyPress);
             // 
             // FRMAGREGARPRODUCTO
             // 
@@ -330,14 +441,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.nudAño);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.txbCantidad);
+            this.Controls.Add(this.txbAñoFabricacion);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnAgregarFoto);
+            this.Controls.Add(this.cmbDimension);
+            this.Controls.Add(this.cmbMaterial);
+            this.Controls.Add(this.cmbColor);
+            this.Controls.Add(this.cmbProveedor);
+            this.Controls.Add(this.cmbCategoria);
+            this.Controls.Add(this.txbPrecio);
+            this.Controls.Add(this.txbModelo);
+            this.Controls.Add(this.txbMarca);
+            this.Controls.Add(this.txbNombre);
+            this.Controls.Add(this.txbCodigo);
+            this.Controls.Add(this.ptbImagenInstrumento);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -358,9 +476,7 @@
             this.Load += new System.EventHandler(this.FRMAGREGARPRODUCTO_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAño)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagenInstrumento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,13 +500,21 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.NumericUpDown nudAño;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.PictureBox ptbImagenInstrumento;
+        private System.Windows.Forms.TextBox txbCodigo;
+        private System.Windows.Forms.TextBox txbNombre;
+        private System.Windows.Forms.TextBox txbMarca;
+        private System.Windows.Forms.TextBox txbModelo;
+        private System.Windows.Forms.TextBox txbPrecio;
+        private System.Windows.Forms.ComboBox cmbCategoria;
+        private System.Windows.Forms.ComboBox cmbProveedor;
+        private System.Windows.Forms.ComboBox cmbColor;
+        private System.Windows.Forms.ComboBox cmbMaterial;
+        private System.Windows.Forms.ComboBox cmbDimension;
+        private System.Windows.Forms.Button btnAgregarFoto;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.TextBox txbAñoFabricacion;
+        private System.Windows.Forms.TextBox txbCantidad;
     }
 }
