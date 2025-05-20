@@ -33,9 +33,10 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_ayuda = new System.Windows.Forms.Label();
             this.pcb_carrito = new System.Windows.Forms.PictureBox();
             this.pcb_catalogo = new System.Windows.Forms.PictureBox();
+            this.lbl_salir = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_carrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_catalogo)).BeginInit();
@@ -93,18 +94,19 @@
             this.label3.Text = "Carrito de instrumentos musicales";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // lbl_ayuda
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.lbl_ayuda.AutoSize = true;
+            this.lbl_ayuda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_ayuda.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(643, 344);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 22);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Ayuda";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_ayuda.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lbl_ayuda.Location = new System.Drawing.Point(643, 344);
+            this.lbl_ayuda.Name = "lbl_ayuda";
+            this.lbl_ayuda.Size = new System.Drawing.Size(60, 22);
+            this.lbl_ayuda.TabIndex = 5;
+            this.lbl_ayuda.Text = "Ayuda";
+            this.lbl_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pcb_carrito
             // 
@@ -130,13 +132,28 @@
             this.pcb_catalogo.TabStop = false;
             this.pcb_catalogo.Click += new System.EventHandler(this.pcb_catalogo_Click);
             // 
+            // lbl_salir
+            // 
+            this.lbl_salir.AutoSize = true;
+            this.lbl_salir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_salir.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_salir.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbl_salir.Location = new System.Drawing.Point(12, 344);
+            this.lbl_salir.Name = "lbl_salir";
+            this.lbl_salir.Size = new System.Drawing.Size(48, 22);
+            this.lbl_salir.TabIndex = 6;
+            this.lbl_salir.Text = "Salir";
+            this.lbl_salir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_salir.Click += new System.EventHandler(this.lbl_salir_Click);
+            // 
             // FRMMENUCLIENTE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.ClientSize = new System.Drawing.Size(715, 415);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbl_salir);
+            this.Controls.Add(this.lbl_ayuda);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pcb_carrito);
@@ -164,6 +181,7 @@
         private System.Windows.Forms.PictureBox pcb_carrito;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_ayuda;
+        private System.Windows.Forms.Label lbl_salir;
     }
 }

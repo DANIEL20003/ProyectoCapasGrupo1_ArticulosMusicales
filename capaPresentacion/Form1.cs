@@ -37,7 +37,7 @@ namespace capaPresentacion
         {
             if (e.KeyChar == (Char)Keys.Enter)
             {
-                if (string.IsNullOrWhiteSpace(txtusuario.Text))
+                /*if (string.IsNullOrWhiteSpace(txtusuario.Text))
                 {
                     MessageBox.Show("El campo de usuario no puede estar vacío.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtusuario.Focus();
@@ -60,6 +60,7 @@ namespace capaPresentacion
                     return;
                 }
 
+                */
                 txtcontrasenia.Focus();
             }
         }
@@ -117,6 +118,14 @@ namespace capaPresentacion
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtcontrasenia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar ==(char)Keys.Enter)
+            {
+                btnlogin_Click(sender, e);
+            }
         }
     }
 }
