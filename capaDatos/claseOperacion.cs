@@ -119,7 +119,7 @@ namespace capaDatos
         public Instrumento objetoInstrumento(string busIdInstru)
         {
             objConec.Abrir();
-            string sentencia = $"SELECT * FROM Productos WHERE codigo_producto = {busIdInstru}";
+            string sentencia = $"SELECT * FROM Productos WHERE codigo_producto = '{busIdInstru}'";
             SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
             SqlDataReader reader = sqlC.ExecuteReader();
 
@@ -155,7 +155,7 @@ namespace capaDatos
         {
             objConec.Abrir();
 
-            SqlCommand eliminarP=new SqlCommand($"Delete from Productos where codigo_producto={codProducto}", objConec.conectar);
+            SqlCommand eliminarP=new SqlCommand($"Delete from Productos where codigo_producto='{codProducto}'", objConec.conectar);
             eliminarP.ExecuteNonQuery();
 
             objConec.Cerrar();

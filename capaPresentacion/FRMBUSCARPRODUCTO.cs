@@ -30,6 +30,7 @@ namespace capaPresentacion
                 if (e.KeyChar == (char)Keys.Enter)
                 {
                     codigoProducto=TB_codigoProducto.Text;
+
                     if (operacion.infoInstrumento(codigoProducto) == null)
                     {
                         MessageBox.Show("El código ingresado no existe" +
@@ -37,6 +38,7 @@ namespace capaPresentacion
                         TB_codigoProducto.Clear();
                         return;
                     }
+
                     btnBuscar.PerformClick();
                 }
             }

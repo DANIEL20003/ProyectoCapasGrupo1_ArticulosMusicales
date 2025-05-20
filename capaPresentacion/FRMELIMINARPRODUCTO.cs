@@ -31,6 +31,7 @@ namespace capaPresentacion
                 if (e.KeyChar == (char)Keys.Enter)
                 {
                     codigoProducto=TB_codigoProducto.Text;
+
                     if (operacion.infoInstrumento(codigoProducto) == null)
                     {
                         MessageBox.Show("No se ha encontrado ningún producto" +
