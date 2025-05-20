@@ -304,6 +304,7 @@
             this.btn_finalizar.TabIndex = 22;
             this.btn_finalizar.Text = "Finalizar";
             this.btn_finalizar.UseVisualStyleBackColor = false;
+            this.btn_finalizar.Click += new System.EventHandler(this.btn_finalizar_Click);
             // 
             // btn_cancelar
             // 
@@ -420,6 +421,7 @@
             this.btn_guardar.TabIndex = 33;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // txt_cantidad
             // 

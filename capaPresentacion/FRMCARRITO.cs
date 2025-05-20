@@ -18,7 +18,6 @@ namespace capaPresentacion
     public partial class FRMCARRITO : Form
     {
         clasePuente objtpuente = new clasePuente();
-        FRMMODIFICARIVA objtiva = new FRMMODIFICARIVA();
         Carrito objtc = new Carrito();
         
         public FRMCARRITO()
@@ -30,8 +29,8 @@ namespace capaPresentacion
         private void FRMCARRITO_Load(object sender, EventArgs e)
         {
             DGVcarrito.DataSource = objtpuente.objetenercarrito();
-            lbl_iva.Text = objtiva.getiva().ToString() + " %";
-            lbl_precio_total.Text = "$ " + objtc.precioT.ToString("F2");
+            lbl_iva.Text = objtpuente.getIva().ToString("F2") + " %";
+            lbl_precio_total.Text = "$ " + objtpuente.obtenerpreciototal().ToString("F2");
         }
 
         private void lbl_iva_Click(object sender, EventArgs e)

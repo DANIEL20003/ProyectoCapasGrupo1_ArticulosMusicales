@@ -73,22 +73,21 @@ namespace capaDatos
             return dt;
         }
 
-        public Carrito Precio_Total()
+        public double Precio_Total()
         {
             objConec.Abrir();
             SqlCommand sqlC = new SqlCommand("SELECT SUM(P.precio_producto * C.cantidad) AS totalP FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto", objConec.conectar);
             SqlDataReader reader = sqlC.ExecuteReader();
-            Carrito objtC = new Carrito();
             if (reader.Read())
             {
-                objtC.precioT = Convert.ToDecimal(reader["totalP"]);
+                double precioT = Convert.ToDouble(reader["totalP"]);
                 objConec.Cerrar();
-                return objtC;
+                return precioT;
             }
             else
             {
                 objConec.Cerrar();
-                return null;
+                return 0;
             }
         }
 
@@ -119,7 +118,7 @@ namespace capaDatos
         public Instrumento objetoInstrumento(string busIdInstru)
         {
             objConec.Abrir();
-            string sentencia = $"SELECT * FROM Productos WHERE codigo_producto = {busIdInstru}";
+            string sentencia = $"SELECT * FROM Productos WHERE codigo_producto = '{busIdInstru}'";
             SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
             SqlDataReader reader = sqlC.ExecuteReader();
 
@@ -131,7 +130,7 @@ namespace capaDatos
                     nombre = Convert.ToString(reader["nombre_producto"]),
                     marca = Convert.ToString(reader["marca"]),
                     modelo = Convert.ToString(reader["modelo"]),
-                    precio = Convert.ToDouble(reader["precio_producto"]),
+                    precio = Convert.ToDecimal(reader["precio_producto"]),
                     anioFabrica = Convert.ToInt32(reader["anio_fabricacion"]),
                     idIva = Convert.ToInt32(reader["id_iva"]),
                     cantidad = Convert.ToInt64(reader["cantidad"]),
@@ -170,5 +169,39 @@ namespace capaDatos
 
             objConec.Cerrar();
         }
+
+        public decimal obtenerIva()
+        {
+            objConec.Abrir();
+            string sentencia = $"SELECT * FROM IVA WHERE id_iva = {1}";
+            SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
+            SqlDataReader reader = sqlC.ExecuteReader();
+            if (reader.Read())
+            {
+                decimal iva = Convert.ToDecimal(reader["valor_iva"]);
+                objConec.Cerrar();
+                return iva;
+            }
+            else
+            {
+                objConec.Cerrar();
+                return 0;
+            }
+        }
+
+        public void insertarCarrito(List<Carrito> newCarrito)
+        {
+            objConec.Abrir();
+
+            foreach(Carrito c in newCarrito)
+            {
+                string sentencia = $"INSERT INTO Carrito VALUES ({c.idCli}, '{c.codigoInstru}',{c.cantidad}, '{c.fecha}')";
+                SqlCommand insertarP = new SqlCommand(sentencia, objConec.conectar);
+                insertarP.ExecuteNonQuery();
+            }
+            objConec.Cerrar();
+
+        }
+        
     }
 }
