@@ -45,6 +45,9 @@ namespace capaLogica
             return objOpera.Precio_Total();
         }
 
-
+        public void eliminarProd(string producto)
+        {
+            objOpera.eliminarProducto(producto);
+        }
     }
 }

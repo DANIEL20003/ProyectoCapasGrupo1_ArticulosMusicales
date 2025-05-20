@@ -151,5 +151,15 @@ namespace capaDatos
             }
         }
 
+        public void eliminarProducto(string codProducto)
+        {
+            objConec.Abrir();
+
+            SqlCommand eliminarP=new SqlCommand($"Delete from Productos where codigo_producto={codProducto}", objConec.conectar);
+            eliminarP.ExecuteNonQuery();
+
+            objConec.Cerrar();
+        }
+
     }
 }
