@@ -378,7 +378,7 @@ namespace capaDatos
             try
             {
                 objConec.Abrir();
-                string sentencia = "SELECT * FROM Clientes";
+                string sentencia = "SELECT * FROM Cliente";
                 SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
                 SqlDataReader reader = sqlC.ExecuteReader();
                 while (reader.Read())
@@ -393,8 +393,8 @@ namespace capaDatos
                         Correo_electronico = Convert.ToString(reader["Correo_electronico"]),
                         Direccion = Convert.ToString(reader["Direccion"]),
                         id_tipo_cliente = Convert.ToInt32(reader["id_tipo_cliente"]),
-                        Usuario = Convert.ToString(reader["Usuario"]),
-                        Contraseña = Convert.ToString(reader["Contraseña"])
+                        Contraseña = Convert.ToString(reader["Contraseña"]),
+                        Usuario = Convert.ToString(reader["Usuario"])
                     };
                     VarDatos.Add(cli);
                 }
