@@ -76,13 +76,31 @@ namespace capaDatos
         public double Precio_Total()
         {
             objConec.Abrir();
-            SqlCommand sqlC = new SqlCommand("SELECT SUM(P.precio_producto * C.cantidad) AS totalP FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto", objConec.conectar);
+            SqlCommand sqlC = new SqlCommand("SELECT SUM((P.precio_producto * C.cantidad)) AS totalP FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto", objConec.conectar);
             SqlDataReader reader = sqlC.ExecuteReader();
             if (reader.Read())
             {
                 double precioT = Convert.ToDouble(reader["totalP"]);
                 objConec.Cerrar();
                 return precioT;
+            }
+            else
+            {
+                objConec.Cerrar();
+                return 0;
+            }
+        }
+
+        public double Obtener_Iva()
+        {
+            objConec.Abrir();
+            SqlCommand sqlC = new SqlCommand("SELECT valor_iva FROM IVA", objConec.conectar);
+            SqlDataReader reader = sqlC.ExecuteReader();
+            if (reader.Read())
+            {
+                double ivaobtenido = Convert.ToDouble(reader["valor_iva"]);
+                objConec.Cerrar();
+                return ivaobtenido;
             }
             else
             {
