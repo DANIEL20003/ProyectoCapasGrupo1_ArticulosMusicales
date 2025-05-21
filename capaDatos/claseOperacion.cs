@@ -142,7 +142,7 @@ namespace capaDatos
                     idIva = Convert.ToInt32(reader["id_iva"]),
                     cantidad = Convert.ToInt64(reader["cantidad"]),
                     idCatego = Convert.ToInt32(reader["id_categoriaYo"]),
-                    idProvee = Convert.ToInt32(reader["id_Proveedor"]),
+                    proveedor = Convert.ToString(reader["id_Proveedor"]),
                     color = Convert.ToString(reader["color"]),
                     material = Convert.ToString(reader["material"]),
                     dimension = Convert.ToString(reader["dimension"]),

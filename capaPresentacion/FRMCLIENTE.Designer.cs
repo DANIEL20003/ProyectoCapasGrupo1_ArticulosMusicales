@@ -160,7 +160,7 @@
             this.pcb_instrumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pcb_instrumento.Location = new System.Drawing.Point(536, 104);
             this.pcb_instrumento.Name = "pcb_instrumento";
-            this.pcb_instrumento.Size = new System.Drawing.Size(214, 160);
+            this.pcb_instrumento.Size = new System.Drawing.Size(180, 160);
             this.pcb_instrumento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_instrumento.TabIndex = 8;
             this.pcb_instrumento.TabStop = false;
