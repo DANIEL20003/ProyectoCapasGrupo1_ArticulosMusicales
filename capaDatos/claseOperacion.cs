@@ -124,6 +124,13 @@ namespace capaDatos
 
             if (reader.Read())
             {
+                // Verifica si el campo "foto" es NULL
+                byte[] fotoBytes = null;
+                if (reader["foto"] != DBNull.Value)
+                {
+                    fotoBytes = (byte[])reader["foto"];
+                }
+
                 Instrumento objInstru = new Instrumento
                 {
                     codInstru = Convert.ToString(reader["codigo_producto"]),
@@ -138,7 +145,8 @@ namespace capaDatos
                     idProvee = Convert.ToInt32(reader["id_Proveedor"]),
                     color = Convert.ToString(reader["color"]),
                     material = Convert.ToString(reader["material"]),
-                    dimension = Convert.ToString(reader["dimension"])
+                    dimension = Convert.ToString(reader["dimension"]),
+                    foto = fotoBytes
                 };
                 objConec.Cerrar();
                 return objInstru;

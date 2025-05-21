@@ -454,6 +454,9 @@ namespace capaPresentacion
 
                 objI.foto = foto;
 
+                //Se envia el objI para que sea ingresado en la BD
+                objP.IngresarInstrumento(objI);
+
 
                 MessageBox.Show("Se agregó el producto correctamente", "Éxito",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
