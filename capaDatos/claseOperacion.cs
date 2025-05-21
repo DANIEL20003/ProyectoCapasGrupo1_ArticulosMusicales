@@ -268,5 +268,50 @@ namespace capaDatos
                 return null;
             }
         }
+
+        public List<Clientes> listaCliente()
+        {
+            List<Clientes> VarDatos = new List<Clientes>();
+            try
+            {
+                objConec.Abrir();
+                string sentencia = "SELECT * FROM Cliente";
+                SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
+                SqlDataReader reader = sqlC.ExecuteReader();
+                if (reader.Read())
+                {
+                    Clientes objClientes = new Clientes
+                    {
+                        id_cliente = Convert.ToInt32(reader["id_cliente"]),
+                        Nombre = Convert.ToString(reader["Nombre"]),
+                        Apellido = Convert.ToString(reader["Apellido"]),
+                        Cedula = Convert.ToString(reader["Cedula"]),
+                        Telefono = Convert.ToString(reader["Telefono"]),
+                        Correo_electronico = Convert.ToString(reader["Correo Electronico"]),
+                        Direccion = Convert.ToString(reader["Direccion"]),
+                        id_tipo_cliente = Convert.ToInt32(reader["Tipo Cliente"]),
+                        Contraseña = Convert.ToString(reader["Contraseña"]),
+                        Usuario = Convert.ToString(reader["Usuario"])
+
+                    };
+
+                }
+            }
+            catch
+            {
+                VarDatos = null;
+            }
+            objConec.Cerrar();
+            return VarDatos;
+        }
+
+        public void Insertar(Clientes c)
+        {
+            objConec.Abrir();
+            SqlCommand sqlC = new SqlCommand("Insert into Cliente(Nombre,Apellido,Cedula,Telefono,Correo_electronico,Direccion,id_tipo_cliente,Contraseña,Usuario) VALUES ('" + c.Nombre + "','" + c.Apellido + "','" + c.Cedula + "','" + c.Telefono + "','" + c.Correo_electronico + "','" + c.Direccion + "','" + c.id_tipo_cliente + "','" + c.Contraseña + "','"+c.Usuario+"')", objConec.conectar);
+            sqlC.ExecuteNonQuery();
+            objConec.Cerrar();
+        }
+
     }
 }

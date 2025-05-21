@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//
 using capaEntidades;
 using capaDatos;
 using System.Data;
@@ -72,5 +71,15 @@ namespace capaLogica
         {
             objOpera.IngresarInstrumento(instrumento);
         }
+        public List<Clientes> listarD()
+        {
+            return objOpera.listaCliente();
+        }
+
+        public void Ingresar(Clientes DatosUsuario)
+        {
+            objOpera.Insertar(DatosUsuario);
+        }
+
     }
 }
