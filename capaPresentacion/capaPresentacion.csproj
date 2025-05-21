@@ -114,6 +114,12 @@
     <Compile Include="FRMREGISTRO.Designer.cs">
       <DependentUpon>FRMREGISTRO.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMREPORTE1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMREPORTE1.Designer.cs">
+      <DependentUpon>FRMREPORTE1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMVERREPORTES.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     <EmbeddedResource Include="FRMREGISTRO.resx">
       <DependentUpon>FRMREGISTRO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRMREPORTE1.resx">
+      <DependentUpon>FRMREPORTE1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMVERREPORTES.resx">
       <DependentUpon>FRMVERREPORTES.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +178,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
     <None Include="obj\Debug\capaPresentacion.csproj.AssemblyReference.cache" />
     <None Include="obj\Debug\capaPresentacion.csproj.CoreCompileInputs.cache" />
     <None Include="obj\Debug\capaPresentacion.csproj.GenerateResource.cache" />
