@@ -88,7 +88,7 @@ namespace capaPresentacion
                 u.UsuarioNombre == usuarioIngresado && u.Contraseña == contraseniaIngresada);//Revisar
                 */
 
-                List<Clientes> clientes = objP.getClientes();
+                List<Clientes> clientes = objP.listarD();
 
 
                 if ((txtusuario.Text == usuario1 || txtusuario.Text == usuario2 || txtusuario.Text == usuario3 || txtusuario.Text == usuario4 || txtusuario.Text == usuario5 || txtusuario.Text == usuario6 || txtusuario.Text == usuario7 || txtusuario.Text == usuario8 || txtusuario.Text == usuario9) && txtcontrasenia.Text == contra)

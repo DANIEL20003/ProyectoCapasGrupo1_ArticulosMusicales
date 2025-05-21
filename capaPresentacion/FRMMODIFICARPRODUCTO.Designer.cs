@@ -33,6 +33,10 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnModificar = new System.Windows.Forms.Button();
             this.gpbProducto = new System.Windows.Forms.GroupBox();
+            this.txbCantidad = new System.Windows.Forms.TextBox();
+            this.txbPrecio = new System.Windows.Forms.TextBox();
+            this.ptbImagenInstrumento = new System.Windows.Forms.PictureBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.lblDimension = new System.Windows.Forms.Label();
             this.lblMaterial = new System.Windows.Forms.Label();
             this.lblColor = new System.Windows.Forms.Label();
@@ -59,12 +63,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txbCodigo = new System.Windows.Forms.TextBox();
             this.LBLT_codigo = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.ptbImagenInstrumento = new System.Windows.Forms.PictureBox();
-            this.txbPrecio = new System.Windows.Forms.TextBox();
-            this.txbCantidad = new System.Windows.Forms.TextBox();
-            this.cmbProveedor = new System.Windows.Forms.ComboBox();
+            this.txbProveedor = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.gpbProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagenInstrumento)).BeginInit();
@@ -116,7 +116,7 @@
             // 
             // gpbProducto
             // 
-            this.gpbProducto.Controls.Add(this.cmbProveedor);
+            this.gpbProducto.Controls.Add(this.txbProveedor);
             this.gpbProducto.Controls.Add(this.txbCantidad);
             this.gpbProducto.Controls.Add(this.txbPrecio);
             this.gpbProducto.Controls.Add(this.ptbImagenInstrumento);
@@ -153,6 +153,45 @@
             this.gpbProducto.TabIndex = 63;
             this.gpbProducto.TabStop = false;
             this.gpbProducto.Text = "Producto";
+            // 
+            // txbCantidad
+            // 
+            this.txbCantidad.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCantidad.Location = new System.Drawing.Point(361, 99);
+            this.txbCantidad.Name = "txbCantidad";
+            this.txbCantidad.Size = new System.Drawing.Size(93, 25);
+            this.txbCantidad.TabIndex = 67;
+            // 
+            // txbPrecio
+            // 
+            this.txbPrecio.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPrecio.Location = new System.Drawing.Point(93, 163);
+            this.txbPrecio.Name = "txbPrecio";
+            this.txbPrecio.Size = new System.Drawing.Size(100, 25);
+            this.txbPrecio.TabIndex = 66;
+            // 
+            // ptbImagenInstrumento
+            // 
+            this.ptbImagenInstrumento.Location = new System.Drawing.Point(620, 131);
+            this.ptbImagenInstrumento.Name = "ptbImagenInstrumento";
+            this.ptbImagenInstrumento.Size = new System.Drawing.Size(80, 80);
+            this.ptbImagenInstrumento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbImagenInstrumento.TabIndex = 65;
+            this.ptbImagenInstrumento.TabStop = false;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Indigo;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Gold;
+            this.btnCancelar.Location = new System.Drawing.Point(382, 215);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(105, 32);
+            this.btnCancelar.TabIndex = 63;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // lblDimension
             // 
@@ -384,6 +423,7 @@
             this.btnBuscar.TabIndex = 66;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txbCodigo
             // 
@@ -403,20 +443,6 @@
             this.LBLT_codigo.TabIndex = 64;
             this.LBLT_codigo.Text = "Ingrese el Código del producto:";
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Indigo;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.Gold;
-            this.btnCancelar.Location = new System.Drawing.Point(382, 215);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(105, 32);
-            this.btnCancelar.TabIndex = 63;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -426,39 +452,13 @@
             this.label3.TabIndex = 64;
             this.label3.Text = "Foto:";
             // 
-            // ptbImagenInstrumento
+            // txbProveedor
             // 
-            this.ptbImagenInstrumento.Location = new System.Drawing.Point(620, 131);
-            this.ptbImagenInstrumento.Name = "ptbImagenInstrumento";
-            this.ptbImagenInstrumento.Size = new System.Drawing.Size(80, 80);
-            this.ptbImagenInstrumento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbImagenInstrumento.TabIndex = 65;
-            this.ptbImagenInstrumento.TabStop = false;
-            // 
-            // txbPrecio
-            // 
-            this.txbPrecio.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPrecio.Location = new System.Drawing.Point(93, 163);
-            this.txbPrecio.Name = "txbPrecio";
-            this.txbPrecio.Size = new System.Drawing.Size(100, 25);
-            this.txbPrecio.TabIndex = 66;
-            // 
-            // txbCantidad
-            // 
-            this.txbCantidad.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCantidad.Location = new System.Drawing.Point(361, 99);
-            this.txbCantidad.Name = "txbCantidad";
-            this.txbCantidad.Size = new System.Drawing.Size(93, 25);
-            this.txbCantidad.TabIndex = 67;
-            // 
-            // cmbProveedor
-            // 
-            this.cmbProveedor.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbProveedor.FormattingEnabled = true;
-            this.cmbProveedor.Location = new System.Drawing.Point(361, 160);
-            this.cmbProveedor.Name = "cmbProveedor";
-            this.cmbProveedor.Size = new System.Drawing.Size(143, 26);
-            this.cmbProveedor.TabIndex = 68;
+            this.txbProveedor.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbProveedor.Location = new System.Drawing.Point(361, 163);
+            this.txbProveedor.Name = "txbProveedor";
+            this.txbProveedor.Size = new System.Drawing.Size(139, 25);
+            this.txbProveedor.TabIndex = 68;
             // 
             // FRMMODIFICARPRODUCTO
             // 
@@ -518,10 +518,10 @@
         private System.Windows.Forms.TextBox txbCodigo;
         private System.Windows.Forms.Label LBLT_codigo;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox ptbImagenInstrumento;
         private System.Windows.Forms.TextBox txbPrecio;
         private System.Windows.Forms.TextBox txbCantidad;
-        private System.Windows.Forms.ComboBox cmbProveedor;
+        private System.Windows.Forms.TextBox txbProveedor;
+        private System.Windows.Forms.Label label3;
     }
 }
