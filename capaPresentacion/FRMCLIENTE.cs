@@ -133,12 +133,20 @@ namespace capaPresentacion
                 lbl_modelo.Text = objInstru.modelo;
                 lbl_aniofabrica.Text = objInstru.anioFabrica.ToString();
 
-                //Para comvertir de byte[] a Image
-                MemoryStream ms = new MemoryStream(objInstru.foto);
-                Image imgInstru = Image.FromStream(ms);
+                
+                if (objInstru.foto != null)
+                {
+                    //Para comvertir de byte[] a Image
+                    MemoryStream ms = new MemoryStream(objInstru.foto);
+                    Image imgInstru = Image.FromStream(ms);
 
-                // Mostrar en un pcb_instrumento
-                pcb_instrumento.Image = imgInstru;
+                    // Mostrar en un pcb_instrumento
+                    pcb_instrumento.Image = imgInstru;
+                }
+                else
+                {
+                    pcb_instrumento.Image = Resources.NoImagen;
+                }
 
             }
         }
@@ -233,10 +241,23 @@ namespace capaPresentacion
                         });
 
                         lbl_precio_total.Text = ((precioTotal += objInstru.precio) * iva).ToString("F2");
+                        
+                        maximo = 0;
+                        cantidad = 0;
+
+                        cmb_categoria.SelectedIndex = -1;
+                        cmb_instrumento.Items.Clear();
+                        cmb_instrumento.Enabled = false;
+                        cmb_codigos.Items.Clear();
+                        cmb_codigos.Enabled = false;
+                        lbl_precio_unidad.Text = "";
+                        lbl_marca.Text = "";
+                        lbl_modelo.Text = "";
+                        lbl_aniofabrica.Text = "";
 
                         MessageBox.Show(
                             "La cantidad seleccionada ha sido guardada con éxito.",
-                            "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else if (respuesta == DialogResult.No)
                     {

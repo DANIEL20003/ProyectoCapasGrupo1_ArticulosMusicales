@@ -154,6 +154,9 @@
     <EmbeddedResource Include="FRMREGISTRO.resx">
       <DependentUpon>FRMREGISTRO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRMVERREPORTES.resx">
+      <DependentUpon>FRMVERREPORTES.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\capaPresentacion.FRMCLIENTE.resources" />
     <EmbeddedResource Include="obj\Debug\capaPresentacion.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -194,6 +197,7 @@
   <ItemGroup>
     <Content Include="obj\Debug\capaPresentacion.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <None Include="Resources\NoImagen.jpg" />
     <None Include="Resources\iva.png" />
     <None Include="Resources\.jpg" />
     <None Include="Resources\modificariva.png" />
