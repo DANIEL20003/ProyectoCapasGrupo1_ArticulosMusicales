@@ -166,7 +166,7 @@ namespace capaDatos
         {
             objConec.Abrir();
 
-            SqlCommand actualizarI = new SqlCommand($"Update IVA set valor_iva={valorI} where id_iva=3", objConec.conectar);
+            SqlCommand actualizarI = new SqlCommand($"Update IVA set valor_iva={valorI} where id_iva=1", objConec.conectar);
             actualizarI.ExecuteNonQuery();
 
             objConec.Cerrar();
@@ -241,7 +241,7 @@ namespace capaDatos
         public claseIva getIvaActual()
         {
             objConec.Abrir();
-            SqlCommand consulta = new SqlCommand($"select * from IVA where id_iva=3", objConec.conectar);
+            SqlCommand consulta = new SqlCommand($"select * from IVA where id_iva=1", objConec.conectar);
             SqlDataReader reader = consulta.ExecuteReader();
 
             if (reader.Read())
