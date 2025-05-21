@@ -86,5 +86,11 @@ namespace capaLogica
             objOpera.Insertar(DatosUsuario);
         }
 
+        public List<Clientes> getClientes()
+        {
+            return objOpera.listClientes();
+        }
+
+
     }
 }

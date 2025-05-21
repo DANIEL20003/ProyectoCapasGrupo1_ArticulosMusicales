@@ -372,5 +372,40 @@ namespace capaDatos
             objConec.Cerrar();
         }
 
+        public List<Clientes> listClientes()
+        {
+            List<Clientes> VarDatos = new List<Clientes>();
+            try
+            {
+                objConec.Abrir();
+                string sentencia = "SELECT * FROM Clientes";
+                SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
+                SqlDataReader reader = sqlC.ExecuteReader();
+                while (reader.Read())
+                {
+                    Clientes cli = new Clientes
+                    {
+                        id_cliente = Convert.ToInt32(reader["id_cliente"]),
+                        Nombre = Convert.ToString(reader["Nombre"]),
+                        Apellido = Convert.ToString(reader["Apellido"]),
+                        Cedula = Convert.ToString(reader["Cedula"]),
+                        Telefono = Convert.ToString(reader["Telefono"]),
+                        Correo_electronico = Convert.ToString(reader["Correo_electronico"]),
+                        Direccion = Convert.ToString(reader["Direccion"]),
+                        id_tipo_cliente = Convert.ToInt32(reader["id_tipo_cliente"]),
+                        Usuario = Convert.ToString(reader["Usuario"]),
+                        Contraseña = Convert.ToString(reader["Contraseña"])
+                    };
+                    VarDatos.Add(cli);
+                }
+            }
+            catch
+            {
+                VarDatos = null;
+            }
+            objConec.Cerrar();
+            return VarDatos;
+        }
+
     }
 }
