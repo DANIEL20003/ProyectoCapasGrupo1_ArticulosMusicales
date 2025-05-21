@@ -28,7 +28,7 @@ namespace capaPresentacion
 
         List<Carrito> carritos = new List<Carrito>();
 
-        //Form1 obj = new Form1;
+        //Form1 obj = new Form1();
 
         public FRMCLIENTE()
         {
