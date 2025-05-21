@@ -21,9 +21,6 @@ namespace capaEntidades
         public string color { get; set; }
         public string material { get; set; }
         public string dimension { get; set; }
-
-        public decimal valorIva { get; set; }
-
         public byte[] foto { get; set; }
 
     }

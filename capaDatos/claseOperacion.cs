@@ -115,10 +115,10 @@ namespace capaDatos
             return VarDatos;
         }
 
-        public Instrumento objetoInstrumento(string busIdInstru)
+        public Instrumento objetoInstrumento(string busCodInstru)
         {
             objConec.Abrir();
-            string sentencia = $"SELECT * FROM Productos WHERE codigo_producto = '{busIdInstru}'";
+            string sentencia = $"SELECT * FROM Productos WHERE codigo_producto = '{busCodInstru}'";
             SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
             SqlDataReader reader = sqlC.ExecuteReader();
 

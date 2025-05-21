@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using capaEntidades;
 using capaLogica;
 using capaPresentacion.Properties;
+using System.IO;
 
 
 namespace capaPresentacion
@@ -121,8 +122,8 @@ namespace capaPresentacion
         {
             if (cmb_codigos.SelectedItem != null)
             {
-                string idInstru = cmb_codigos.SelectedItem.ToString();
-                objInstru = objP.infoInstrumento(idInstru);
+                string codInstru = cmb_codigos.SelectedItem.ToString();
+                objInstru = objP.infoInstrumento(codInstru);
 
                 maximo = objInstru.cantidad;
                 lbl_stock.Text = maximo.ToString();
@@ -131,6 +132,13 @@ namespace capaPresentacion
                 lbl_marca.Text = objInstru.marca;
                 lbl_modelo.Text = objInstru.modelo;
                 lbl_aniofabrica.Text = objInstru.anioFabrica.ToString();
+
+                //Para comvertir de byte[] a Image
+                MemoryStream ms = new MemoryStream(objInstru.foto);
+                Image imgInstru = Image.FromStream(ms);
+
+                // Mostrar en un pcb_instrumento
+                pcb_instrumento.Image = imgInstru;
 
             }
         }
@@ -180,52 +188,86 @@ namespace capaPresentacion
             }
         }
 
+        private void txt_cantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar ==(char)Keys.Enter)
+            {
+                btn_guardar_Click(sender, e);
+            }
+        }
+
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            cantidad = Convert.ToInt64(txt_cantidad.Text);
-            if (cantidad <= maximo)
+            try
             {
-                DialogResult respuesta = MessageBox.Show(
-                    "¿Está seguro que desea guardar la cantidad de instrumentos?",
-                    "Aviso",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning
-                    );
+                cantidad = Convert.ToInt64(txt_cantidad.Text);
 
-                if (respuesta == DialogResult.Yes)
+                if (cantidad < 0)
                 {
-                    carritos.Add(new Carrito
-                    {
-                        //idCli = obj.idCliente,
-                        codigoInstru = cmb_codigos.SelectedItem.ToString(),
-                        cantidad = Convert.ToInt32(txt_cantidad.Text),
-                        fecha = DateTime.Now
-                    });
-                    
-                    lbl_precio_total.Text = ((precioTotal += objInstru.precio) * iva).ToString("F2");
-                    
                     MessageBox.Show(
-                        "La cantidad seleccionada ha sido guardada con éxito.",
-                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        "Ingrese un entero positivo en la cantidad.",
+                        "Advertencia",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                        );
+                    txt_cantidad.Clear();
+                    txt_cantidad.Focus();
                 }
-                else if (respuesta == DialogResult.No)
+                else if (cantidad <= maximo)
+                { 
+                    DialogResult respuesta = MessageBox.Show(
+                        "¿Está seguro que desea guardar la cantidad de instrumentos?",
+                        "Aviso",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning
+                        );
+
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        carritos.Add(new Carrito
+                        {
+                            //idCli = obj.idCliente,
+                            codigoInstru = cmb_codigos.SelectedItem.ToString(),
+                            cantidad = Convert.ToInt32(txt_cantidad.Text),
+                            fecha = DateTime.Now
+                        });
+
+                        lbl_precio_total.Text = ((precioTotal += objInstru.precio) * iva).ToString("F2");
+
+                        MessageBox.Show(
+                            "La cantidad seleccionada ha sido guardada con éxito.",
+                            "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (respuesta == DialogResult.No)
+                    {
+                        MessageBox.Show(
+                            "No se ha guardado la cantidad seleccionada.",
+                            "Información",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+                else
                 {
                     MessageBox.Show(
-                        "No se ha guardado la cantidad seleccionada.", 
-                        "Información",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        $"La cantidad seleccionada no puede superar la cantidad existente de {maximo}",
+                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_cantidad.Clear();
+                    txt_cantidad.Focus();
                 }
 
             }
-            else
+            catch
             {
                 MessageBox.Show(
-                    $"La cantidad seleccionada no puede superar la cantidad existente de {maximo}",
-                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    "Ingrese un valor númerico entero positivo en la cantidad.",
+                    "Advertencia",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                    );
                 txt_cantidad.Clear();
                 txt_cantidad.Focus();
             }
-
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -243,6 +285,7 @@ namespace capaPresentacion
                 maximo = 0;
                 cantidad = 0;
                 precioTotal = 0;
+
                 lbl_precio_total.Text = "$ " + precioTotal.ToString("F2");
                 cmb_categoria.SelectedIndex = -1;
                 cmb_instrumento.Items.Clear();
