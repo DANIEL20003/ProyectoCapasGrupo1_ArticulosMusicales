@@ -51,7 +51,7 @@ namespace capaPresentacion
 
         private void FRMCLIENTE_Load(object sender, EventArgs e)
         {
-            iva = objP.getIva();
+            iva = objP.getIva(1);
             lbl_iva.Text = iva.ToString("F2");
         }
 

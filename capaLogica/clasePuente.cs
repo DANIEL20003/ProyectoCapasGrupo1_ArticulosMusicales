@@ -55,9 +55,9 @@ namespace capaLogica
             objOpera.actualizarIva(newValor);
         }
 
-        public decimal getIva()
+        public decimal getIva(int idIVA)
         {
-            return objOpera.obtenerIva();
+            return objOpera.obtenerIva(idIVA);
         }
 
         public void insertCarrito(List<Carrito> listCarritos)
