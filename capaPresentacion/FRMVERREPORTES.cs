@@ -19,8 +19,12 @@ namespace capaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FRMREPORTE1 fRMREPORTE1 = new FRMREPORTE1();
-            fRMREPORTE1.Show();
+            
+        }
+
+        private void FRMVERREPORTES_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
