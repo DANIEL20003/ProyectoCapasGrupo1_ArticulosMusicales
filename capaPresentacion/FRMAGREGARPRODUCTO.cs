@@ -448,7 +448,7 @@ namespace capaPresentacion
                 // Convertir la imagen del PictureBox a un arreglo de bytes
                 using (MemoryStream ms = new MemoryStream())
                 {
-                    ptbImagenInstrumento.Image.Save(ms, ImageFormat.Jpeg);
+                    ptbImagenInstrumento.Image.Save(ms, ptbImagenInstrumento.Image.RawFormat);
                     foto = ms.ToArray();
                 }
 

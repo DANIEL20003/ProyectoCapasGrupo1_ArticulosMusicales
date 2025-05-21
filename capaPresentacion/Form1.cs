@@ -10,12 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static capaPresentacion.FRMREGISTRO;
-//esta es una pequeña prueba
+
+using capaEntidades;
 namespace capaPresentacion
 {
     public partial class Form1 : Form
     {
         public int idCliente;
+        Clientes objC = new Clientes();
 
         private SoundPlayer soundPlayer;
         String usuario4 = "Erik Yumi";

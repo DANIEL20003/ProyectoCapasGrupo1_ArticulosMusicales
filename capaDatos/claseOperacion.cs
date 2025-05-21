@@ -241,9 +241,50 @@ namespace capaDatos
         public void IngresarInstrumento(Instrumento instrumento)
         {
             objConec.Abrir();
+
+            string query = @"INSERT INTO Productos 
+                        (codigo_producto, nombre_producto, marca, modelo, 
+                         precio_producto, anio_fabricacion, id_iva, cantidad, 
+                         id_categoriaYo, id_Proveedor, color, material, dimension, foto) 
+                        VALUES 
+                        (@Codigo, @Nombre, @Marca, @Modelo, 
+                         @Precio, @Anio, @IdIva, @Cantidad, 
+                         @IdCategoria, @IdProveedor, @Color, @Material, @Dimension, @Foto)";
+
+            using (SqlCommand cmd = new SqlCommand(query, objConec.conectar))
+            {
+                // Parámetros normales
+                cmd.Parameters.AddWithValue("@Codigo", instrumento.codInstru);
+                cmd.Parameters.AddWithValue("@Nombre", instrumento.nombre);
+                cmd.Parameters.AddWithValue("@Marca", instrumento.marca);
+                cmd.Parameters.AddWithValue("@Modelo", instrumento.modelo);
+                cmd.Parameters.AddWithValue("@Precio", instrumento.precio);
+                cmd.Parameters.AddWithValue("@Anio", instrumento.anioFabrica);
+                cmd.Parameters.AddWithValue("@IdIva", instrumento.idIva);
+                cmd.Parameters.AddWithValue("@Cantidad", instrumento.cantidad);
+                cmd.Parameters.AddWithValue("@IdCategoria", instrumento.idCatego);
+                cmd.Parameters.AddWithValue("@IdProveedor", instrumento.idProvee);
+                cmd.Parameters.AddWithValue("@Color", instrumento.color);
+                cmd.Parameters.AddWithValue("@Material", instrumento.material);
+                cmd.Parameters.AddWithValue("@Dimension", instrumento.dimension);
+
+                // Manejo especial para la foto
+                if (instrumento.foto != null && instrumento.foto.Length > 0)
+                {
+                    cmd.Parameters.Add("@Foto", SqlDbType.VarBinary).Value = instrumento.foto;
+                }
+                else
+                {
+                    cmd.Parameters.Add("@Foto", SqlDbType.VarBinary).Value = DBNull.Value;
+                }
+
+                cmd.ExecuteNonQuery();
+            }
+
+            /*objConec.Abrir();
             SqlCommand sqlC = new SqlCommand("INSERT INTO Productos (codigo_producto, nombre_producto, marca, modelo, precio_producto, anio_fabricacion, id_iva, cantidad, id_categoriaYo, id_Proveedor, color, material, dimension, foto) VALUES ('" + instrumento.codInstru + "', '" + instrumento.nombre + "', '" + instrumento.marca + "', '" + instrumento.modelo + "', '" + instrumento.precio + "', '" + instrumento.anioFabrica + "', '" + instrumento.idIva + "', '" + instrumento.cantidad + "', '" + instrumento.idCatego + "', '" + instrumento.idProvee + "', '" + instrumento.color + "', '" + instrumento.material + "', '" + instrumento.dimension + "', '" + instrumento.foto + "')", objConec.conectar);
             sqlC.ExecuteNonQuery();
-            objConec.Cerrar();
+            objConec.Cerrar();*/
         }
 
         public claseIva getIvaActual()
