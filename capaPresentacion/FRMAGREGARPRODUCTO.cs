@@ -406,23 +406,23 @@ namespace capaPresentacion
 
             switch (categoria)
             {
-                case "Cuerdas":
+                case "Cuerda":
                     categoria = "1";
                     break;
 
-                case "Percusión":
+                case "Viento":
                     categoria = "2";
                     break;
 
-                case "Viento":
+                case "Percusión":
                     categoria = "3";
                     break;
 
-                case "Teclados":
+                case "Teclado":
                     categoria = "4";
                     break;
 
-                case "Electrónica musical":
+                case "Electrónico":
                     categoria = "5";
                     break;
             }

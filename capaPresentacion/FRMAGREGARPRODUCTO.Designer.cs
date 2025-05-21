@@ -297,11 +297,11 @@
             this.cmbCategoria.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Items.AddRange(new object[] {
-            "Cuerdas",
-            "Percusión",
+            "Cuerda",
             "Viento",
-            "Teclados",
-            "Electrónica musical"});
+            "Percusión",
+            "Teclado",
+            "Electrónico"});
             this.cmbCategoria.Location = new System.Drawing.Point(509, 86);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(176, 30);
