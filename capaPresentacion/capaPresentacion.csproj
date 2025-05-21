@@ -154,6 +154,9 @@
     <EmbeddedResource Include="FRMREGISTRO.resx">
       <DependentUpon>FRMREGISTRO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRMVERREPORTES.resx">
+      <DependentUpon>FRMVERREPORTES.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\capaPresentacion.FRMCLIENTE.resources" />
     <EmbeddedResource Include="obj\Debug\capaPresentacion.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
