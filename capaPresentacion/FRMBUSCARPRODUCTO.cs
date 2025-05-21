@@ -64,13 +64,15 @@ namespace capaPresentacion
                 }
                 Instrumento producto = operacion.infoInstrumento(codigoProducto);
 
+                claseIva iva = operacion.showIvaActual();
+
                 lblCodigo.Text = producto.codInstru.ToString();
                 lblNombre.Text = producto.nombre.ToString();
                 lblMarca.Text = producto.marca.ToString();
                 lblModelo.Text = producto.modelo.ToString();
                 lblPrecio.Text = producto.precio.ToString();
                 lblaFab.Text = producto.anioFabrica.ToString();
-                lblIdIva.Text = producto.idIva.ToString();
+                lblIdIva.Text = iva.valor_iva.ToString() + "%";
                 lblCantidad.Text = producto.cantidad.ToString();
                 lblCategoria.Text = producto.idCatego.ToString();
                 lblProveedor.Text = producto.proveedor.ToString();

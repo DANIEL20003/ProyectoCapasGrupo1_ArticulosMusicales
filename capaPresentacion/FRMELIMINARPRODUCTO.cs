@@ -62,6 +62,7 @@ namespace capaPresentacion
                     return;
                 }
                 Instrumento instrumentoA = operacion.infoInstrumento(codigoProducto);
+                claseIva iva = operacion.showIvaActual();
 
                 lblCodigo.Text = instrumentoA.codInstru.ToString();
                 lblNombre.Text = instrumentoA.nombre.ToString();
@@ -69,7 +70,7 @@ namespace capaPresentacion
                 lblModelo.Text = instrumentoA.modelo.ToString();
                 lblPrecio.Text = instrumentoA.precio.ToString();
                 lblaFab.Text = instrumentoA.anioFabrica.ToString();
-                lblIdIva.Text = instrumentoA.idIva.ToString();
+                lblIdIva.Text = iva.valor_iva.ToString() + "%";
                 lblCantidad.Text = instrumentoA.cantidad.ToString();
                 lblCategoria.Text = instrumentoA.idCatego.ToString();
                 lblProveedor.Text = instrumentoA.proveedor.ToString();

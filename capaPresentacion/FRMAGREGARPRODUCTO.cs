@@ -99,13 +99,13 @@ namespace capaPresentacion
                             else
                             {
                                 cmbCategoria.Focus();
-                                cmbCategoria.DroppedDown = true;
+                                //cmbCategoria.DroppedDown = true;
                             }
                         }
                         else if (cantidad > 0)
                         {
                             cmbCategoria.Focus();
-                            cmbCategoria.DroppedDown = true;
+                            //cmbCategoria.DroppedDown = true;
                         }
                         else
                         {
@@ -162,8 +162,7 @@ namespace capaPresentacion
                     }
                     else
                     {
-                        //PENDIENTE: si no selecciono entre los proveedores que ya estaban en la base de datos
-                        //guardar el nuevo proveedor en la base de datos
+                        
                         proveedor = cmbProveedor.Text;
                         cmbColor.Focus();
                         cmbColor.DroppedDown = true;
@@ -188,13 +187,13 @@ namespace capaPresentacion
                     MessageBox.Show("Debe seleccionar un color",
                         "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     cmbColor.Focus(); // Devuelve el foco 
-                    cmbColor.DroppedDown = true;
+                    //cmbColor.DroppedDown = true;
                 }
                 else
                 {
                     color = cmbColor.Text;
                     cmbMaterial.Focus();
-                    cmbMaterial.DroppedDown = true;
+                    //cmbMaterial.DroppedDown = true;
                 }
             }
         }
@@ -237,7 +236,7 @@ namespace capaPresentacion
                         //si no esta vacío continúa normalmente
                         proveedor = txbProveedor.Text;
                         cmbColor.Focus();
-                        cmbColor.DroppedDown = true;
+                        //cmbColor.DroppedDown = true;
                     }
                 }
                 catch (Exception ex)
@@ -424,8 +423,7 @@ namespace capaPresentacion
 
         private void FRMAGREGARPRODUCTO_Load(object sender, EventArgs e)
         {
-            //PENDIENTE: traer los id y nombres de los proveedores y ponerlos en el combobox
-            //si ingresa un nuevo proveedor guardarlo en la base en su tabla corresponfdiente
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -467,68 +465,84 @@ namespace capaPresentacion
                 return;
             }
 
-            switch (categoria)
+            //ADVERTENCIA DE CONFIRMACION
+            DialogResult resultado = MessageBox.Show(
+                "Los campos que se podrán editar posteriormente son: Precio, Cantidad y Proveedor, los demás campos serán permanentes \n¿Desea guardar los cambios?",
+                "Confirmación",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question
+            );
+            if (resultado == DialogResult.OK)
             {
-                case "Cuerda":
-                    categoria = "1";
-                    break;
-
-                case "Viento":
-                    categoria = "2";
-                    break;
-
-                case "Percusión":
-                    categoria = "3";
-                    break;
-
-                case "Teclado":
-                    categoria = "4";
-                    break;
-
-                case "Electrónico":
-                    categoria = "5";
-                    break;
-            }
-
-            try
-            {
-                objI.codInstru = codigo;
-                objI.nombre = nombre;
-                objI.marca = marca;
-                objI.modelo = modelo;
-                objI.precio = precio;
-                objI.anioFabrica = añoFabricacion;
-
-                objI.idIva = 1;
-
-                objI.idCatego = Convert.ToInt32(categoria);
-                objI.proveedor = proveedor;
-                objI.color = color;
-                objI.material = material;
-                objI.dimension = dimension;
-                objI.cantidad = cantidad;
-
-                // Convertir la imagen del PictureBox a un arreglo de bytes
-                using (MemoryStream ms = new MemoryStream())
+                switch (categoria)
                 {
-                    ptbImagenInstrumento.Image.Save(ms, ptbImagenInstrumento.Image.RawFormat);
-                    foto = ms.ToArray();
+                    case "Cuerda":
+                        categoria = "1";
+                        break;
+
+                    case "Viento":
+                        categoria = "2";
+                        break;
+
+                    case "Percusión":
+                        categoria = "3";
+                        break;
+
+                    case "Teclado":
+                        categoria = "4";
+                        break;
+
+                    case "Electrónico":
+                        categoria = "5";
+                        break;
                 }
 
-                objI.foto = foto;
+                try
+                {
+                    objI.codInstru = codigo;
+                    objI.nombre = nombre;
+                    objI.marca = marca;
+                    objI.modelo = modelo;
+                    objI.precio = precio;
+                    objI.anioFabrica = añoFabricacion;
 
-                //Se envia el objI para que sea ingresado en la BD
-                objP.IngresarInstrumento(objI);
+                    objI.idIva = 1;
 
-                //PENDIENTE ADVERTENCIA DE CAMBIOS PERMANENTES
+                    objI.idCatego = Convert.ToInt32(categoria);
+                    objI.proveedor = proveedor;
+                    objI.color = color;
+                    objI.material = material;
+                    objI.dimension = dimension;
+                    objI.cantidad = cantidad;
 
-                MessageBox.Show("Se agregó el producto correctamente", "Éxito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Convertir la imagen del PictureBox a un arreglo de bytes
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        ptbImagenInstrumento.Image.Save(ms, ptbImagenInstrumento.Image.RawFormat);
+                        foto = ms.ToArray();
+                    }
+
+                    objI.foto = foto;
+
+                    //Se envia el objI para que sea ingresado en la BD
+                    objP.IngresarInstrumento(objI);
+
+                    
+
+                    MessageBox.Show("Se agregó el producto correctamente", "Éxito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error \n" + ex, "Se presentó un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
+            else if (resultado == DialogResult.Cancel)
             {
-                MessageBox.Show("Error \n" + ex, "Se presentó un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Acción si el usuario presiona Cancelar
+                MessageBox.Show("No se ingresó el producto actual", "Se canceló la operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
         }
 
         private void btnAgregarFoto_Click(object sender, EventArgs e)
