@@ -12,12 +12,14 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static capaPresentacion.FRMREGISTRO;
 
 using capaEntidades;
+using capaLogica;
+using System.Dynamic;
 namespace capaPresentacion
 {
     public partial class Form1 : Form
     {
         public int idCliente;
-        Clientes objC = new Clientes();
+        clasePuente objP = new clasePuente();
 
         private SoundPlayer soundPlayer;
         String usuario4 = "Erik Yumi";
@@ -81,10 +83,15 @@ namespace capaPresentacion
                 string usuarioIngresado = txtusuario.Text.Trim(); //Revisar
                 string contraseniaIngresada = txtcontrasenia.Text.Trim();//Revisar
 
+                /*
                 bool usuarioTemporalValido = UsuarioManager.listaUsuarios.Any(u =>//Revisar
                 u.UsuarioNombre == usuarioIngresado && u.Contraseña == contraseniaIngresada);//Revisar
+                */
 
-                if (txtusuario.Text == usuario1 || txtusuario.Text == usuario2 || txtusuario.Text == usuario3 || txtusuario.Text == usuario4 || txtusuario.Text == usuario5 || txtusuario.Text == usuario6 || txtusuario.Text == usuario7 || txtusuario.Text == usuario8 || txtusuario.Text == usuario9 || txtusuario.Text == contra)
+                List<Clientes> clientes = objP.getClientes();
+
+
+                if ((txtusuario.Text == usuario1 || txtusuario.Text == usuario2 || txtusuario.Text == usuario3 || txtusuario.Text == usuario4 || txtusuario.Text == usuario5 || txtusuario.Text == usuario6 || txtusuario.Text == usuario7 || txtusuario.Text == usuario8 || txtusuario.Text == usuario9) && txtcontrasenia.Text == contra)
                 {
                     FRMMENUADMINISTRADOR objetopin = new FRMMENUADMINISTRADOR();
 
@@ -96,17 +103,30 @@ namespace capaPresentacion
                     objetopin.ShowDialog();
                     this.Show(); // Muestra el login otra vez cuando se cierra el otro form
                 }
-                else if (usuarioTemporalValido || txtusuario.Text == "cliente")
+                else //if (txtusuario.Text ==  || txtcontrasenia.Text == contra)
                 {
-                    FRMMENUCLIENTE objMenuCliente = new FRMMENUCLIENTE();
-                    string informacion = txtusuario.Text; // Obtener el texto del TextBox
-                    this.Hide();
-                    objMenuCliente.ShowDialog();
-                    this.Show();
-                } else
-                {
-                    MessageBox.Show("Usuario o contraseña incorrecta");
-                }
+                    bool band = false;
+                    foreach (Clientes c in clientes)
+                    {
+
+                        if (txtusuario.Text == c.Usuario  || txtcontrasenia.Text == c.Contraseña)
+                        {
+                            band = true;
+                            idCliente = c.id_cliente;
+                            FRMMENUCLIENTE objMenuCliente = new FRMMENUCLIENTE();
+                            string informacion = txtusuario.Text; // Obtener el texto del TextBox
+                            this.Hide();
+                            objMenuCliente.ShowDialog();
+                            this.Show();
+                        }
+
+                    }
+                    if (band == false)
+                    {
+                        MessageBox.Show("Usuario o contraseña incorrecta");
+                    }
+
+                } 
                 txtusuario.Clear();
                 txtcontrasenia.Clear();
                 txtusuario.Focus();
