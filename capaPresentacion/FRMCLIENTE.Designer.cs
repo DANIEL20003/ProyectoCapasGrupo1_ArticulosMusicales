@@ -36,7 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmb_categoria = new System.Windows.Forms.ComboBox();
             this.cmb_instrumento = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pcb_instrumento = new System.Windows.Forms.PictureBox();
             this.pcb_categoria = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_stock = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.cmb_codigos = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_instrumento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_categoria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,15 +155,15 @@
             this.cmb_instrumento.TabIndex = 7;
             this.cmb_instrumento.SelectedIndexChanged += new System.EventHandler(this.cmb_instrumento_SelectedIndexChanged);
             // 
-            // pictureBox1
+            // pcb_instrumento
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(536, 104);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(214, 160);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.pcb_instrumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pcb_instrumento.Location = new System.Drawing.Point(536, 104);
+            this.pcb_instrumento.Name = "pcb_instrumento";
+            this.pcb_instrumento.Size = new System.Drawing.Size(180, 160);
+            this.pcb_instrumento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcb_instrumento.TabIndex = 8;
+            this.pcb_instrumento.TabStop = false;
             // 
             // pcb_categoria
             // 
@@ -431,6 +431,7 @@
             this.txt_cantidad.Size = new System.Drawing.Size(117, 29);
             this.txt_cantidad.TabIndex = 34;
             this.txt_cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cantidad_KeyPress);
             // 
             // label14
             // 
@@ -487,7 +488,7 @@
             this.Controls.Add(this.lbl_stock);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pcb_categoria);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pcb_instrumento);
             this.Controls.Add(this.cmb_instrumento);
             this.Controls.Add(this.cmb_categoria);
             this.Controls.Add(this.label4);
@@ -501,7 +502,7 @@
             this.Load += new System.EventHandler(this.FRMCLIENTE_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_instrumento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_categoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -517,7 +518,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmb_instrumento;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pcb_instrumento;
         private System.Windows.Forms.PictureBox pcb_categoria;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_stock;

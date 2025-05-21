@@ -99,13 +99,13 @@ namespace capaPresentacion
                             else
                             {
                                 cmbCategoria.Focus();
-                                cmbCategoria.DroppedDown = true;
+                                //cmbCategoria.DroppedDown = true;
                             }
                         }
                         else if (cantidad > 0)
                         {
                             cmbCategoria.Focus();
-                            cmbCategoria.DroppedDown = true;
+                            //cmbCategoria.DroppedDown = true;
                         }
                         else
                         {
@@ -141,13 +141,13 @@ namespace capaPresentacion
                 else
                 {
                     categoria = cmbCategoria.Text;
-                    cmbProveedor.Focus();
-                    cmbProveedor.DroppedDown = true;
+                    txbProveedor.Focus();
+                    
                 }
             }
         }
 
-        private void cmbProveedor_KeyPress(object sender, KeyPressEventArgs e)
+        /*private void cmbProveedor_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
@@ -162,8 +162,7 @@ namespace capaPresentacion
                     }
                     else
                     {
-                        //PENDIENTE: si no selecciono entre los proveedores que ya estaban en la base de datos
-                        //guardar el nuevo proveedor en la base de datos
+                        
                         proveedor = cmbProveedor.Text;
                         cmbColor.Focus();
                         cmbColor.DroppedDown = true;
@@ -173,11 +172,11 @@ namespace capaPresentacion
                 {
                     MessageBox.Show("Error en el proveedor:\n" + ex.Message, "Se presentó un error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    cmbProveedor.Focus();
+                    txbProveedor.Focus();
                 }
                 
             }
-        }
+        }*/
 
         private void cmbColor_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -188,13 +187,13 @@ namespace capaPresentacion
                     MessageBox.Show("Debe seleccionar un color",
                         "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     cmbColor.Focus(); // Devuelve el foco 
-                    cmbColor.DroppedDown = true;
+                    //cmbColor.DroppedDown = true;
                 }
                 else
                 {
                     color = cmbColor.Text;
                     cmbMaterial.Focus();
-                    cmbMaterial.DroppedDown = true;
+                    //cmbMaterial.DroppedDown = true;
                 }
             }
         }
@@ -213,13 +212,75 @@ namespace capaPresentacion
                 else
                 {
                     material = cmbMaterial.Text;
-                    cmbDimension.Focus();
-                    cmbDimension.DroppedDown = true;
+                    txbDimension.Focus();
+                    
                 }
             }
         }
 
-        private void cmbDimension_KeyPress(object sender, KeyPressEventArgs e)
+        private void txbProveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                try
+                {
+                    //controla que el textbox no quede vacío
+                    if (string.IsNullOrWhiteSpace(txbProveedor.Text))
+                    {
+                        MessageBox.Show("El proveedor no puede estar vacío",
+                            "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txbProveedor.Focus(); // Devuelve el foco al TextBox
+                    }
+                    else
+                    {
+                        //si no esta vacío continúa normalmente
+                        proveedor = txbProveedor.Text;
+                        cmbColor.Focus();
+                        //cmbColor.DroppedDown = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error en el proveedor:\n" + ex.Message, "Se presentó un error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txbProveedor.Clear();
+                    txbProveedor.Focus();
+                }
+            }
+        }
+
+        private void txbDimension_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                try
+                {
+                    //controla que el textbox no quede vacío
+                    if (string.IsNullOrWhiteSpace(txbDimension.Text))
+                    {
+                        MessageBox.Show("La dimensión no puede estar vacía",
+                            "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txbDimension.Focus(); // Devuelve el foco al TextBox
+                    }
+                    else
+                    {
+                        dimension = txbDimension.Text;
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error en la dimensión:\n" + ex.Message, "Se presentó un error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txbDimension.Clear();
+                    txbDimension.Focus();
+                }
+            }
+        }
+
+
+
+        /*private void cmbDimension_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
@@ -236,7 +297,7 @@ namespace capaPresentacion
                     //el mismo usuario debe dar clic al boton agregar foto
                 }
             }
-        }
+        }*/
 
         private void txbPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -362,8 +423,7 @@ namespace capaPresentacion
 
         private void FRMAGREGARPRODUCTO_Load(object sender, EventArgs e)
         {
-            //PENDIENTE: traer los id y nombres de los proveedores y ponerlos en el combobox
-            //si ingresa un nuevo proveedor guardarlo en la base en su tabla corresponfdiente
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -382,10 +442,11 @@ namespace capaPresentacion
                 txbAñoFabricacion,
                 txbCantidad,
                 cmbCategoria,
-                cmbProveedor,
+                txbProveedor,
                 cmbColor,
                 cmbMaterial,
-                cmbDimension
+                txbDimension,
+                
             };
 
             //simula todos los KeyPress
@@ -404,64 +465,84 @@ namespace capaPresentacion
                 return;
             }
 
-            switch (categoria)
+            //ADVERTENCIA DE CONFIRMACION
+            DialogResult resultado = MessageBox.Show(
+                "Los campos que se podrán editar posteriormente son: Precio, Cantidad y Proveedor, los demás campos serán permanentes \n¿Desea guardar los cambios?",
+                "Confirmación",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question
+            );
+            if (resultado == DialogResult.OK)
             {
-                case "Cuerdas":
-                    categoria = "1";
-                    break;
-
-                case "Percusión":
-                    categoria = "2";
-                    break;
-
-                case "Viento":
-                    categoria = "3";
-                    break;
-
-                case "Teclados":
-                    categoria = "4";
-                    break;
-
-                case "Electrónica musical":
-                    categoria = "5";
-                    break;
-            }
-
-            try
-            {
-                objI.codInstru = codigo;
-                objI.nombre = nombre;
-                objI.marca = marca;
-                objI.modelo = modelo;
-                objI.precio = precio;
-                objI.anioFabrica = añoFabricacion;
-
-                objI.idIva = 1;
-
-                objI.idCatego = Convert.ToInt32(categoria);
-                objI.idProvee = 1;  //PENDIENTE de cambiar
-                objI.color = color;
-                objI.material = material;
-                objI.dimension = dimension;
-                objI.cantidad = cantidad;
-
-                // Convertir la imagen del PictureBox a un arreglo de bytes
-                using (MemoryStream ms = new MemoryStream())
+                switch (categoria)
                 {
-                    ptbImagenInstrumento.Image.Save(ms, ImageFormat.Jpeg);
-                    foto = ms.ToArray();
+                    case "Cuerda":
+                        categoria = "1";
+                        break;
+
+                    case "Viento":
+                        categoria = "2";
+                        break;
+
+                    case "Percusión":
+                        categoria = "3";
+                        break;
+
+                    case "Teclado":
+                        categoria = "4";
+                        break;
+
+                    case "Electrónico":
+                        categoria = "5";
+                        break;
                 }
 
-                objI.foto = foto;
+                try
+                {
+                    objI.codInstru = codigo;
+                    objI.nombre = nombre;
+                    objI.marca = marca;
+                    objI.modelo = modelo;
+                    objI.precio = precio;
+                    objI.anioFabrica = añoFabricacion;
 
+                    objI.idIva = 1;
 
-                MessageBox.Show("Se agregó el producto correctamente", "Éxito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    objI.idCatego = Convert.ToInt32(categoria);
+                    objI.proveedor = proveedor;
+                    objI.color = color;
+                    objI.material = material;
+                    objI.dimension = dimension;
+                    objI.cantidad = cantidad;
+
+                    // Convertir la imagen del PictureBox a un arreglo de bytes
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        ptbImagenInstrumento.Image.Save(ms, ptbImagenInstrumento.Image.RawFormat);
+                        foto = ms.ToArray();
+                    }
+
+                    objI.foto = foto;
+
+                    //Se envia el objI para que sea ingresado en la BD
+                    objP.IngresarInstrumento(objI);
+
+                    
+
+                    MessageBox.Show("Se agregó el producto correctamente", "Éxito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error \n" + ex, "Se presentó un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
+            else if (resultado == DialogResult.Cancel)
             {
-                MessageBox.Show("Error \n" + ex, "Se presentó un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Acción si el usuario presiona Cancelar
+                MessageBox.Show("No se ingresó el producto actual", "Se canceló la operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
         }
 
         private void btnAgregarFoto_Click(object sender, EventArgs e)

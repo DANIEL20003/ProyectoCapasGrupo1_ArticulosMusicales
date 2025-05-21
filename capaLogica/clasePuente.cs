@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//
 using capaEntidades;
 using capaDatos;
 using System.Data;
@@ -29,9 +28,9 @@ namespace capaLogica
             return objOpera.listCodInstrumento(instru);
         }
 
-        public Instrumento infoInstrumento(string idInstrumento)
+        public Instrumento infoInstrumento(string codInstrumento)
         {
-            return objOpera.objetoInstrumento(idInstrumento);
+            return objOpera.objetoInstrumento(codInstrumento);
         }
 
         public DataTable objetenercarrito()
@@ -42,7 +41,12 @@ namespace capaLogica
         
         public double obtenerpreciototal()
         {
-            return objOpera.Precio_Total();
+            return objOpera.Precio_Total() * objOpera.Obtener_Iva();
+        }
+
+        public double obtneriva()
+        {
+            return objOpera.Obtener_Iva();
         }
 
         public void eliminarProd(string producto)
@@ -72,5 +76,21 @@ namespace capaLogica
         {
             objOpera.IngresarInstrumento(instrumento);
         }
+        public List<Clientes> listarD()
+        {
+            return objOpera.listaCliente();
+        }
+
+        public void Ingresar(Clientes DatosUsuario)
+        {
+            objOpera.Insertar(DatosUsuario);
+        }
+
+        public List<Clientes> getClientes()
+        {
+            return objOpera.listClientes();
+        }
+
+
     }
 }

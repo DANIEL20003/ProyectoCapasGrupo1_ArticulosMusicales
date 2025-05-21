@@ -29,7 +29,7 @@ namespace capaPresentacion
         private void FRMCARRITO_Load(object sender, EventArgs e)
         {
             DGVcarrito.DataSource = objtpuente.objetenercarrito();
-            lbl_iva.Text = objtpuente.getIva(1).ToString("F2") + " %";
+            lbl_iva.Text = objtpuente.obtneriva().ToString("F2") + " %";
             lbl_precio_total.Text = "$ " + objtpuente.obtenerpreciototal().ToString("F2");
         }
 

@@ -12,5 +12,6 @@ namespace capaEntidades
         public string codigoInstru { get; set; }
         public int cantidad { get; set; }
         public DateTime fecha { get; set; }
+        
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using capaEntidades;
+using capaLogica;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
@@ -14,10 +16,8 @@ namespace capaPresentacion
 {
     public partial class FRMREGISTRO : Form
     {
-        string cedula, nombre, apellido, direccion, ciudad, email = "";
-        char estadoCivil = 'S', genero = 'M';
-        int edadEnAnios;
-        DateTime fechaNac;
+        string cedula, nombre, apellido, direccion, email = "",telefono;
+        
 
         public static class UsuarioManager
         {
@@ -29,12 +29,40 @@ namespace capaPresentacion
             InitializeComponent();
         }
 
-        private void txtCedula_TextChanged(object sender, EventArgs e)
-        {
+        clasePuente objP = new clasePuente();
+        Clientes objCl = new Clientes();
 
+        private void btnAceptar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                objCl.Nombre = txtNombre.Text;
+                objCl.Apellido = txtApellido.Text;
+                objCl.Cedula = txtCedula.Text;
+                objCl.Telefono = txttelefono.Text;
+                objCl.Correo_electronico = txtEmail.Text;
+                objCl.Direccion = txtDireccion.Text;
+                objCl.id_tipo_cliente = int.Parse(cbxtipo.Text);
+                objCl.Contraseña = TXB_crearC.Text;
+                objCl.Usuario = txtusuario.Text;
+
+                objP.Ingresar(objCl);
+
+                MessageBox.Show("¡Cliente guardado correctamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar cliente: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void txtCedula_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
@@ -44,8 +72,8 @@ namespace capaPresentacion
                 if (cedulaTexto.Length != 10 || !cedulaTexto.All(char.IsDigit))
                 {
                     MessageBox.Show("La cédula debe tener exactamente 10 dígitos numéricos.");
-                    e.Handled = true; 
-                    return; 
+                    e.Handled = true;
+                    return;
                 }
 
                 Cedula cedulaObj = new Cedula(cedulaTexto);
@@ -53,17 +81,17 @@ namespace capaPresentacion
                 if (!cedulaObj.ComprobarCedula())
                 {
                     MessageBox.Show("Cédula inválida.");
-                    e.Handled = true; 
-                    return; 
+                    e.Handled = true;
+                    return;
                 }
 
-                cedula = cedulaTexto;  
-                txtNombre.Focus(); 
-                e.Handled = true;  
+                cedula = cedulaTexto;
+                txtNombre.Focus();
+                e.Handled = true;
             }
         }
 
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtNombre_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
@@ -72,150 +100,81 @@ namespace capaPresentacion
             }
         }
 
-        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtApellido_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
                 apellido = txtApellido.Text.Trim();
-                dateTimePicker1.Focus();
+                txttelefono.Focus();
             }
         }
 
-        private void cbxProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        private void txttelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ciudad = cbxProvincia.SelectedItem.ToString();
-            txtEmail.Focus();
-        }
-
-        private void cbxProvincia_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
+            try
             {
-                txtEmail.Focus();
-                e.Handled = true;
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    txtEmail.Focus();
+                }
             }
+            catch 
+            {
+                MessageBox.Show("Ingrese números de 10 dígitos");
+                txttelefono.Clear();
+            }
+                
         }
 
-        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtEmail_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
                 email = txtEmail.Text.Trim();
+                txtDireccion.Focus();
             }
         }
 
-        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtDireccion_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
                 direccion = txtDireccion.Text.Trim();
+                cbxtipo.Focus();
             }
         }
 
-        private void rdbSoltero_CheckedChanged(object sender, EventArgs e)
+        private void TXB_crearC_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if (rdbSoltero.Checked)
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                estadoCivil = 'S';
+                e.Handled = true; // Evita que se procese el Enter como texto
+
+                DialogResult resultado = MessageBox.Show(
+                    "¿Estás seguro que deseas registrar este usuario?",
+                    "Confirmar registro",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (resultado == DialogResult.Yes)
+                {
+                    btnAceptar_Click_1(sender, e); // Ejecuta la acción de registrar
+                }
+                else
+                {
+                    MessageBox.Show("Registro cancelado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
-        private void rdbCasado_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdbCasado.Checked)
-            {
-                estadoCivil = 'C';
-            }
-        }
-
-        private void rdbMasculino_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdbMasculino.Checked) genero = 'M';
-        }
-
-        private void rdbFemenino_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdbFemenino.Checked) genero = 'F';
-        }
-
-        private void TXB_registroU_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtusuario_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
                 TXB_crearC.Focus();
-                e.Handled = true;
             }
         }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TXB_crearC_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Poner que se ejecute directamente
-        }
-
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string usuarioNombre = TXB_registroU.Text.Trim();
-                string contraseña = TXB_crearC.Text.Trim();
-
-                if (string.IsNullOrEmpty(usuarioNombre) || string.IsNullOrEmpty(contraseña))
-                {
-                    MessageBox.Show("Por favor, complete todos los campos.");
-                    return;
-                }
-
-                fechaNac = dateTimePicker1.Value;
-                edadEnAnios = calcularEdad(fechaNac);
-
-                if (edadEnAnios < 18)
-                {
-                    MessageBox.Show("Debes tener al menos 18 años para registrarte.");
-                    return;
-                }
-
-                // Verificar si el usuario ya está registrado en la lista temporal
-                foreach (var usuario in UsuarioManager.listaUsuarios)
-                {
-                    if (usuario.UsuarioNombre == usuarioNombre)
-                    {
-                        MessageBox.Show("El usuario ya está registrado.");
-                        return;
-                    }
-                }
-
-                // Crear el nuevo usuario y agregarlo a la lista temporal
-                Usuario nuevoUsuario = new Usuario(usuarioNombre, contraseña);
-                UsuarioManager.listaUsuarios.Add(nuevoUsuario);
-
-                MessageBox.Show("Usuario creado exitosamente.");
-
-                // Limpiar los campos del formulario
-                TXB_registroU.Clear();
-                TXB_crearC.Clear();
-                txtNombre.Clear();
-                txtApellido.Clear();
-                txtEmail.Clear();
-                txtDireccion.Clear();
-
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al registrar el usuario: " + ex.Message);
-            }
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-        }
-
         private int calcularEdad(DateTime fechaNac)
         {
             DateTime fechaActual = DateTime.Today;

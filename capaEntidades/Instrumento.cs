@@ -17,13 +17,10 @@ namespace capaEntidades
         public int idIva { get; set; }
         public Int64 cantidad { get; set; }
         public int idCatego { get; set; }
-        public int idProvee { get; set; }
+        public string proveedor { get; set; }
         public string color { get; set; }
         public string material { get; set; }
         public string dimension { get; set; }
-
-        public decimal valorIva { get; set; }
-
         public byte[] foto { get; set; }
 
     }
