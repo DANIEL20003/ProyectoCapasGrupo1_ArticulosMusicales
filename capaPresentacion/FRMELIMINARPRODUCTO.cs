@@ -33,8 +33,7 @@ namespace capaPresentacion
 
                     if (operacion.infoInstrumento(codigoProducto) == null)
                     {
-                        MessageBox.Show("No se ha encontrado ningún producto" +
-                            $" con el código: {codigoProducto}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        MessageBox.Show($"No se ha encontrado ningún producto con el código: '{codigoProducto}'", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         TB_codigoProducto.Clear();
                         return;
                     }
@@ -52,21 +51,38 @@ namespace capaPresentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Instrumento instrumentoA=operacion.infoInstrumento(codigoProducto);
+            try
+            {
+                codigoProducto = TB_codigoProducto.Text;
 
-            lblCodigo.Text = instrumentoA.codInstru.ToString();
-            lblNombre.Text = instrumentoA.nombre.ToString();
-            lblMarca.Text = instrumentoA.marca.ToString();
-            lblModelo.Text = instrumentoA.modelo.ToString();
-            lblPrecio.Text = instrumentoA.precio.ToString();
-            lblaFab.Text = instrumentoA.anioFabrica.ToString();
-            lblIdIva.Text = instrumentoA.idIva.ToString();
-            lblCantidad.Text = instrumentoA.cantidad.ToString();
-            lblCategoria.Text = instrumentoA.idCatego.ToString();
-            lblProveedor.Text = instrumentoA.idProvee.ToString();
-            lblColor.Text = instrumentoA.color.ToString();
-            lblMaterial.Text = instrumentoA.material.ToString();
-            lblDimension.Text = instrumentoA.dimension.ToString();
+                if (operacion.infoInstrumento(codigoProducto) == null)
+                {
+                    MessageBox.Show($"No se ha encontrado ningún producto con el código: '{codigoProducto}'", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TB_codigoProducto.Clear();
+                    return;
+                }
+                Instrumento instrumentoA = operacion.infoInstrumento(codigoProducto);
+
+                lblCodigo.Text = instrumentoA.codInstru.ToString();
+                lblNombre.Text = instrumentoA.nombre.ToString();
+                lblMarca.Text = instrumentoA.marca.ToString();
+                lblModelo.Text = instrumentoA.modelo.ToString();
+                lblPrecio.Text = instrumentoA.precio.ToString();
+                lblaFab.Text = instrumentoA.anioFabrica.ToString();
+                lblIdIva.Text = instrumentoA.idIva.ToString();
+                lblCantidad.Text = instrumentoA.cantidad.ToString();
+                lblCategoria.Text = instrumentoA.idCatego.ToString();
+                lblProveedor.Text = instrumentoA.idProvee.ToString();
+                lblColor.Text = instrumentoA.color.ToString();
+                lblMaterial.Text = instrumentoA.material.ToString();
+                lblDimension.Text = instrumentoA.dimension.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Por favor, Ingrese un código", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                TB_codigoProducto.Clear();
+            }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

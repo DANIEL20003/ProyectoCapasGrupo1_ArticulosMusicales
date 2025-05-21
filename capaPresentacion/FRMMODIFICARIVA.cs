@@ -16,23 +16,20 @@ namespace capaPresentacion
     public partial class FRMMODIFICARIVA : Form
     {
         clasePuente operacion=new clasePuente();
-        int iva;
+        decimal iva;
 
         public FRMMODIFICARIVA()
         {
             InitializeComponent();
-        }
-
-        private void TB_codigoProducto_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        public double getiva()
-        {
-            double ivac;
-            ivac = double.Parse(TB_codigoProducto.Text);
-            return ivac;
+            if (operacion.showIvaActual() == null)
+            {
+                lblIvaActual.Text = "Sin IVA";
+            }
+            else
+            {
+                claseIva sIA= operacion.showIvaActual();
+                lblIvaActual.Text = sIA.valor_iva.ToString();
+            }
         }
 
         private void TB_codigoProducto_KeyPress(object sender, KeyPressEventArgs e)
@@ -41,7 +38,7 @@ namespace capaPresentacion
             {
                 if (e.KeyChar == (char)Keys.Enter)
                 {
-                    iva=int.Parse(TB_codigoProducto.Text);
+                    iva=decimal.Parse(TB_codigoProducto.Text);
                     if(iva<0 || iva > 100)
                     {
                         MessageBox.Show("El valor ingresado para el IVA " +
@@ -70,7 +67,33 @@ namespace capaPresentacion
 
         private void btnActualizarIva_Click(object sender, EventArgs e)
         {
-            operacion.actualizarIv(iva);
+            try
+            {
+                iva = decimal.Parse(TB_codigoProducto.Text);
+
+                if (iva < 0 || iva > 100)
+                {
+                    MessageBox.Show("El valor ingresado para el IVA " +
+                                    "no es un valor correcto, Ingrese de nuevo",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TB_codigoProducto.Clear();
+                    return;
+                }
+                operacion.actualizarIv(iva);
+                TB_codigoProducto.Clear();
+
+                lblIvaActual.Text = iva.ToString();
+
+                MessageBox.Show($"Se ha modificado correctamente el valor del iva a {iva}", "Modificación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch
+            {
+                MessageBox.Show("Por favor, ingrese un valor para " +
+                                        "el IVA, Ingrese de nuevo",
+                                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TB_codigoProducto.Clear();
+            }
         }
     }
 }

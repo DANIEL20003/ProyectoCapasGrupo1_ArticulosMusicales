@@ -35,7 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.LBL_titulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblIvaActual = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +75,6 @@
             this.TB_codigoProducto.Name = "TB_codigoProducto";
             this.TB_codigoProducto.Size = new System.Drawing.Size(192, 20);
             this.TB_codigoProducto.TabIndex = 16;
-            this.TB_codigoProducto.TextChanged += new System.EventHandler(this.TB_codigoProducto_TextChanged);
             this.TB_codigoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_codigoProducto_KeyPress);
             // 
             // LBLT_codigo
@@ -121,16 +120,16 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Valor actual del IVA (%):";
             // 
-            // label2
+            // lblIvaActual
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(317, 109);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 25);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "----";
+            this.lblIvaActual.AutoSize = true;
+            this.lblIvaActual.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIvaActual.ForeColor = System.Drawing.Color.Black;
+            this.lblIvaActual.Location = new System.Drawing.Point(317, 109);
+            this.lblIvaActual.Name = "lblIvaActual";
+            this.lblIvaActual.Size = new System.Drawing.Size(36, 25);
+            this.lblIvaActual.TabIndex = 22;
+            this.lblIvaActual.Text = "----";
             // 
             // FRMMODIFICARIVA
             // 
@@ -138,7 +137,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(601, 309);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblIvaActual);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnActualizarIva);
@@ -164,6 +163,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label LBL_titulo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblIvaActual;
     }
 }

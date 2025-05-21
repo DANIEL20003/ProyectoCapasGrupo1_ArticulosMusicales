@@ -153,18 +153,20 @@ namespace capaDatos
         public void eliminarProducto(string codProducto)
         {
             objConec.Abrir();
-
-            SqlCommand eliminarP=new SqlCommand($"Delete from Productos where codigo_producto='{codProducto}'", objConec.conectar);
+            
+            SqlCommand eliminarC=new SqlCommand($"DELETE FROM Carrito WHERE codigo_producto = '{codProducto}';", objConec.conectar);
+            eliminarC.ExecuteNonQuery();
+            SqlCommand eliminarP=new SqlCommand($"Delete from Productos where codigo_producto='{codProducto}';", objConec.conectar);
             eliminarP.ExecuteNonQuery();
 
             objConec.Cerrar();
         }
 
-        public void actualizarIva(int valorI)
+        public void actualizarIva(decimal valorI)
         {
             objConec.Abrir();
 
-            SqlCommand actualizarI = new SqlCommand($"Update IVA set valor_iva={valorI} where id_iva=1", objConec.conectar);
+            SqlCommand actualizarI = new SqlCommand($"Update IVA set valor_iva={valorI} where id_iva=3", objConec.conectar);
             actualizarI.ExecuteNonQuery();
 
             objConec.Cerrar();
@@ -229,5 +231,27 @@ namespace capaDatos
 
         }
         
+        public claseIva getIvaActual()
+        {
+            objConec.Abrir();
+            SqlCommand consulta = new SqlCommand($"select * from IVA where id_iva=3", objConec.conectar);
+            SqlDataReader reader= consulta.ExecuteReader();
+
+            if (reader.Read())
+            {
+                claseIva objIva = new claseIva()
+                {
+                    id_iva = Convert.ToInt32(reader["id_iva"]),
+                    valor_iva = Convert.ToDecimal(reader["valor_iva"])
+                };
+                objConec.Cerrar();
+                return objIva;
+            }
+            else
+            {
+                objConec.Cerrar();
+                return null;
+            }
+        }
     }
 }

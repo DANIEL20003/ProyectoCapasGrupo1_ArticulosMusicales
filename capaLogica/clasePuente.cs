@@ -50,7 +50,7 @@ namespace capaLogica
             objOpera.eliminarProducto(producto);
         }
 
-        public void actualizarIv(int newValor)
+        public void actualizarIv(decimal newValor)
         {
             objOpera.actualizarIva(newValor);
         }
@@ -63,6 +63,10 @@ namespace capaLogica
         public void insertCarrito(List<Carrito> listCarritos)
         {
             objOpera.insertarCarrito(listCarritos);
+        }
+        public claseIva showIvaActual()
+        {
+            return objOpera.getIvaActual();
         }
     }
 }
