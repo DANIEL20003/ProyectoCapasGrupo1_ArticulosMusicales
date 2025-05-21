@@ -24,5 +24,7 @@ namespace capaEntidades
 
         public decimal valorIva { get; set; }
 
+        public byte[] foto { get; set; }
+
     }
 }

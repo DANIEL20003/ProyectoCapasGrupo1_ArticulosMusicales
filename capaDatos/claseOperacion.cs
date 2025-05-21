@@ -230,12 +230,19 @@ namespace capaDatos
             objConec.Cerrar();
 
         }
-        
+        public void IngresarInstrumento(Instrumento instrumento)
+        {
+            objConec.Abrir();
+            SqlCommand sqlC = new SqlCommand("INSERT INTO Productos (codigo_producto, nombre_producto, marca, modelo, precio_producto, anio_fabricacion, id_iva, cantidad, id_categoriaYo, id_Proveedor, color, material, dimension, foto) VALUES ('" + instrumento.codInstru + "', '" + instrumento.nombre + "', '" + instrumento.marca + "', '" + instrumento.modelo + "', '" + instrumento.precio + "', '" + instrumento.anioFabrica + "', '" + instrumento.idIva + "', '" + instrumento.cantidad + "', '" + instrumento.idCatego + "', '" + instrumento.idProvee + "', '" + instrumento.color + "', '" + instrumento.material + "', '" + instrumento.dimension + "', '" + instrumento.foto + "')", objConec.conectar);
+            sqlC.ExecuteNonQuery();
+            objConec.Cerrar();
+        }
+
         public claseIva getIvaActual()
         {
             objConec.Abrir();
             SqlCommand consulta = new SqlCommand($"select * from IVA where id_iva=3", objConec.conectar);
-            SqlDataReader reader= consulta.ExecuteReader();
+            SqlDataReader reader = consulta.ExecuteReader();
 
             if (reader.Read())
             {

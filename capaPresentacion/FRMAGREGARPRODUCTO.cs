@@ -1,9 +1,13 @@
-﻿using System;
+﻿using capaEntidades;
+using capaLogica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlTypes;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +18,13 @@ namespace capaPresentacion
 {
     public partial class FRMAGREGARPRODUCTO : Form
     {
+        clasePuente objP = new clasePuente();
+        Instrumento objI = new Instrumento();
+
         string codigo, nombre, marca, modelo, categoria, proveedor, color, material, dimension;
         decimal precio;
         int añoFabricacion, cantidad;
+        byte[] foto;
 
         private void txbAñoFabricacion_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -396,13 +404,64 @@ namespace capaPresentacion
                 return;
             }
 
+            switch (categoria)
+            {
+                case "Cuerdas":
+                    categoria = "1";
+                    break;
 
-            //desde aqui empiezo a mandar mis variables a la base de datos
-            //MESSAGEBOX de confirmacion de agregacion de todos los campos a la base de datos
+                case "Percusión":
+                    categoria = "2";
+                    break;
 
-            MessageBox.Show("Se agregó el producto correctamente", "Éxito", 
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                case "Viento":
+                    categoria = "3";
+                    break;
 
+                case "Teclados":
+                    categoria = "4";
+                    break;
+
+                case "Electrónica musical":
+                    categoria = "5";
+                    break;
+            }
+
+            try
+            {
+                objI.codInstru = codigo;
+                objI.nombre = nombre;
+                objI.marca = marca;
+                objI.modelo = modelo;
+                objI.precio = precio;
+                objI.anioFabrica = añoFabricacion;
+
+                objI.idIva = 1;
+
+                objI.idCatego = Convert.ToInt32(categoria);
+                objI.idProvee = 1;  //PENDIENTE de cambiar
+                objI.color = color;
+                objI.material = material;
+                objI.dimension = dimension;
+                objI.cantidad = cantidad;
+
+                // Convertir la imagen del PictureBox a un arreglo de bytes
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    ptbImagenInstrumento.Image.Save(ms, ImageFormat.Jpeg);
+                    foto = ms.ToArray();
+                }
+
+                objI.foto = foto;
+
+
+                MessageBox.Show("Se agregó el producto correctamente", "Éxito",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error \n" + ex, "Se presentó un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnAgregarFoto_Click(object sender, EventArgs e)

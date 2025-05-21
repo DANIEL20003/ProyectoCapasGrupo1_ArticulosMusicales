@@ -59,7 +59,7 @@ namespace capaLogica
         {
             return objOpera.obtenerIva(idIVA);
         }
-
+        
         public void insertCarrito(List<Carrito> listCarritos)
         {
             objOpera.insertarCarrito(listCarritos);
@@ -67,6 +67,10 @@ namespace capaLogica
         public claseIva showIvaActual()
         {
             return objOpera.getIvaActual();
+        }
+        public void IngresarInstrumento(Instrumento instrumento)
+        {
+            objOpera.IngresarInstrumento(instrumento);
         }
     }
 }
