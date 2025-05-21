@@ -72,7 +72,7 @@ namespace capaPresentacion
                 lblIdIva.Text = instrumentoA.idIva.ToString();
                 lblCantidad.Text = instrumentoA.cantidad.ToString();
                 lblCategoria.Text = instrumentoA.idCatego.ToString();
-                lblProveedor.Text = instrumentoA.idProvee.ToString();
+                lblProveedor.Text = instrumentoA.proveedor.ToString();
                 lblColor.Text = instrumentoA.color.ToString();
                 lblMaterial.Text = instrumentoA.material.ToString();
                 lblDimension.Text = instrumentoA.dimension.ToString();

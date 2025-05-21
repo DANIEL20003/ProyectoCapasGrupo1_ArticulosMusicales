@@ -160,7 +160,7 @@ namespace capaDatos
                     idIva = Convert.ToInt32(reader["id_iva"]),
                     cantidad = Convert.ToInt64(reader["cantidad"]),
                     idCatego = Convert.ToInt32(reader["id_categoriaYo"]),
-                    proveedor = Convert.ToString(reader["id_Proveedor"]),
+                    proveedor = Convert.ToString(reader["proveedor"]),
                     color = Convert.ToString(reader["color"]),
                     material = Convert.ToString(reader["material"]),
                     dimension = Convert.ToString(reader["dimension"]),
@@ -263,7 +263,7 @@ namespace capaDatos
             string query = @"INSERT INTO Productos 
                         (codigo_producto, nombre_producto, marca, modelo, 
                          precio_producto, anio_fabricacion, id_iva, cantidad, 
-                         id_categoriaYo, id_Proveedor, color, material, dimension, foto) 
+                         id_categoriaYo, proveedor, color, material, dimension, foto) 
                         VALUES 
                         (@Codigo, @Nombre, @Marca, @Modelo, 
                          @Precio, @Anio, @IdIva, @Cantidad, 
@@ -281,7 +281,7 @@ namespace capaDatos
                 cmd.Parameters.AddWithValue("@IdIva", instrumento.idIva);
                 cmd.Parameters.AddWithValue("@Cantidad", instrumento.cantidad);
                 cmd.Parameters.AddWithValue("@IdCategoria", instrumento.idCatego);
-                cmd.Parameters.AddWithValue("@IdProveedor", instrumento.idProvee);
+                cmd.Parameters.AddWithValue("@IdProveedor", instrumento.proveedor);
                 cmd.Parameters.AddWithValue("@Color", instrumento.color);
                 cmd.Parameters.AddWithValue("@Material", instrumento.material);
                 cmd.Parameters.AddWithValue("@Dimension", instrumento.dimension);

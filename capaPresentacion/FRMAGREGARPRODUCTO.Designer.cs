@@ -51,15 +51,15 @@
             this.txbModelo = new System.Windows.Forms.TextBox();
             this.txbPrecio = new System.Windows.Forms.TextBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
-            this.cmbProveedor = new System.Windows.Forms.ComboBox();
             this.cmbColor = new System.Windows.Forms.ComboBox();
             this.cmbMaterial = new System.Windows.Forms.ComboBox();
-            this.cmbDimension = new System.Windows.Forms.ComboBox();
             this.btnAgregarFoto = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txbAñoFabricacion = new System.Windows.Forms.TextBox();
             this.txbCantidad = new System.Windows.Forms.TextBox();
+            this.txbProveedor = new System.Windows.Forms.TextBox();
+            this.txbDimension = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagenInstrumento)).BeginInit();
             this.SuspendLayout();
@@ -308,19 +308,8 @@
             this.cmbCategoria.TabIndex = 27;
             this.cmbCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCategoria_KeyPress);
             // 
-            // cmbProveedor
-            // 
-            this.cmbProveedor.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbProveedor.FormattingEnabled = true;
-            this.cmbProveedor.Location = new System.Drawing.Point(509, 127);
-            this.cmbProveedor.Name = "cmbProveedor";
-            this.cmbProveedor.Size = new System.Drawing.Size(176, 30);
-            this.cmbProveedor.TabIndex = 28;
-            this.cmbProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbProveedor_KeyPress);
-            // 
             // cmbColor
             // 
-            this.cmbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbColor.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbColor.FormattingEnabled = true;
             this.cmbColor.Items.AddRange(new object[] {
@@ -346,7 +335,6 @@
             // 
             // cmbMaterial
             // 
-            this.cmbMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMaterial.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMaterial.FormattingEnabled = true;
             this.cmbMaterial.Items.AddRange(new object[] {
@@ -364,22 +352,6 @@
             this.cmbMaterial.Size = new System.Drawing.Size(176, 30);
             this.cmbMaterial.TabIndex = 30;
             this.cmbMaterial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMaterial_KeyPress);
-            // 
-            // cmbDimension
-            // 
-            this.cmbDimension.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDimension.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDimension.FormattingEnabled = true;
-            this.cmbDimension.Items.AddRange(new object[] {
-            "Pequeño",
-            "Mediano",
-            "Grande",
-            "Muy grande"});
-            this.cmbDimension.Location = new System.Drawing.Point(509, 264);
-            this.cmbDimension.Name = "cmbDimension";
-            this.cmbDimension.Size = new System.Drawing.Size(176, 30);
-            this.cmbDimension.TabIndex = 31;
-            this.cmbDimension.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbDimension_KeyPress);
             // 
             // btnAgregarFoto
             // 
@@ -435,20 +407,38 @@
             this.txbCantidad.TabIndex = 36;
             this.txbCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCantidad_KeyPress);
             // 
+            // txbProveedor
+            // 
+            this.txbProveedor.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbProveedor.Location = new System.Drawing.Point(509, 128);
+            this.txbProveedor.Name = "txbProveedor";
+            this.txbProveedor.Size = new System.Drawing.Size(176, 29);
+            this.txbProveedor.TabIndex = 37;
+            this.txbProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbProveedor_KeyPress);
+            // 
+            // txbDimension
+            // 
+            this.txbDimension.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbDimension.Location = new System.Drawing.Point(509, 264);
+            this.txbDimension.Name = "txbDimension";
+            this.txbDimension.Size = new System.Drawing.Size(176, 29);
+            this.txbDimension.TabIndex = 38;
+            this.txbDimension.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbDimension_KeyPress);
+            // 
             // FRMAGREGARPRODUCTO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txbDimension);
+            this.Controls.Add(this.txbProveedor);
             this.Controls.Add(this.txbCantidad);
             this.Controls.Add(this.txbAñoFabricacion);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnAgregarFoto);
-            this.Controls.Add(this.cmbDimension);
             this.Controls.Add(this.cmbMaterial);
             this.Controls.Add(this.cmbColor);
-            this.Controls.Add(this.cmbProveedor);
             this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.txbPrecio);
             this.Controls.Add(this.txbModelo);
@@ -507,14 +497,14 @@
         private System.Windows.Forms.TextBox txbModelo;
         private System.Windows.Forms.TextBox txbPrecio;
         private System.Windows.Forms.ComboBox cmbCategoria;
-        private System.Windows.Forms.ComboBox cmbProveedor;
         private System.Windows.Forms.ComboBox cmbColor;
         private System.Windows.Forms.ComboBox cmbMaterial;
-        private System.Windows.Forms.ComboBox cmbDimension;
         private System.Windows.Forms.Button btnAgregarFoto;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txbAñoFabricacion;
         private System.Windows.Forms.TextBox txbCantidad;
+        private System.Windows.Forms.TextBox txbProveedor;
+        private System.Windows.Forms.TextBox txbDimension;
     }
 }

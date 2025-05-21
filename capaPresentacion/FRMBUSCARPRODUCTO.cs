@@ -73,7 +73,7 @@ namespace capaPresentacion
                 lblIdIva.Text = producto.idIva.ToString();
                 lblCantidad.Text = producto.cantidad.ToString();
                 lblCategoria.Text = producto.idCatego.ToString();
-                lblProveedor.Text = producto.idProvee.ToString();
+                lblProveedor.Text = producto.proveedor.ToString();
                 lblColor.Text = producto.color.ToString();
                 lblMaterial.Text = producto.material.ToString();
                 lblDimension.Text = producto.dimension.ToString();
