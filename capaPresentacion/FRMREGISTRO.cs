@@ -172,6 +172,58 @@ namespace capaPresentacion
             this.DialogResult = DialogResult.Cancel;
         }
 
+        private void txtCedula_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            txtNombre.Focus();
+        }
+
+        private void txtNombre_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            txtApellido.Focus();
+        }
+
+        private void txtApellido_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            txttelefono.Focus();
+        }
+
+        private void txttelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    txtEmail.Focus();
+                }
+            }
+            catch 
+            {
+                MessageBox.Show("Ingrese números de 10 dígitos");
+                txttelefono.Clear();
+            }
+                
+        }
+
+        private void txtEmail_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            txtDireccion.Focus();
+        }
+
+        private void txtDireccion_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            txtusuario.Focus();
+        }
+
+        private void TXB_crearC_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtusuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TXB_crearC.Focus();
+        }
+
         private void TXB_crearC_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Poner que se ejecute directamente

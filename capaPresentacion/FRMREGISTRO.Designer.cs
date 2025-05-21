@@ -113,6 +113,7 @@
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(224, 34);
             this.txttelefono.TabIndex = 125;
+            this.txttelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttelefono_KeyPress);
             // 
             // btnCancelar
             // 
@@ -154,6 +155,7 @@
             this.TXB_crearC.Name = "TXB_crearC";
             this.TXB_crearC.Size = new System.Drawing.Size(208, 34);
             this.TXB_crearC.TabIndex = 122;
+            this.TXB_crearC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXB_crearC_KeyPress_1);
             // 
             // txtDireccion
             // 
@@ -163,6 +165,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(225, 34);
             this.txtDireccion.TabIndex = 121;
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress_1);
             // 
             // txtEmail
             // 
@@ -172,6 +175,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(224, 34);
             this.txtEmail.TabIndex = 120;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress_1);
             // 
             // txtApellido
             // 
@@ -181,6 +185,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(225, 34);
             this.txtApellido.TabIndex = 119;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress_1);
             // 
             // txtNombre
             // 
@@ -190,6 +195,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(225, 34);
             this.txtNombre.TabIndex = 118;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress_1);
             // 
             // txtCedula
             // 
@@ -199,6 +205,7 @@
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(225, 34);
             this.txtCedula.TabIndex = 117;
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress_1);
             // 
             // label12
             // 
@@ -296,6 +303,7 @@
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(225, 34);
             this.txtusuario.TabIndex = 128;
+            this.txtusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtusuario_KeyPress);
             // 
             // lblUsuario
             // 
