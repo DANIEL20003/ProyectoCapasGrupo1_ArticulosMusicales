@@ -38,7 +38,7 @@ namespace capaPresentacion
         public Form1()
         {
             InitializeComponent();
-            listaclientes = objP.getClientes();
+            
         }
 
         private void txtusuario_KeyPress(object sender, KeyPressEventArgs e)
@@ -87,7 +87,8 @@ namespace capaPresentacion
                 string contraseniaIngresada = txtcontrasenia.Text.Trim();
                 bool band = false;
 
-                // 3. Verificar administrador
+                listaclientes = objP.getClientes();
+
                 if ((usuarioIngresado == usuario1 || usuarioIngresado == usuario2 ||
                      usuarioIngresado == usuario3 || usuarioIngresado == usuario4 ||
                      usuarioIngresado == usuario5 || usuarioIngresado == usuario6 ||
@@ -104,24 +105,22 @@ namespace capaPresentacion
                 }
                 else
                 {
-                    // 4. Verificar clientes con manejo de nulos
-                    foreach (Clientes c in listaclientes)
+                    if (listaclientes != null)
                     {
-
-                        if (txtusuario.Text == c.Usuario && txtcontrasenia.Text == c.Contraseña)
+                        foreach (Clientes c in listaclientes)
                         {
-                            listBox1.Items.Add(c.Usuario);
-                            listBox1.Items.Add(c.Contraseña);
-
-                            /*band = true;
-                            idCliente = c.id_cliente;
-                            using (FRMMENUCLIENTE objMenuCliente = new FRMMENUCLIENTE())
+                            if (txtusuario.Text == c.Usuario && txtcontrasenia.Text == c.Contraseña)
                             {
-                                this.Hide();
-                                objMenuCliente.ShowDialog();
-                                this.Show();
+                                band = true;
+                                idCliente = c.id_cliente;
+                                using (FRMMENUCLIENTE objMenuCliente = new FRMMENUCLIENTE())
+                                {
+                                    this.Hide();
+                                    objMenuCliente.ShowDialog();
+                                    this.Show();
+                                }
+                                break;
                             }
-                            break;*/
                         }
                     }
 
@@ -143,7 +142,7 @@ namespace capaPresentacion
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txtcontrasenia_KeyPress(object sender, KeyPressEventArgs e)

@@ -392,7 +392,6 @@ namespace capaDatos
                         Telefono = Convert.ToString(reader["Telefono"]),
                         Correo_electronico = Convert.ToString(reader["Correo_electronico"]),
                         Direccion = Convert.ToString(reader["Direccion"]),
-                        id_tipo_cliente = Convert.ToInt32(reader["id_tipo_cliente"]),
                         Contraseña = Convert.ToString(reader["Contraseña"]),
                         Usuario = Convert.ToString(reader["Usuario"])
                     };

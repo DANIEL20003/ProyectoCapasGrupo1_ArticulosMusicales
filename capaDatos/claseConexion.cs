@@ -9,8 +9,8 @@ namespace capaDatos
 {
     public class claseConexion
     {
-        //string cadena = "Data Source = PANLOREX-LAPTOP; Initial Catalog = BDPRACTICALB; Integrated Security = True";
-        string cadena = "Data Source = FIESWL01N15; Initial Catalog = BDPRACTICALB; User = sa; Password = SQLSERVER";
+        string cadena = "Data Source = DESKTOP-ISKD3MM\\SQLEXPRESS; Initial Catalog = BDPRACTICALB; Integrated Security = True";
+        //string cadena = "Data Source = FIESWL01N15; Initial Catalog = BDPRACTICALB; User = sa; Password = SQLSERVER";
         
         //el error esta en el localhost es poner el inicio  y poner nombre del dbms o base
         //Data Source = ServidorSQL; Initial Catalog = BaseDatos; Integrated Security = True

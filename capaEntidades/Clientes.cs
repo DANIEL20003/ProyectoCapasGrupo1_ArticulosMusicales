@@ -17,7 +17,6 @@ namespace capaEntidades
         public string Direccion { get; set; }
         public int id_tipo_cliente { get; set; }
         public string Contraseña { get; set; }
-
         public string Usuario { get; set; }
 
 

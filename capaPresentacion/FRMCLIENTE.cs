@@ -23,7 +23,7 @@ namespace capaPresentacion
 
         clasePuente objP = new clasePuente();
 
-        long maximo = 0, cantidad;
+        long maximo = 0, cantidad, totalsleccion = 0;
         decimal iva = 0, precioTotal = 0;
 
         List<Carrito> carritos = new List<Carrito>();
@@ -53,7 +53,7 @@ namespace capaPresentacion
         private void FRMCLIENTE_Load(object sender, EventArgs e)
         {
             iva = objP.getIva(1);
-            lbl_iva.Text = iva.ToString("F2");
+            lbl_iva.Text = iva.ToString("F2") + " %";
         }
 
         private void cmb_categoria_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,7 +94,6 @@ namespace capaPresentacion
                 cmb_instrumento.Items.Clear();
                 cmb_instrumento.Enabled = false;
                 cmb_codigos.Items.Clear();
-                cmb_categoria.Enabled = false;
             }
         }
 
@@ -133,7 +132,9 @@ namespace capaPresentacion
                 lbl_modelo.Text = objInstru.modelo;
                 lbl_aniofabrica.Text = objInstru.anioFabrica.ToString();
 
-                
+                txt_cantidad.Enabled = true;
+                txt_cantidad.Focus();
+
                 if (objInstru.foto != null)
                 {
                     //Para comvertir de byte[] a Image
@@ -240,20 +241,31 @@ namespace capaPresentacion
                             fecha = DateTime.Now
                         });
 
-                        lbl_precio_total.Text = ((precioTotal += objInstru.precio) * iva).ToString("F2");
+                        totalsleccion += cantidad;
+                        lbl_precio_total.Text = ((precioTotal += objInstru.precio) * (100 + iva)).ToString("F2");
                         
-                        maximo = 0;
+                        maximo = maximo - cantidad;
+                        lbl_stock.Text = "";
+
+                        txt_cantidad.Enabled = false;
+
                         cantidad = 0;
+
+                        lbl_total_instru.Text = totalsleccion.ToString();
 
                         cmb_categoria.SelectedIndex = -1;
                         cmb_instrumento.Items.Clear();
                         cmb_instrumento.Enabled = false;
                         cmb_codigos.Items.Clear();
                         cmb_codigos.Enabled = false;
+
                         lbl_precio_unidad.Text = "";
                         lbl_marca.Text = "";
                         lbl_modelo.Text = "";
                         lbl_aniofabrica.Text = "";
+
+                        txt_cantidad.Clear();
+                        cmb_categoria.Focus();
 
                         MessageBox.Show(
                             "La cantidad seleccionada ha sido guardada con éxito.",
