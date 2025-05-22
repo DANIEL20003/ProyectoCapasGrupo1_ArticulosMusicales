@@ -91,6 +91,9 @@ namespace capaLogica
             return objOpera.listClientes();
         }
 
-
+        public void modificarInstrumento(string codigo, decimal precio, int cantidad, string proveedor)
+        {
+            objOpera.modificarInstrumento(codigo, precio, cantidad, proveedor);
+        }
     }
 }

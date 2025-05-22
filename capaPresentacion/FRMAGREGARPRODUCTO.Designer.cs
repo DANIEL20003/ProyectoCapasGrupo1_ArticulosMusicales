@@ -355,12 +355,12 @@
             // 
             // btnAgregarFoto
             // 
-            this.btnAgregarFoto.BackColor = System.Drawing.Color.White;
+            this.btnAgregarFoto.BackColor = System.Drawing.Color.DarkKhaki;
             this.btnAgregarFoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarFoto.FlatAppearance.BorderSize = 0;
             this.btnAgregarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarFoto.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarFoto.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregarFoto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAgregarFoto.Location = new System.Drawing.Point(393, 341);
             this.btnAgregarFoto.Name = "btnAgregarFoto";
             this.btnAgregarFoto.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -462,6 +462,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Name = "FRMAGREGARPRODUCTO";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRMAGREGARPRODUCTO";
             this.Load += new System.EventHandler(this.FRMAGREGARPRODUCTO_Load);
             this.panel1.ResumeLayout(false);
