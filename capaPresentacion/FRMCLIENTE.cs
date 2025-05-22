@@ -173,7 +173,7 @@ namespace capaPresentacion
         private void btn_finalizar_Click(object sender, EventArgs e)
         {
             DialogResult respuesta = MessageBox.Show(
-                "¿Está seguro que desea finalizar su selección? Despues de esto no se podran revertir los cambios.",
+                "¿Está seguro que desea finalizar su selección? Después de esto no se podran revertir los cambios.",
                 "Aviso",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning
@@ -223,7 +223,7 @@ namespace capaPresentacion
                 else if (cantidad <= maximo)
                 { 
                     DialogResult respuesta = MessageBox.Show(
-                        "¿Está seguro que desea guardar la cantidad de instrumentos?",
+                        "¿Está seguro que desea guardar la cantidad seleccionada de instrumentos?",
                         "Aviso",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Warning
@@ -266,7 +266,7 @@ namespace capaPresentacion
                         cmb_categoria.Focus();
 
                         MessageBox.Show(
-                            "La cantidad seleccionada ha sido guardada con éxito.",
+                            "La cantidad de instrumentos seleccionada ha sido guardada con éxito. Puede seguir agregando instrumentos.",
                             "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else if (respuesta == DialogResult.No)

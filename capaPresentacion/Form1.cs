@@ -87,7 +87,6 @@ namespace capaPresentacion
                 string contraseniaIngresada = txtcontrasenia.Text.Trim();
                 bool band = false;
 
-                listaclientes = objP.getClientes();
 
                 if ((usuarioIngresado == usuario1 || usuarioIngresado == usuario2 ||
                      usuarioIngresado == usuario3 || usuarioIngresado == usuario4 ||
@@ -105,6 +104,7 @@ namespace capaPresentacion
                 }
                 else
                 {
+                    listaclientes = objP.getClientes();
                     if (listaclientes != null)
                     {
                         foreach (Clientes c in listaclientes)
