@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.TB_codigoProducto = new System.Windows.Forms.TextBox();
-            this.LBLT_codigo = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.LBL_titulo = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.lblDimension = new System.Windows.Forms.Label();
             this.lblMaterial = new System.Windows.Forms.Label();
             this.lblColor = new System.Windows.Forms.Label();
@@ -62,13 +55,27 @@
             this.lblt_marca = new System.Windows.Forms.Label();
             this.lblt_nombre = new System.Windows.Forms.Label();
             this.LBLT_cod = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.TB_codigoProducto = new System.Windows.Forms.TextBox();
+            this.LBLT_codigo = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.LBL_titulo = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.ptbImagenInstrumento = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagenInstrumento)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ptbImagenInstrumento);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.lblDimension);
+            this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.lblMaterial);
             this.groupBox1.Controls.Add(this.lblColor);
             this.groupBox1.Controls.Add(this.lblProveedor);
@@ -97,7 +104,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(33, 159);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(733, 220);
+            this.groupBox1.Size = new System.Drawing.Size(733, 255);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Producto";
@@ -291,9 +298,9 @@
             this.lblt_idIva.AutoSize = true;
             this.lblt_idIva.Location = new System.Drawing.Point(234, 69);
             this.lblt_idIva.Name = "lblt_idIva";
-            this.lblt_idIva.Size = new System.Drawing.Size(55, 18);
+            this.lblt_idIva.Size = new System.Drawing.Size(36, 18);
             this.lblt_idIva.TabIndex = 6;
-            this.lblt_idIva.Text = "Id iva:";
+            this.lblt_idIva.Text = "Iva:";
             // 
             // lblt_anioFab
             // 
@@ -411,7 +418,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Gold;
-            this.btnEliminar.Location = new System.Drawing.Point(290, 409);
+            this.btnEliminar.Location = new System.Drawing.Point(227, 210);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(113, 30);
             this.btnEliminar.TabIndex = 12;
@@ -426,7 +433,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Gold;
-            this.btnCancelar.Location = new System.Drawing.Point(434, 409);
+            this.btnCancelar.Location = new System.Drawing.Point(383, 210);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(113, 30);
             this.btnCancelar.TabIndex = 13;
@@ -434,14 +441,30 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // ptbImagenInstrumento
+            // 
+            this.ptbImagenInstrumento.Location = new System.Drawing.Point(591, 133);
+            this.ptbImagenInstrumento.Name = "ptbImagenInstrumento";
+            this.ptbImagenInstrumento.Size = new System.Drawing.Size(80, 80);
+            this.ptbImagenInstrumento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbImagenInstrumento.TabIndex = 67;
+            this.ptbImagenInstrumento.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(513, 133);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 18);
+            this.label3.TabIndex = 66;
+            this.label3.Text = "Foto:";
+            // 
             // FRMELIMINARPRODUCTO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.ClientSize = new System.Drawing.Size(799, 461);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.TB_codigoProducto);
@@ -450,10 +473,12 @@
             this.Name = "FRMELIMINARPRODUCTO";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRMELIMINARPRODUCTO";
+            this.Load += new System.EventHandler(this.FRMELIMINARPRODUCTO_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagenInstrumento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,5 +520,7 @@
         private System.Windows.Forms.Label lblt_marca;
         private System.Windows.Forms.Label lblt_nombre;
         private System.Windows.Forms.Label LBLT_cod;
+        private System.Windows.Forms.PictureBox ptbImagenInstrumento;
+        private System.Windows.Forms.Label label3;
     }
 }

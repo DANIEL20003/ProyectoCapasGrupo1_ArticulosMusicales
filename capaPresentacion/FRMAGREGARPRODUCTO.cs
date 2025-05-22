@@ -279,6 +279,12 @@ namespace capaPresentacion
             }
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Se canceló la operación de agregación", "Operación cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+        }
+
 
 
         /*private void cmbDimension_KeyPress(object sender, KeyPressEventArgs e)

@@ -62,6 +62,7 @@ namespace capaPresentacion
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Se canceló la operación de modificación", "Operación cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 
@@ -85,7 +86,7 @@ namespace capaPresentacion
                 lblIvaActual.Text = iva.ToString();
 
                 MessageBox.Show($"Se ha modificado correctamente el valor del iva a {iva}", "Modificación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                this.Close();
             }
             catch
             {

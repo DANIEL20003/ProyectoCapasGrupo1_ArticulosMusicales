@@ -55,6 +55,7 @@ namespace capaPresentacion
                 {
                     gpbProducto.Visible = true;
                     claseIva iva = objP.showIvaActual();
+                    string cat = objP.getC(objI.idCatego);
 
                     lblCodigo.Text = objI.codInstru.ToString();
                     lblNombre.Text = objI.nombre.ToString();
@@ -64,7 +65,7 @@ namespace capaPresentacion
                     lblaFab.Text = objI.anioFabrica.ToString();
                     lblIdIva.Text = iva.valor_iva.ToString() + "%";
                     txbCantidad.Text = objI.cantidad.ToString();
-                    lblCategoria.Text = objI.idCatego.ToString();//PENDIENTE
+                    lblCategoria.Text = cat;
                     txbProveedor.Text = objI.proveedor.ToString();
                     lblColor.Text = objI.color.ToString();
                     lblMaterial.Text = objI.material.ToString();
@@ -240,7 +241,7 @@ namespace capaPresentacion
 
         private void FRMMODIFICARPRODUCTO_Load(object sender, EventArgs e)
         {
-
+            gpbProducto.Visible = false;
         }
 
         private void txbPrecio_KeyPress(object sender, KeyPressEventArgs e)

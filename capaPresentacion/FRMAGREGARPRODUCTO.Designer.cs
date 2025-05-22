@@ -60,6 +60,7 @@
             this.txbCantidad = new System.Windows.Forms.TextBox();
             this.txbProveedor = new System.Windows.Forms.TextBox();
             this.txbDimension = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagenInstrumento)).BeginInit();
             this.SuspendLayout();
@@ -381,7 +382,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.Gold;
-            this.btnAgregar.Location = new System.Drawing.Point(650, 341);
+            this.btnAgregar.Location = new System.Drawing.Point(650, 308);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(105, 32);
             this.btnAgregar.TabIndex = 34;
@@ -425,12 +426,28 @@
             this.txbDimension.TabIndex = 38;
             this.txbDimension.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbDimension_KeyPress);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Indigo;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Gold;
+            this.btnCancelar.Location = new System.Drawing.Point(650, 378);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(105, 30);
+            this.btnCancelar.TabIndex = 39;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FRMAGREGARPRODUCTO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txbDimension);
             this.Controls.Add(this.txbProveedor);
             this.Controls.Add(this.txbCantidad);
@@ -507,5 +524,6 @@
         private System.Windows.Forms.TextBox txbCantidad;
         private System.Windows.Forms.TextBox txbProveedor;
         private System.Windows.Forms.TextBox txbDimension;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

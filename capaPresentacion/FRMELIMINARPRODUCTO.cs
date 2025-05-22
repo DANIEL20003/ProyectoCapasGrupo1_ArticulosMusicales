@@ -1,15 +1,16 @@
-﻿using System;
+﻿using capaEntidades;
+using capaLogica;
+using capaPresentacion.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using capaEntidades;
-using capaLogica;
 
 
 namespace capaPresentacion
@@ -53,6 +54,8 @@ namespace capaPresentacion
                 return;
             }
 
+            groupBox1.Visible = true;
+
             claseIva iva = operacion.showIvaActual();
             string cat = operacion.getC(instrumentoA.idCatego);
 
@@ -69,6 +72,21 @@ namespace capaPresentacion
             lblColor.Text = instrumentoA.color;
             lblMaterial.Text = instrumentoA.material;
             lblDimension.Text = instrumentoA.dimension;
+
+            if (instrumentoA.foto != null)
+            {
+                //Para comvertir de byte[] a Image
+                MemoryStream ms = new MemoryStream(instrumentoA.foto);
+                Image imgInstru = Image.FromStream(ms);
+
+                // Mostrar en un pcb_instrumento
+                ptbImagenInstrumento.Image = imgInstru;
+            }
+            else
+            {
+                ptbImagenInstrumento.Image = Resources.NoImagen;
+            }
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -105,6 +123,7 @@ namespace capaPresentacion
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Se canceló la operación de eliminación", "Operación cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 
@@ -117,5 +136,9 @@ namespace capaPresentacion
             TB_codigoProducto.Focus();
         }
 
+        private void FRMELIMINARPRODUCTO_Load(object sender, EventArgs e)
+        {
+            groupBox1.Visible = false;
+        }
     }
 }

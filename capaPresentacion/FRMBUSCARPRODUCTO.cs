@@ -1,15 +1,16 @@
-﻿using System;
+﻿using capaEntidades;
+using capaLogica;
+using capaPresentacion.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using capaEntidades;
-using capaLogica;
 
 namespace capaPresentacion
 {
@@ -62,6 +63,9 @@ namespace capaPresentacion
                     TB_codigoProducto.Clear();
                     return;
                 }
+
+                groupBox1.Visible = true;
+
                 Instrumento producto = operacion.infoInstrumento(codigoProducto);
 
                 claseIva iva = operacion.showIvaActual();
@@ -80,6 +84,21 @@ namespace capaPresentacion
                 lblColor.Text = producto.color.ToString();
                 lblMaterial.Text = producto.material.ToString();
                 lblDimension.Text = producto.dimension.ToString();
+
+                if (producto.foto != null)
+                {
+                    //Para comvertir de byte[] a Image
+                    MemoryStream ms = new MemoryStream(producto.foto);
+                    Image imgInstru = Image.FromStream(ms);
+
+                    // Mostrar en un pcb_instrumento
+                    ptbImagenInstrumento.Image = imgInstru;
+                }
+                else
+                {
+                    ptbImagenInstrumento.Image = Resources.NoImagen;
+                }
+
             }
             catch
             {
@@ -87,6 +106,11 @@ namespace capaPresentacion
                 TB_codigoProducto.Clear();
             }
            
+        }
+
+        private void FRMBUSCARPRODUCTO_Load(object sender, EventArgs e)
+        {
+            groupBox1.Visible = false;
         }
     }
 }
