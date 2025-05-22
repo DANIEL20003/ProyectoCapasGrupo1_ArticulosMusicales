@@ -106,7 +106,7 @@
             // 
             this.lblDimension.AutoSize = true;
             this.lblDimension.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDimension.Location = new System.Drawing.Point(651, 99);
+            this.lblDimension.Location = new System.Drawing.Point(612, 101);
             this.lblDimension.Name = "lblDimension";
             this.lblDimension.Size = new System.Drawing.Size(20, 18);
             this.lblDimension.TabIndex = 25;
@@ -116,7 +116,7 @@
             // 
             this.lblMaterial.AutoSize = true;
             this.lblMaterial.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterial.Location = new System.Drawing.Point(651, 67);
+            this.lblMaterial.Location = new System.Drawing.Point(612, 69);
             this.lblMaterial.Name = "lblMaterial";
             this.lblMaterial.Size = new System.Drawing.Size(20, 18);
             this.lblMaterial.TabIndex = 24;
@@ -126,7 +126,7 @@
             // 
             this.lblColor.AutoSize = true;
             this.lblColor.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColor.Location = new System.Drawing.Point(651, 35);
+            this.lblColor.Location = new System.Drawing.Point(612, 37);
             this.lblColor.Name = "lblColor";
             this.lblColor.Size = new System.Drawing.Size(20, 18);
             this.lblColor.TabIndex = 23;
@@ -136,7 +136,7 @@
             // 
             this.lblProveedor.AutoSize = true;
             this.lblProveedor.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProveedor.Location = new System.Drawing.Point(419, 163);
+            this.lblProveedor.Location = new System.Drawing.Point(380, 165);
             this.lblProveedor.Name = "lblProveedor";
             this.lblProveedor.Size = new System.Drawing.Size(20, 18);
             this.lblProveedor.TabIndex = 22;
@@ -146,7 +146,7 @@
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(419, 131);
+            this.lblCategoria.Location = new System.Drawing.Point(380, 133);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(20, 18);
             this.lblCategoria.TabIndex = 21;
@@ -156,7 +156,7 @@
             // 
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidad.Location = new System.Drawing.Point(419, 99);
+            this.lblCantidad.Location = new System.Drawing.Point(380, 101);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(20, 18);
             this.lblCantidad.TabIndex = 20;
@@ -166,7 +166,7 @@
             // 
             this.lblIdIva.AutoSize = true;
             this.lblIdIva.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdIva.Location = new System.Drawing.Point(419, 67);
+            this.lblIdIva.Location = new System.Drawing.Point(380, 69);
             this.lblIdIva.Name = "lblIdIva";
             this.lblIdIva.Size = new System.Drawing.Size(20, 18);
             this.lblIdIva.TabIndex = 19;
@@ -176,7 +176,7 @@
             // 
             this.lblaFab.AutoSize = true;
             this.lblaFab.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblaFab.Location = new System.Drawing.Point(419, 35);
+            this.lblaFab.Location = new System.Drawing.Point(380, 37);
             this.lblaFab.Name = "lblaFab";
             this.lblaFab.Size = new System.Drawing.Size(20, 18);
             this.lblaFab.TabIndex = 18;
@@ -186,7 +186,7 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(143, 163);
+            this.lblPrecio.Location = new System.Drawing.Point(104, 165);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(20, 18);
             this.lblPrecio.TabIndex = 17;
@@ -196,7 +196,7 @@
             // 
             this.lblModelo.AutoSize = true;
             this.lblModelo.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModelo.Location = new System.Drawing.Point(143, 131);
+            this.lblModelo.Location = new System.Drawing.Point(104, 133);
             this.lblModelo.Name = "lblModelo";
             this.lblModelo.Size = new System.Drawing.Size(20, 18);
             this.lblModelo.TabIndex = 16;
@@ -206,7 +206,7 @@
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(143, 99);
+            this.lblMarca.Location = new System.Drawing.Point(104, 101);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(20, 18);
             this.lblMarca.TabIndex = 15;
@@ -216,7 +216,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(143, 67);
+            this.lblNombre.Location = new System.Drawing.Point(104, 69);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(20, 18);
             this.lblNombre.TabIndex = 14;
@@ -226,7 +226,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(143, 35);
+            this.lblCodigo.Location = new System.Drawing.Point(104, 37);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(20, 18);
             this.lblCodigo.TabIndex = 13;
@@ -235,7 +235,7 @@
             // lblt_dimension
             // 
             this.lblt_dimension.AutoSize = true;
-            this.lblt_dimension.Location = new System.Drawing.Point(547, 99);
+            this.lblt_dimension.Location = new System.Drawing.Point(508, 101);
             this.lblt_dimension.Name = "lblt_dimension";
             this.lblt_dimension.Size = new System.Drawing.Size(82, 18);
             this.lblt_dimension.TabIndex = 12;
@@ -244,7 +244,7 @@
             // lblt_material
             // 
             this.lblt_material.AutoSize = true;
-            this.lblt_material.Location = new System.Drawing.Point(547, 67);
+            this.lblt_material.Location = new System.Drawing.Point(508, 69);
             this.lblt_material.Name = "lblt_material";
             this.lblt_material.Size = new System.Drawing.Size(70, 18);
             this.lblt_material.TabIndex = 11;
@@ -253,7 +253,7 @@
             // lblt_color
             // 
             this.lblt_color.AutoSize = true;
-            this.lblt_color.Location = new System.Drawing.Point(547, 35);
+            this.lblt_color.Location = new System.Drawing.Point(508, 37);
             this.lblt_color.Name = "lblt_color";
             this.lblt_color.Size = new System.Drawing.Size(47, 18);
             this.lblt_color.TabIndex = 10;
@@ -262,7 +262,7 @@
             // lblt_proveedor
             // 
             this.lblt_proveedor.AutoSize = true;
-            this.lblt_proveedor.Location = new System.Drawing.Point(273, 163);
+            this.lblt_proveedor.Location = new System.Drawing.Point(234, 165);
             this.lblt_proveedor.Name = "lblt_proveedor";
             this.lblt_proveedor.Size = new System.Drawing.Size(80, 18);
             this.lblt_proveedor.TabIndex = 9;
@@ -271,7 +271,7 @@
             // lblt_categoria
             // 
             this.lblt_categoria.AutoSize = true;
-            this.lblt_categoria.Location = new System.Drawing.Point(273, 131);
+            this.lblt_categoria.Location = new System.Drawing.Point(234, 133);
             this.lblt_categoria.Name = "lblt_categoria";
             this.lblt_categoria.Size = new System.Drawing.Size(74, 18);
             this.lblt_categoria.TabIndex = 8;
@@ -280,7 +280,7 @@
             // lblt_cantidad
             // 
             this.lblt_cantidad.AutoSize = true;
-            this.lblt_cantidad.Location = new System.Drawing.Point(273, 99);
+            this.lblt_cantidad.Location = new System.Drawing.Point(234, 101);
             this.lblt_cantidad.Name = "lblt_cantidad";
             this.lblt_cantidad.Size = new System.Drawing.Size(73, 18);
             this.lblt_cantidad.TabIndex = 7;
@@ -289,7 +289,7 @@
             // lblt_idIva
             // 
             this.lblt_idIva.AutoSize = true;
-            this.lblt_idIva.Location = new System.Drawing.Point(273, 67);
+            this.lblt_idIva.Location = new System.Drawing.Point(234, 69);
             this.lblt_idIva.Name = "lblt_idIva";
             this.lblt_idIva.Size = new System.Drawing.Size(55, 18);
             this.lblt_idIva.TabIndex = 6;
@@ -298,7 +298,7 @@
             // lblt_anioFab
             // 
             this.lblt_anioFab.AutoSize = true;
-            this.lblt_anioFab.Location = new System.Drawing.Point(273, 35);
+            this.lblt_anioFab.Location = new System.Drawing.Point(234, 37);
             this.lblt_anioFab.Name = "lblt_anioFab";
             this.lblt_anioFab.Size = new System.Drawing.Size(140, 18);
             this.lblt_anioFab.TabIndex = 5;
@@ -307,7 +307,7 @@
             // lblt_precio
             // 
             this.lblt_precio.AutoSize = true;
-            this.lblt_precio.Location = new System.Drawing.Point(62, 163);
+            this.lblt_precio.Location = new System.Drawing.Point(23, 165);
             this.lblt_precio.Name = "lblt_precio";
             this.lblt_precio.Size = new System.Drawing.Size(53, 18);
             this.lblt_precio.TabIndex = 4;
@@ -316,7 +316,7 @@
             // lblt_modelo
             // 
             this.lblt_modelo.AutoSize = true;
-            this.lblt_modelo.Location = new System.Drawing.Point(62, 131);
+            this.lblt_modelo.Location = new System.Drawing.Point(23, 133);
             this.lblt_modelo.Name = "lblt_modelo";
             this.lblt_modelo.Size = new System.Drawing.Size(62, 18);
             this.lblt_modelo.TabIndex = 3;
@@ -325,7 +325,7 @@
             // lblt_marca
             // 
             this.lblt_marca.AutoSize = true;
-            this.lblt_marca.Location = new System.Drawing.Point(62, 99);
+            this.lblt_marca.Location = new System.Drawing.Point(23, 101);
             this.lblt_marca.Name = "lblt_marca";
             this.lblt_marca.Size = new System.Drawing.Size(53, 18);
             this.lblt_marca.TabIndex = 2;
@@ -334,7 +334,7 @@
             // lblt_nombre
             // 
             this.lblt_nombre.AutoSize = true;
-            this.lblt_nombre.Location = new System.Drawing.Point(62, 67);
+            this.lblt_nombre.Location = new System.Drawing.Point(23, 69);
             this.lblt_nombre.Name = "lblt_nombre";
             this.lblt_nombre.Size = new System.Drawing.Size(64, 18);
             this.lblt_nombre.TabIndex = 1;
@@ -343,7 +343,7 @@
             // LBLT_cod
             // 
             this.LBLT_cod.AutoSize = true;
-            this.LBLT_cod.Location = new System.Drawing.Point(62, 35);
+            this.LBLT_cod.Location = new System.Drawing.Point(23, 37);
             this.LBLT_cod.Name = "LBLT_cod";
             this.LBLT_cod.Size = new System.Drawing.Size(57, 18);
             this.LBLT_cod.TabIndex = 0;
