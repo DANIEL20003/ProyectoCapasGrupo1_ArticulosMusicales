@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BDPRACTICALBDataSet3" targetNamespace="http://tempuri.org/BDPRACTICALBDataSet3.xsd" xmlns:mstns="http://tempuri.org/BDPRACTICALBDataSet3.xsd" xmlns="http://tempuri.org/BDPRACTICALBDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BDPRACTICALBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BDPRACTICALBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.capaPresentacion.Properties.Settings.GlobalReference.Default.BDPRACTICALBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VistaCarritoProductosIVATableAdapter" GeneratorDataComponentClassName="VistaCarritoProductosIVATableAdapter" Name="VistaCarritoProductosIVA" UserDataComponentName="VistaCarritoProductosIVATableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDPRACTICALBConnectionString (Settings)" DbObjectName="BDPRACTICALB.dbo.VistaCarritoProductosIVA" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id_carrito, ProductoNombre, IDIVA, ValorIVA, PrecioProducto, MontoIVA FROM dbo.VistaCarritoProductosIVA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_carrito" DataSetColumn="id_carrito" />
+              <Mapping SourceColumn="ProductoNombre" DataSetColumn="ProductoNombre" />
+              <Mapping SourceColumn="IDIVA" DataSetColumn="IDIVA" />
+              <Mapping SourceColumn="ValorIVA" DataSetColumn="ValorIVA" />
+              <Mapping SourceColumn="PrecioProducto" DataSetColumn="PrecioProducto" />
+              <Mapping SourceColumn="MontoIVA" DataSetColumn="MontoIVA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BDPRACTICALBDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="BDPRACTICALBDataSet3" msprop:Generator_DataSetName="BDPRACTICALBDataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VistaCarritoProductosIVA" msprop:Generator_RowEvHandlerName="VistaCarritoProductosIVARowChangeEventHandler" msprop:Generator_RowDeletedName="VistaCarritoProductosIVARowDeleted" msprop:Generator_RowDeletingName="VistaCarritoProductosIVARowDeleting" msprop:Generator_RowEvArgName="VistaCarritoProductosIVARowChangeEvent" msprop:Generator_TablePropName="VistaCarritoProductosIVA" msprop:Generator_RowChangedName="VistaCarritoProductosIVARowChanged" msprop:Generator_RowChangingName="VistaCarritoProductosIVARowChanging" msprop:Generator_TableClassName="VistaCarritoProductosIVADataTable" msprop:Generator_RowClassName="VistaCarritoProductosIVARow" msprop:Generator_TableVarName="tableVistaCarritoProductosIVA" msprop:Generator_UserTableName="VistaCarritoProductosIVA">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_carrito" msprop:Generator_ColumnPropNameInRow="id_carrito" msprop:Generator_ColumnPropNameInTable="id_carritoColumn" msprop:Generator_ColumnVarNameInTable="columnid_carrito" msprop:Generator_UserColumnName="id_carrito" type="xs:int" />
+              <xs:element name="ProductoNombre" msprop:Generator_ColumnPropNameInRow="ProductoNombre" msprop:Generator_ColumnPropNameInTable="ProductoNombreColumn" msprop:Generator_ColumnVarNameInTable="columnProductoNombre" msprop:Generator_UserColumnName="ProductoNombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IDIVA" msprop:Generator_ColumnPropNameInRow="IDIVA" msprop:Generator_ColumnPropNameInTable="IDIVAColumn" msprop:Generator_ColumnVarNameInTable="columnIDIVA" msprop:Generator_UserColumnName="IDIVA" type="xs:int" />
+              <xs:element name="ValorIVA" msprop:Generator_ColumnPropNameInRow="ValorIVA" msprop:Generator_ColumnPropNameInTable="ValorIVAColumn" msprop:Generator_ColumnVarNameInTable="columnValorIVA" msprop:Generator_UserColumnName="ValorIVA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PrecioProducto" msprop:Generator_ColumnPropNameInRow="PrecioProducto" msprop:Generator_ColumnPropNameInTable="PrecioProductoColumn" msprop:Generator_ColumnVarNameInTable="columnPrecioProducto" msprop:Generator_UserColumnName="PrecioProducto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MontoIVA" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="MontoIVA" msprop:Generator_ColumnPropNameInTable="MontoIVAColumn" msprop:Generator_ColumnVarNameInTable="columnMontoIVA" msprop:Generator_UserColumnName="MontoIVA" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VistaCarritoProductosIVA" />
+      <xs:field xpath="mstns:id_carrito" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
