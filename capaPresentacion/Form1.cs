@@ -8,18 +8,22 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaCom;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static capaPresentacion.FRMREGISTRO;
 
 using capaEntidades;
 using capaLogica;
 using System.Dynamic;
+using System.Runtime.Remoting.Messaging;
 namespace capaPresentacion
 {
     public partial class Form1 : Form
     {
-        public int idCliente;
+        public static int ClienteIdActual { get; private set; }
         clasePuente objP = new clasePuente();
+
+        List<Clientes> listaclientes = new List<Clientes>();
 
         private SoundPlayer soundPlayer;
         String usuario4 = "Erik Yumi";
@@ -36,7 +40,10 @@ namespace capaPresentacion
         public Form1()
         {
             InitializeComponent();
+            
         }
+
+        
 
         private void txtusuario_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -80,67 +87,69 @@ namespace capaPresentacion
         {
             try
             {
-                string usuarioIngresado = txtusuario.Text.Trim(); //Revisar
-                string contraseniaIngresada = txtcontrasenia.Text.Trim();//Revisar
-
-                /*
-                bool usuarioTemporalValido = UsuarioManager.listaUsuarios.Any(u =>//Revisar
-                u.UsuarioNombre == usuarioIngresado && u.Contraseña == contraseniaIngresada);//Revisar
-                */
-
-                List<Clientes> clientes = objP.listarD();
+                string usuarioIngresado = txtusuario.Text.Trim();
+                string contraseniaIngresada = txtcontrasenia.Text.Trim();
+                bool band = false;
 
 
-                if ((txtusuario.Text == usuario1 || txtusuario.Text == usuario2 || txtusuario.Text == usuario3 || txtusuario.Text == usuario4 || txtusuario.Text == usuario5 || txtusuario.Text == usuario6 || txtusuario.Text == usuario7 || txtusuario.Text == usuario8 || txtusuario.Text == usuario9) && txtcontrasenia.Text == contra)
+                if ((usuarioIngresado == usuario1 || usuarioIngresado == usuario2 ||
+                     usuarioIngresado == usuario3 || usuarioIngresado == usuario4 ||
+                     usuarioIngresado == usuario5 || usuarioIngresado == usuario6 ||
+                     usuarioIngresado == usuario7 || usuarioIngresado == usuario8 ||
+                     usuarioIngresado == usuario9) && contraseniaIngresada == contra)
                 {
-                    FRMMENUADMINISTRADOR objetopin = new FRMMENUADMINISTRADOR();
-
-                    string informacion = txtusuario.Text; // Obtener el texto del TextBox
-
-                    // Pasar la información al segundo formulario
-                    objetopin.RecibirInformacion(informacion);
-                    this.Hide(); // Oculta el login mientras se abre el nuevo form
-                    objetopin.ShowDialog();
-                    this.Show(); // Muestra el login otra vez cuando se cierra el otro form
-                }
-                else //if (txtusuario.Text ==  || txtcontrasenia.Text == contra)
-                {
-                    bool band = false;
-                    foreach (Clientes c in clientes)
+                    using (FRMMENUADMINISTRADOR objetopin = new FRMMENUADMINISTRADOR())
                     {
-
-                        if (txtusuario.Text == c.Usuario  || txtcontrasenia.Text == c.Contraseña)
-                        {
-                            band = true;
-                            idCliente = c.id_cliente;
-                            FRMMENUCLIENTE objMenuCliente = new FRMMENUCLIENTE();
-                            string informacion = txtusuario.Text; // Obtener el texto del TextBox
-                            this.Hide();
-                            objMenuCliente.ShowDialog();
-                            this.Show();
-                        }
-
+                        objetopin.RecibirInformacion(usuarioIngresado);
+                        this.Hide();
+                        objetopin.ShowDialog();
+                        this.Show();
                     }
-                    if (band == false)
+                }
+                else
+                {
+                    listaclientes = objP.getClientes();
+                    if (listaclientes != null)
+                    {
+                        foreach (Clientes c in listaclientes)
+                        {
+                            if (txtusuario.Text == c.Usuario && txtcontrasenia.Text == c.Contraseña)
+                            {
+                                band = true;
+                                ClienteIdActual = c.id_cliente;
+                                DatosComun.ClienteId = ClienteIdActual;
+                                using (FRMMENUCLIENTE objMenuCliente = new FRMMENUCLIENTE())
+                                {
+                                    this.Hide();
+                                    objMenuCliente.ShowDialog();
+                                    this.Show();
+                                }
+                                
+                                break;
+
+                            }
+                        }
+                    }
+
+                    if (!band)
                     {
                         MessageBox.Show("Usuario o contraseña incorrecta");
                     }
+                }
 
-                } 
                 txtusuario.Clear();
                 txtcontrasenia.Clear();
                 txtusuario.Focus();
-
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error, intente de nuevo");
-            } 
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txtcontrasenia_KeyPress(object sender, KeyPressEventArgs e)

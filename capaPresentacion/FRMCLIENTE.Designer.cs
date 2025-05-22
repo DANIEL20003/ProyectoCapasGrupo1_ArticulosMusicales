@@ -425,6 +425,7 @@
             // 
             // txt_cantidad
             // 
+            this.txt_cantidad.Enabled = false;
             this.txt_cantidad.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_cantidad.Location = new System.Drawing.Point(186, 202);
             this.txt_cantidad.Name = "txt_cantidad";

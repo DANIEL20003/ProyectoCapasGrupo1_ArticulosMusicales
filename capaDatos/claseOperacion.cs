@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaCom;
 //
 using capaEntidades;
 
@@ -63,8 +64,9 @@ namespace capaDatos
         public DataTable GetDatosCarrito()
         {
             objConec.Abrir();
+            int idCliente = DatosComun.ClienteId;
             DataTable dt = new DataTable();
-            String consulta = @"SELECT C.id_cliente, C.codigo_producto, P.nombre_producto, P.marca, P.modelo, P.precio_producto, C.cantidad, C.fecha_agregado FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto";
+            String consulta = @"SELECT C.id_cliente, C.codigo_producto, P.nombre_producto, P.marca, P.modelo, P.precio_producto, C.cantidad, C.fecha_agregado FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto WHERE id_cliente = "+idCliente+"";
             SqlCommand sqlC = new SqlCommand(consulta, objConec.conectar);
             SqlDataAdapter da = new SqlDataAdapter(sqlC);
             da.Fill(dt);
@@ -76,7 +78,8 @@ namespace capaDatos
         public double Precio_Total()
         {
             objConec.Abrir();
-            SqlCommand sqlC = new SqlCommand("SELECT SUM((P.precio_producto * C.cantidad)) AS totalP FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto", objConec.conectar);
+            int idCliente = DatosComun.ClienteId;
+            SqlCommand sqlC = new SqlCommand($"SELECT SUM((P.precio_producto * C.cantidad)) AS totalP FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto WHERE id_cliente = {idCliente}", objConec.conectar);
             SqlDataReader reader = sqlC.ExecuteReader();
             if (reader.Read())
             {
@@ -298,6 +301,7 @@ namespace capaDatos
 
                 cmd.ExecuteNonQuery();
             }
+            objConec.Cerrar();
 
             /*objConec.Abrir();
             SqlCommand sqlC = new SqlCommand("INSERT INTO Productos (codigo_producto, nombre_producto, marca, modelo, precio_producto, anio_fabricacion, id_iva, cantidad, id_categoriaYo, id_Proveedor, color, material, dimension, foto) VALUES ('" + instrumento.codInstru + "', '" + instrumento.nombre + "', '" + instrumento.marca + "', '" + instrumento.modelo + "', '" + instrumento.precio + "', '" + instrumento.anioFabrica + "', '" + instrumento.idIva + "', '" + instrumento.cantidad + "', '" + instrumento.idCatego + "', '" + instrumento.idProvee + "', '" + instrumento.color + "', '" + instrumento.material + "', '" + instrumento.dimension + "', '" + instrumento.foto + "')", objConec.conectar);
@@ -348,7 +352,6 @@ namespace capaDatos
                         Telefono = Convert.ToString(reader["Telefono"]),
                         Correo_electronico = Convert.ToString(reader["Correo Electronico"]),
                         Direccion = Convert.ToString(reader["Direccion"]),
-                        id_tipo_cliente = Convert.ToInt32(reader["Tipo Cliente"]),
                         Contraseña = Convert.ToString(reader["Contraseña"]),
                         Usuario = Convert.ToString(reader["Usuario"])
 
@@ -367,7 +370,7 @@ namespace capaDatos
         public void Insertar(Clientes c)
         {
             objConec.Abrir();
-            SqlCommand sqlC = new SqlCommand("Insert into Cliente(Nombre,Apellido,Cedula,Telefono,Correo_electronico,Direccion,id_tipo_cliente,Contraseña,Usuario) VALUES ('" + c.Nombre + "','" + c.Apellido + "','" + c.Cedula + "','" + c.Telefono + "','" + c.Correo_electronico + "','" + c.Direccion + "','" + c.id_tipo_cliente + "','" + c.Contraseña + "','"+c.Usuario+"')", objConec.conectar);
+            SqlCommand sqlC = new SqlCommand("Insert into Cliente(Nombre,Apellido,Cedula,Telefono,Correo_electronico,Direccion,Contraseña,Usuario) VALUES ('" + c.Nombre + "','" + c.Apellido + "','" + c.Cedula + "','" + c.Telefono + "','" + c.Correo_electronico + "','" + c.Direccion + "','" + c.Contraseña + "','"+c.Usuario+"')", objConec.conectar);
             sqlC.ExecuteNonQuery();
             objConec.Cerrar();
         }
@@ -378,7 +381,7 @@ namespace capaDatos
             try
             {
                 objConec.Abrir();
-                string sentencia = "SELECT * FROM Clientes";
+                string sentencia = "SELECT * FROM Cliente";
                 SqlCommand sqlC = new SqlCommand(sentencia, objConec.conectar);
                 SqlDataReader reader = sqlC.ExecuteReader();
                 while (reader.Read())
@@ -392,9 +395,8 @@ namespace capaDatos
                         Telefono = Convert.ToString(reader["Telefono"]),
                         Correo_electronico = Convert.ToString(reader["Correo_electronico"]),
                         Direccion = Convert.ToString(reader["Direccion"]),
-                        id_tipo_cliente = Convert.ToInt32(reader["id_tipo_cliente"]),
-                        Usuario = Convert.ToString(reader["Usuario"]),
-                        Contraseña = Convert.ToString(reader["Contraseña"])
+                        Contraseña = Convert.ToString(reader["Contraseña"]),
+                        Usuario = Convert.ToString(reader["Usuario"])
                     };
                     VarDatos.Add(cli);
                 }
@@ -406,7 +408,6 @@ namespace capaDatos
             objConec.Cerrar();
             return VarDatos;
         }
-
         public string getCategoria(int id)
         {
             objConec.Abrir();
@@ -420,10 +421,17 @@ namespace capaDatos
             }
             else
             {
+                objConec.Cerrar(); // Siempre cierra la conexión
                 return null;
             }
+        }
 
-            
+        public void modificarInstrumento(string codigo, decimal precio, int cantidad, string proveedor)
+        {
+            objConec.Abrir();
+            SqlCommand sqlC = new SqlCommand("UPDATE Productos SET precio_producto = '"+precio+"', cantidad = '"+cantidad+"', proveedor = '"+proveedor+"' WHERE codigo_producto = '"+codigo+"'", objConec.conectar);
+            sqlC.ExecuteNonQuery();
+            objConec.Cerrar();
         }
     }
 }

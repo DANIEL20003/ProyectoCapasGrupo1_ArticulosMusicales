@@ -32,7 +32,6 @@
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbxtipo = new System.Windows.Forms.ComboBox();
             this.txttelefono = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -43,7 +42,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbltelefono = new System.Windows.Forms.Label();
@@ -94,17 +92,6 @@
             this.panel1.Size = new System.Drawing.Size(1063, 100);
             this.panel1.TabIndex = 86;
             // 
-            // cbxtipo
-            // 
-            this.cbxtipo.FormattingEnabled = true;
-            this.cbxtipo.Items.AddRange(new object[] {
-            "1",
-            "2"});
-            this.cbxtipo.Location = new System.Drawing.Point(713, 254);
-            this.cbxtipo.Name = "cbxtipo";
-            this.cbxtipo.Size = new System.Drawing.Size(165, 24);
-            this.cbxtipo.TabIndex = 126;
-            // 
             // txttelefono
             // 
             this.txttelefono.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,7 +109,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Gold;
-            this.btnCancelar.Location = new System.Drawing.Point(838, 401);
+            this.btnCancelar.Location = new System.Drawing.Point(823, 337);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(140, 39);
@@ -138,7 +125,7 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.Gold;
-            this.btnAceptar.Location = new System.Drawing.Point(562, 401);
+            this.btnAceptar.Location = new System.Drawing.Point(547, 337);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(140, 39);
@@ -150,7 +137,7 @@
             // TXB_crearC
             // 
             this.TXB_crearC.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXB_crearC.Location = new System.Drawing.Point(756, 349);
+            this.TXB_crearC.Location = new System.Drawing.Point(741, 254);
             this.TXB_crearC.Margin = new System.Windows.Forms.Padding(4);
             this.TXB_crearC.Name = "TXB_crearC";
             this.TXB_crearC.Size = new System.Drawing.Size(208, 34);
@@ -211,23 +198,12 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(557, 352);
+            this.label12.Location = new System.Drawing.Point(542, 257);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(179, 28);
             this.label12.TabIndex = 116;
             this.label12.Text = "Crear Contraseña:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(556, 216);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(443, 28);
-            this.label10.TabIndex = 115;
-            this.label10.Text = "Tipo de cliente (1 Administrador y 2 Usuario)";
             // 
             // label8
             // 
@@ -298,7 +274,7 @@
             // txtusuario
             // 
             this.txtusuario.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusuario.Location = new System.Drawing.Point(722, 294);
+            this.txtusuario.Location = new System.Drawing.Point(707, 199);
             this.txtusuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(225, 34);
@@ -309,7 +285,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(584, 298);
+            this.lblUsuario.Location = new System.Drawing.Point(569, 203);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(102, 28);
@@ -324,7 +300,6 @@
             this.ClientSize = new System.Drawing.Size(1063, 529);
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.cbxtipo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txttelefono);
             this.Controls.Add(this.flowLayoutPanel2);
@@ -342,7 +317,6 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtCedula);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label12);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FRMREGISTRO";
@@ -360,7 +334,6 @@
         private System.DirectoryServices.DirectorySearcher directorySearcher1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cbxtipo;
         private System.Windows.Forms.TextBox txttelefono;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
@@ -371,7 +344,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbltelefono;

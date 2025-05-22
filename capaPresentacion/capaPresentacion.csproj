@@ -33,6 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
@@ -50,6 +65,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDPRACTICALBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPRACTICALBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BDPRACTICALBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPRACTICALBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Cedula.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -117,6 +142,18 @@
     <Compile Include="FRMREGISTRO.Designer.cs">
       <DependentUpon>FRMREGISTRO.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMREPORTE1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMREPORTE1.Designer.cs">
+      <DependentUpon>FRMREPORTE1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMREPORTE2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMREPORTE2.Designer.cs">
+      <DependentUpon>FRMREPORTE2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMVERREPORTES.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +198,12 @@
     <EmbeddedResource Include="FRMREGISTRO.resx">
       <DependentUpon>FRMREGISTRO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRMREPORTE1.resx">
+      <DependentUpon>FRMREPORTE1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMREPORTE2.resx">
+      <DependentUpon>FRMREPORTE2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMVERREPORTES.resx">
       <DependentUpon>FRMVERREPORTES.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +219,30 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <None Include="BDPRACTICALBDataSet.xsc">
+      <DependentUpon>BDPRACTICALBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDPRACTICALBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDPRACTICALBDataSet.xss">
+      <DependentUpon>BDPRACTICALBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet1.xsc">
+      <DependentUpon>BDPRACTICALBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDPRACTICALBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDPRACTICALBDataSet1.xss">
+      <DependentUpon>BDPRACTICALBDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="obj\Debug\capaPresentacion.csproj.AssemblyReference.cache" />
     <None Include="obj\Debug\capaPresentacion.csproj.CoreCompileInputs.cache" />
     <None Include="obj\Debug\capaPresentacion.csproj.GenerateResource.cache" />
@@ -223,6 +290,10 @@
     <Folder Include="SqlServerTypes\x86\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaCom\CapaCom.csproj">
+      <Project>{54f0f0ef-f4da-41f4-9697-5b040982b9cf}</Project>
+      <Name>CapaCom</Name>
+    </ProjectReference>
     <ProjectReference Include="..\capaEntidades\capaEntidades.csproj">
       <Project>{e3932f36-c901-4786-ad52-f17e471e6b4d}</Project>
       <Name>capaEntidades</Name>

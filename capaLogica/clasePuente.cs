@@ -41,7 +41,7 @@ namespace capaLogica
         
         public double obtenerpreciototal()
         {
-            return objOpera.Precio_Total() * objOpera.Obtener_Iva();
+            return objOpera.Precio_Total() * (1 + (objOpera.Obtener_Iva() / 100));
         }
 
         public double obtneriva()
@@ -90,10 +90,14 @@ namespace capaLogica
         {
             return objOpera.listClientes();
         }
-
         public string getC(int id)
         {
             return objOpera.getCategoria(id);
         }
-    }
+
+        public void modificarInstrumento(string codigo, decimal precio, int cantidad, string proveedor)
+        {
+            objOpera.modificarInstrumento(codigo, precio, cantidad, proveedor);
+        }
+
 }

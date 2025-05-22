@@ -23,12 +23,10 @@ namespace capaPresentacion
 
         clasePuente objP = new clasePuente();
 
-        long maximo = 0, cantidad;
+        long maximo = 0, cantidad, totalseleccion = 0;
         decimal iva = 0, precioTotal = 0;
 
         List<Carrito> carritos = new List<Carrito>();
-
-        //Form1 obj = new Form1();
 
         public FRMCLIENTE()
         {
@@ -53,7 +51,7 @@ namespace capaPresentacion
         private void FRMCLIENTE_Load(object sender, EventArgs e)
         {
             iva = objP.getIva(1);
-            lbl_iva.Text = iva.ToString("F2");
+            lbl_iva.Text = iva.ToString("F2") + " %";
         }
 
         private void cmb_categoria_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,7 +92,6 @@ namespace capaPresentacion
                 cmb_instrumento.Items.Clear();
                 cmb_instrumento.Enabled = false;
                 cmb_codigos.Items.Clear();
-                cmb_categoria.Enabled = false;
             }
         }
 
@@ -133,7 +130,9 @@ namespace capaPresentacion
                 lbl_modelo.Text = objInstru.modelo;
                 lbl_aniofabrica.Text = objInstru.anioFabrica.ToString();
 
-                
+                txt_cantidad.Enabled = true;
+                txt_cantidad.Focus();
+
                 if (objInstru.foto != null)
                 {
                     //Para comvertir de byte[] a Image
@@ -174,7 +173,7 @@ namespace capaPresentacion
         private void btn_finalizar_Click(object sender, EventArgs e)
         {
             DialogResult respuesta = MessageBox.Show(
-                "¿Está seguro que desea finalizar su selección? Despues de esto no se podran revertir los cambios.",
+                "¿Está seguro que desea finalizar su selección? Después de esto no se podran revertir los cambios.",
                 "Aviso",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning
@@ -224,7 +223,7 @@ namespace capaPresentacion
                 else if (cantidad <= maximo)
                 { 
                     DialogResult respuesta = MessageBox.Show(
-                        "¿Está seguro que desea guardar la cantidad de instrumentos?",
+                        "¿Está seguro que desea guardar la cantidad seleccionada de instrumentos?",
                         "Aviso",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Warning
@@ -234,29 +233,40 @@ namespace capaPresentacion
                     {
                         carritos.Add(new Carrito
                         {
-                            //idCli = obj.idCliente,
+                            idCli = Form1.ClienteIdActual,
                             codigoInstru = cmb_codigos.SelectedItem.ToString(),
                             cantidad = Convert.ToInt32(txt_cantidad.Text),
                             fecha = DateTime.Now
                         });
 
-                        lbl_precio_total.Text = ((precioTotal += objInstru.precio) * iva).ToString("F2");
+                        totalseleccion += cantidad;
+                        lbl_precio_total.Text = "$ " + ((precioTotal += objInstru.precio) * (1 + (iva/100))).ToString("F2");
                         
-                        maximo = 0;
+                        maximo = maximo - cantidad;
+                        lbl_stock.Text = "";
+
+                        txt_cantidad.Enabled = false;
+
                         cantidad = 0;
+
+                        lbl_total_instru.Text = totalseleccion.ToString();
 
                         cmb_categoria.SelectedIndex = -1;
                         cmb_instrumento.Items.Clear();
                         cmb_instrumento.Enabled = false;
                         cmb_codigos.Items.Clear();
                         cmb_codigos.Enabled = false;
+
                         lbl_precio_unidad.Text = "";
                         lbl_marca.Text = "";
                         lbl_modelo.Text = "";
                         lbl_aniofabrica.Text = "";
 
+                        txt_cantidad.Clear();
+                        cmb_categoria.Focus();
+
                         MessageBox.Show(
-                            "La cantidad seleccionada ha sido guardada con éxito.",
+                            "La cantidad de instrumentos seleccionada ha sido guardada con éxito. Puede seguir agregando instrumentos.",
                             "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else if (respuesta == DialogResult.No)
@@ -306,6 +316,9 @@ namespace capaPresentacion
                 maximo = 0;
                 cantidad = 0;
                 precioTotal = 0;
+
+                totalseleccion = 0;
+                lbl_total_instru.Text = totalseleccion.ToString();
 
                 lbl_precio_total.Text = "$ " + precioTotal.ToString("F2");
                 cmb_categoria.SelectedIndex = -1;
