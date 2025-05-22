@@ -154,7 +154,6 @@
             this.gpbProducto.TabIndex = 63;
             this.gpbProducto.TabStop = false;
             this.gpbProducto.Text = "Producto";
-            this.gpbProducto.Visible = false;
             // 
             // txbProveedor
             // 
@@ -482,6 +481,7 @@
             this.Name = "FRMMODIFICARPRODUCTO";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRMMODIFICARPRODUCTO";
+            this.Load += new System.EventHandler(this.FRMMODIFICARPRODUCTO_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.gpbProducto.ResumeLayout(false);

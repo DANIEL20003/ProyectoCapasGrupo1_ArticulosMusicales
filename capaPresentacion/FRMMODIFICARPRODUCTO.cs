@@ -237,6 +237,11 @@ namespace capaPresentacion
             this.Close();
         }
 
+        private void FRMMODIFICARPRODUCTO_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void txbPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
