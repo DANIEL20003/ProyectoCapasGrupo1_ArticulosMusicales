@@ -50,9 +50,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.Reporte8 = new System.Windows.Forms.Button();
             this.Reporte7 = new System.Windows.Forms.Button();
@@ -65,8 +63,6 @@
             this.groupBox2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -297,46 +293,30 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Linen;
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Location = new System.Drawing.Point(538, 562);
+            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(548, 576);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.groupBox4.Size = new System.Drawing.Size(201, 88);
+            this.groupBox4.Size = new System.Drawing.Size(201, 70);
             this.groupBox4.TabIndex = 56;
             this.groupBox4.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(21, 20);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "...";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.groupBox4.Text = "Reporte 7: Productos No Vendidos";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Linen;
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Location = new System.Drawing.Point(782, 562);
+            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(778, 576);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.groupBox3.Size = new System.Drawing.Size(176, 88);
+            this.groupBox3.Size = new System.Drawing.Size(176, 61);
             this.groupBox3.TabIndex = 75;
             this.groupBox3.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(2, 31);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(21, 20);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "...";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.groupBox3.Text = "Reporte 8: Resumen de Ventas Diarias";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // button1
             // 
@@ -362,6 +342,7 @@
             this.Reporte8.Size = new System.Drawing.Size(128, 151);
             this.Reporte8.TabIndex = 65;
             this.Reporte8.UseVisualStyleBackColor = true;
+            this.Reporte8.Click += new System.EventHandler(this.Reporte8_Click);
             // 
             // Reporte7
             // 
@@ -374,6 +355,7 @@
             this.Reporte7.Size = new System.Drawing.Size(128, 151);
             this.Reporte7.TabIndex = 64;
             this.Reporte7.UseVisualStyleBackColor = true;
+            this.Reporte7.Click += new System.EventHandler(this.Reporte7_Click);
             // 
             // Reporte6
             // 
@@ -483,10 +465,6 @@
             this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,8 +501,6 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label8;
     }
 }

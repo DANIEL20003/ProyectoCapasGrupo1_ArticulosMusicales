@@ -105,6 +105,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDPRACTICALBDataSet7.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BDPRACTICALBDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPRACTICALBDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BDPRACTICALBDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPRACTICALBDataSet9.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Cedula.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -208,6 +218,18 @@
     <Compile Include="FRMREPORTE6.Designer.cs">
       <DependentUpon>FRMREPORTE6.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMREPORTE8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMREPORTE8.Designer.cs">
+      <DependentUpon>FRMREPORTE8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMREPORTES7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMREPORTES7.Designer.cs">
+      <DependentUpon>FRMREPORTES7.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMVERREPORTES.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +292,12 @@
     <EmbeddedResource Include="FRMREPORTE6.resx">
       <DependentUpon>FRMREPORTE6.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRMREPORTE8.resx">
+      <DependentUpon>FRMREPORTE8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMREPORTES7.resx">
+      <DependentUpon>FRMREPORTES7.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMVERREPORTES.resx">
       <DependentUpon>FRMVERREPORTES.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,11 +314,13 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report10.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Report5.rdlc" />
     <EmbeddedResource Include="Report6.rdlc" />
     <EmbeddedResource Include="Report7.rdlc" />
     <EmbeddedResource Include="Report8.rdlc" />
+    <EmbeddedResource Include="Report9.rdlc" />
     <None Include="BDPRACTICALBDataSet.xsc">
       <DependentUpon>BDPRACTICALBDataSet.xsd</DependentUpon>
     </None>
@@ -378,6 +408,28 @@
     </None>
     <None Include="BDPRACTICALBDataSet7.xss">
       <DependentUpon>BDPRACTICALBDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet8.xsc">
+      <DependentUpon>BDPRACTICALBDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDPRACTICALBDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDPRACTICALBDataSet8.xss">
+      <DependentUpon>BDPRACTICALBDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet9.xsc">
+      <DependentUpon>BDPRACTICALBDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDPRACTICALBDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDPRACTICALBDataSet9.xss">
+      <DependentUpon>BDPRACTICALBDataSet9.xsd</DependentUpon>
     </None>
     <None Include="obj\Debug\capaPresentacion.csproj.AssemblyReference.cache" />
     <None Include="obj\Debug\capaPresentacion.csproj.CoreCompileInputs.cache" />

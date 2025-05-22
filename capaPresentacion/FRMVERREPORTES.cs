@@ -63,5 +63,27 @@ namespace capaPresentacion
             FRMREPORTE6 objreporte6 = new FRMREPORTE6();
             objreporte6.ShowDialog();
         }
+
+        private void Reporte7_Click(object sender, EventArgs e)
+        {
+            FRMREPORTES7 objreporte7 = new FRMREPORTES7();
+            objreporte7.ShowDialog();
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Reporte8_Click(object sender, EventArgs e)
+        {
+            FRMREPORTE8 objreporte8 = new FRMREPORTE8();
+            objreporte8.ShowDialog();
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

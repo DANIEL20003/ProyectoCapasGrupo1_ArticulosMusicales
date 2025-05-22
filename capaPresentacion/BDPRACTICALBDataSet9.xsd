@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BDPRACTICALBDataSet9" targetNamespace="http://tempuri.org/BDPRACTICALBDataSet9.xsd" xmlns:mstns="http://tempuri.org/BDPRACTICALBDataSet9.xsd" xmlns="http://tempuri.org/BDPRACTICALBDataSet9.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BDPRACTICALBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BDPRACTICALBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.capaPresentacion.Properties.Settings.GlobalReference.Default.BDPRACTICALBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VistaResumenVentasDiariasTableAdapter" GeneratorDataComponentClassName="VistaResumenVentasDiariasTableAdapter" Name="VistaResumenVentasDiarias" UserDataComponentName="VistaResumenVentasDiariasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDPRACTICALBConnectionString (Settings)" DbObjectName="BDPRACTICALB.dbo.VistaResumenVentasDiarias" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT FechaVenta, TotalProductosVendidos, MontoTotalSinIVA, MontoTotalIVA, MontoTotalConIVA FROM dbo.VistaResumenVentasDiarias</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FechaVenta" DataSetColumn="FechaVenta" />
+              <Mapping SourceColumn="TotalProductosVendidos" DataSetColumn="TotalProductosVendidos" />
+              <Mapping SourceColumn="MontoTotalSinIVA" DataSetColumn="MontoTotalSinIVA" />
+              <Mapping SourceColumn="MontoTotalIVA" DataSetColumn="MontoTotalIVA" />
+              <Mapping SourceColumn="MontoTotalConIVA" DataSetColumn="MontoTotalConIVA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BDPRACTICALBDataSet9" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="BDPRACTICALBDataSet9" msprop:Generator_DataSetName="BDPRACTICALBDataSet9">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VistaResumenVentasDiarias" msprop:Generator_RowEvHandlerName="VistaResumenVentasDiariasRowChangeEventHandler" msprop:Generator_RowDeletedName="VistaResumenVentasDiariasRowDeleted" msprop:Generator_RowDeletingName="VistaResumenVentasDiariasRowDeleting" msprop:Generator_RowEvArgName="VistaResumenVentasDiariasRowChangeEvent" msprop:Generator_TablePropName="VistaResumenVentasDiarias" msprop:Generator_RowChangedName="VistaResumenVentasDiariasRowChanged" msprop:Generator_RowChangingName="VistaResumenVentasDiariasRowChanging" msprop:Generator_TableClassName="VistaResumenVentasDiariasDataTable" msprop:Generator_RowClassName="VistaResumenVentasDiariasRow" msprop:Generator_TableVarName="tableVistaResumenVentasDiarias" msprop:Generator_UserTableName="VistaResumenVentasDiarias">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FechaVenta" msprop:Generator_ColumnPropNameInRow="FechaVenta" msprop:Generator_ColumnPropNameInTable="FechaVentaColumn" msprop:Generator_ColumnVarNameInTable="columnFechaVenta" msprop:Generator_UserColumnName="FechaVenta" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TotalProductosVendidos" msprop:Generator_ColumnPropNameInRow="TotalProductosVendidos" msprop:Generator_ColumnPropNameInTable="TotalProductosVendidosColumn" msprop:Generator_ColumnVarNameInTable="columnTotalProductosVendidos" msprop:Generator_UserColumnName="TotalProductosVendidos" type="xs:int" minOccurs="0" />
+              <xs:element name="MontoTotalSinIVA" msprop:Generator_ColumnPropNameInRow="MontoTotalSinIVA" msprop:Generator_ColumnPropNameInTable="MontoTotalSinIVAColumn" msprop:Generator_ColumnVarNameInTable="columnMontoTotalSinIVA" msprop:Generator_UserColumnName="MontoTotalSinIVA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MontoTotalIVA" msprop:Generator_ColumnPropNameInRow="MontoTotalIVA" msprop:Generator_ColumnPropNameInTable="MontoTotalIVAColumn" msprop:Generator_ColumnVarNameInTable="columnMontoTotalIVA" msprop:Generator_UserColumnName="MontoTotalIVA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MontoTotalConIVA" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="MontoTotalConIVA" msprop:Generator_ColumnPropNameInTable="MontoTotalConIVAColumn" msprop:Generator_ColumnVarNameInTable="columnMontoTotalConIVA" msprop:Generator_UserColumnName="MontoTotalConIVA" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
