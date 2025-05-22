@@ -91,6 +91,9 @@ namespace capaLogica
             return objOpera.listClientes();
         }
 
-
+        public string getC(int id)
+        {
+            return objOpera.getCategoria(id);
+        }
     }
 }
