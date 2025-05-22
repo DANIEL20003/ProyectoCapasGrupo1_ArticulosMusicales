@@ -107,6 +107,7 @@
             this.lbl_ayuda.TabIndex = 5;
             this.lbl_ayuda.Text = "Ayuda";
             this.lbl_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_ayuda.Click += new System.EventHandler(this.lbl_ayuda_Click);
             // 
             // pcb_carrito
             // 

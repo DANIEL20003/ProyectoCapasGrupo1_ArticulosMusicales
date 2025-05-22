@@ -99,6 +99,5 @@ namespace capaLogica
         {
             objOpera.modificarInstrumento(codigo, precio, cantidad, proveedor);
         }
-
     }
 }
