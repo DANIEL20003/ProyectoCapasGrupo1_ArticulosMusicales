@@ -95,5 +95,14 @@ namespace capaPresentacion
         {
             this.Close();
         }
+
+        private void linkAcercaDe_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string rutaProyecto = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName;
+            string rutaResources = Path.Combine(rutaProyecto, "ACERCA DE");
+            string rutaArchivo = Path.Combine(rutaResources, "Acerca de. Grupo 1.htm");
+
+            System.Diagnostics.Process.Start(rutaArchivo);
+        }
     }
 }

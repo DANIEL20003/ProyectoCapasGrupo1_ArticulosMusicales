@@ -37,6 +37,7 @@
             this.pcb_carrito = new System.Windows.Forms.PictureBox();
             this.pcb_catalogo = new System.Windows.Forms.PictureBox();
             this.lbl_salir = new System.Windows.Forms.Label();
+            this.lblAcercaDe = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_carrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_catalogo)).BeginInit();
@@ -101,7 +102,7 @@
             this.lbl_ayuda.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ayuda.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lbl_ayuda.Location = new System.Drawing.Point(643, 344);
+            this.lbl_ayuda.Location = new System.Drawing.Point(327, 343);
             this.lbl_ayuda.Name = "lbl_ayuda";
             this.lbl_ayuda.Size = new System.Drawing.Size(60, 22);
             this.lbl_ayuda.TabIndex = 5;
@@ -147,12 +148,28 @@
             this.lbl_salir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_salir.Click += new System.EventHandler(this.lbl_salir_Click);
             // 
+            // lblAcercaDe
+            // 
+            this.lblAcercaDe.AutoSize = true;
+            this.lblAcercaDe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAcercaDe.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAcercaDe.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblAcercaDe.Location = new System.Drawing.Point(618, 344);
+            this.lblAcercaDe.Name = "lblAcercaDe";
+            this.lblAcercaDe.Size = new System.Drawing.Size(85, 22);
+            this.lblAcercaDe.TabIndex = 7;
+            this.lblAcercaDe.Text = "Acerca de";
+            this.lblAcercaDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAcercaDe.Click += new System.EventHandler(this.lblAcercaDe_Click);
+            // 
             // FRMMENUCLIENTE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.ClientSize = new System.Drawing.Size(715, 415);
+            this.Controls.Add(this.lblAcercaDe);
             this.Controls.Add(this.lbl_salir);
             this.Controls.Add(this.lbl_ayuda);
             this.Controls.Add(this.label3);
@@ -184,5 +201,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_ayuda;
         private System.Windows.Forms.Label lbl_salir;
+        private System.Windows.Forms.Label lblAcercaDe;
     }
 }

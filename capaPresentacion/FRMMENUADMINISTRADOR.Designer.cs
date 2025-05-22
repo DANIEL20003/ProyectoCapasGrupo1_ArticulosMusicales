@@ -47,6 +47,7 @@
             this.ptbModificar = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_salir = new System.Windows.Forms.Label();
+            this.linkAcercaDe = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbVerReportes)).BeginInit();
@@ -284,12 +285,25 @@
             this.lbl_salir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_salir.Click += new System.EventHandler(this.lbl_salir_Click);
             // 
+            // linkAcercaDe
+            // 
+            this.linkAcercaDe.AutoSize = true;
+            this.linkAcercaDe.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkAcercaDe.Location = new System.Drawing.Point(712, 390);
+            this.linkAcercaDe.Name = "linkAcercaDe";
+            this.linkAcercaDe.Size = new System.Drawing.Size(76, 22);
+            this.linkAcercaDe.TabIndex = 25;
+            this.linkAcercaDe.TabStop = true;
+            this.linkAcercaDe.Text = "Acerca de";
+            this.linkAcercaDe.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAcercaDe_LinkClicked);
+            // 
             // FRMMENUADMINISTRADOR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.linkAcercaDe);
             this.Controls.Add(this.lbl_salir);
             this.Controls.Add(this.linkAyuda);
             this.Controls.Add(this.groupBox2);
@@ -338,5 +352,6 @@
         private System.Windows.Forms.PictureBox ptbModificar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbl_salir;
+        private System.Windows.Forms.LinkLabel linkAcercaDe;
     }
 }
