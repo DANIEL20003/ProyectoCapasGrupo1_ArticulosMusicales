@@ -408,6 +408,23 @@ namespace capaDatos
             objConec.Cerrar();
             return VarDatos;
         }
+        public string getCategoria(int id)
+        {
+            objConec.Abrir();
+            SqlCommand consulta = new SqlCommand($"select Nombre from Categoria where id_categoria={id}", objConec.conectar);
+            SqlDataReader reader = consulta.ExecuteReader();
+
+            if (reader.Read()){
+                string valor = Convert.ToString(reader["Nombre"]);
+                objConec.Cerrar();
+                return valor;
+            }
+            else
+            {
+                objConec.Cerrar(); // Siempre cierra la conexión
+                return null;
+            }
+        }
 
         public void modificarInstrumento(string codigo, decimal precio, int cantidad, string proveedor)
         {

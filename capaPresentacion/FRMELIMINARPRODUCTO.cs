@@ -25,65 +25,82 @@ namespace capaPresentacion
 
         private void TB_codigoProducto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                if (e.KeyChar == (char)Keys.Enter)
-                {
-                    codigoProducto=TB_codigoProducto.Text;
-
-                    if (operacion.infoInstrumento(codigoProducto) == null)
-                    {
-                        MessageBox.Show($"No se ha encontrado ningún producto con el código: '{codigoProducto}'", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                        TB_codigoProducto.Clear();
-                        return;
-                    }
-                    btnBuscar.PerformClick();
-
-                }
+                btnBuscar.PerformClick();
             }
-            catch
-            {
-                MessageBox.Show("Por favor, Ingrese un código", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                TB_codigoProducto.Clear();
-            }
-
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                codigoProducto = TB_codigoProducto.Text;
+            codigoProducto = TB_codigoProducto.Text.Trim();
 
-                if (operacion.infoInstrumento(codigoProducto) == null)
-                {
-                    MessageBox.Show($"No se ha encontrado ningún producto con el código: '{codigoProducto}'", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    TB_codigoProducto.Clear();
-                    return;
-                }
-                Instrumento instrumentoA = operacion.infoInstrumento(codigoProducto);
-                claseIva iva = operacion.showIvaActual();
-
-                lblCodigo.Text = instrumentoA.codInstru.ToString();
-                lblNombre.Text = instrumentoA.nombre.ToString();
-                lblMarca.Text = instrumentoA.marca.ToString();
-                lblModelo.Text = instrumentoA.modelo.ToString();
-                lblPrecio.Text = instrumentoA.precio.ToString();
-                lblaFab.Text = instrumentoA.anioFabrica.ToString();
-                lblIdIva.Text = iva.valor_iva.ToString() + "%";
-                lblCantidad.Text = instrumentoA.cantidad.ToString();
-                lblCategoria.Text = instrumentoA.idCatego.ToString();
-                lblProveedor.Text = instrumentoA.proveedor.ToString();
-                lblColor.Text = instrumentoA.color.ToString();
-                lblMaterial.Text = instrumentoA.material.ToString();
-                lblDimension.Text = instrumentoA.dimension.ToString();
-            }
-            catch
+            if (string.IsNullOrWhiteSpace(codigoProducto))
             {
-                MessageBox.Show("Por favor, Ingrese un código", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Por favor, ingrese un código de producto.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TB_codigoProducto.Clear();
+                TB_codigoProducto.Focus();
+                return;
             }
-            
+
+            Instrumento instrumentoA = operacion.infoInstrumento(codigoProducto);
+
+            if (instrumentoA == null)
+            {
+                MessageBox.Show($"No se encontró ningún producto con el código: '{codigoProducto}'", "Producto no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TB_codigoProducto.Clear();
+                TB_codigoProducto.Focus();
+                return;
+            }
+
+            claseIva iva = operacion.showIvaActual();
+            string cat = operacion.getC(instrumentoA.idCatego);
+
+            lblCodigo.Text = instrumentoA.codInstru;
+            lblNombre.Text = instrumentoA.nombre;
+            lblMarca.Text = instrumentoA.marca;
+            lblModelo.Text = instrumentoA.modelo;
+            lblPrecio.Text = instrumentoA.precio.ToString("F2");
+            lblaFab.Text = instrumentoA.anioFabrica.ToString();
+            lblIdIva.Text = iva != null ? iva.valor_iva.ToString() + "%" : "IVA no disponible";
+            lblCantidad.Text = instrumentoA.cantidad.ToString();
+            lblCategoria.Text = cat;
+            lblProveedor.Text = instrumentoA.proveedor;
+            lblColor.Text = instrumentoA.color;
+            lblMaterial.Text = instrumentoA.material;
+            lblDimension.Text = instrumentoA.dimension;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            codigoProducto = TB_codigoProducto.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(codigoProducto))
+            {
+                MessageBox.Show("Por favor, ingrese un código antes de eliminar.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TB_codigoProducto.Focus();
+                return;
+            }
+
+            Instrumento instrumentoA = operacion.infoInstrumento(codigoProducto);
+
+            if (instrumentoA == null)
+            {
+                MessageBox.Show($"No se encontró ningún producto con el código: '{codigoProducto}'. No se puede eliminar.", "Producto no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TB_codigoProducto.Clear();
+                TB_codigoProducto.Focus();
+                return;
+            }
+
+            DialogResult confirmacion = MessageBox.Show($"¿Está seguro de que desea eliminar el producto '{instrumentoA.nombre}' (Código: {codigoProducto})?",
+                "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmacion == DialogResult.Yes)
+            {
+                operacion.eliminarProd(codigoProducto);
+                MessageBox.Show("El instrumento se ha eliminado con éxito de la base de datos.", "Eliminación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                limpiar();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -91,17 +108,14 @@ namespace capaPresentacion
             this.Close();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            operacion.eliminarProd(codigoProducto);
-            MessageBox.Show("El instrumento se ha eliminado con exito" +
-                " de la base de datos","Registro eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            limpiar();
-        }
-
         public void limpiar()
         {
             TB_codigoProducto.Clear();
+            lblCodigo.Text = lblNombre.Text = lblMarca.Text = lblModelo.Text = lblPrecio.Text =
+            lblaFab.Text = lblIdIva.Text = lblCantidad.Text = lblCategoria.Text =
+            lblProveedor.Text = lblColor.Text = lblMaterial.Text = lblDimension.Text = "";
+            TB_codigoProducto.Focus();
         }
+
     }
 }

@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.TB_codigoProducto = new System.Windows.Forms.TextBox();
+            this.LBLT_codigo = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.LBL_titulo = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.lblDimension = new System.Windows.Forms.Label();
             this.lblMaterial = new System.Windows.Forms.Label();
             this.lblColor = new System.Windows.Forms.Label();
@@ -55,13 +62,6 @@
             this.lblt_marca = new System.Windows.Forms.Label();
             this.lblt_nombre = new System.Windows.Forms.Label();
             this.LBLT_cod = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.TB_codigoProducto = new System.Windows.Forms.TextBox();
-            this.LBLT_codigo = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.LBL_titulo = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -377,7 +377,7 @@
             this.LBLT_codigo.AutoSize = true;
             this.LBLT_codigo.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLT_codigo.ForeColor = System.Drawing.Color.Black;
-            this.LBLT_codigo.Location = new System.Drawing.Point(61, 103);
+            this.LBLT_codigo.Location = new System.Drawing.Point(51, 103);
             this.LBLT_codigo.Name = "LBLT_codigo";
             this.LBLT_codigo.Size = new System.Drawing.Size(267, 25);
             this.LBLT_codigo.TabIndex = 8;
@@ -462,6 +462,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox TB_codigoProducto;
+        private System.Windows.Forms.Label LBLT_codigo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label LBL_titulo;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblDimension;
         private System.Windows.Forms.Label lblMaterial;
         private System.Windows.Forms.Label lblColor;
@@ -488,12 +495,5 @@
         private System.Windows.Forms.Label lblt_marca;
         private System.Windows.Forms.Label lblt_nombre;
         private System.Windows.Forms.Label LBLT_cod;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox TB_codigoProducto;
-        private System.Windows.Forms.Label LBLT_codigo;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label LBL_titulo;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnCancelar;
     }
 }

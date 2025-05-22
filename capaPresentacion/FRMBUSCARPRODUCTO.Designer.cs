@@ -114,7 +114,7 @@
             this.LBLT_codigo.AutoSize = true;
             this.LBLT_codigo.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLT_codigo.ForeColor = System.Drawing.Color.Black;
-            this.LBLT_codigo.Location = new System.Drawing.Point(61, 104);
+            this.LBLT_codigo.Location = new System.Drawing.Point(54, 104);
             this.LBLT_codigo.Name = "LBLT_codigo";
             this.LBLT_codigo.Size = new System.Drawing.Size(267, 25);
             this.LBLT_codigo.TabIndex = 3;
