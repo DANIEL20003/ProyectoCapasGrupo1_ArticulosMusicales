@@ -331,6 +331,7 @@
             this.btn_ayuda.TabIndex = 24;
             this.btn_ayuda.Text = "Ayuda";
             this.btn_ayuda.UseVisualStyleBackColor = false;
+            this.btn_ayuda.Click += new System.EventHandler(this.btn_ayuda_Click);
             // 
             // btn_volver
             // 
