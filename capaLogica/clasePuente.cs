@@ -41,7 +41,7 @@ namespace capaLogica
         
         public double obtenerpreciototal()
         {
-            return objOpera.Precio_Total() * objOpera.Obtener_Iva();
+            return objOpera.Precio_Total() * (1 + (objOpera.Obtener_Iva() / 100));
         }
 
         public double obtneriva()

@@ -23,7 +23,7 @@ namespace capaPresentacion
 
         clasePuente objP = new clasePuente();
 
-        long maximo = 0, cantidad, totalsleccion = 0;
+        long maximo = 0, cantidad, totalseleccion = 0;
         decimal iva = 0, precioTotal = 0;
 
         List<Carrito> carritos = new List<Carrito>();
@@ -239,8 +239,8 @@ namespace capaPresentacion
                             fecha = DateTime.Now
                         });
 
-                        totalsleccion += cantidad;
-                        lbl_precio_total.Text = ((precioTotal += objInstru.precio) * (100 + iva)).ToString("F2");
+                        totalseleccion += cantidad;
+                        lbl_precio_total.Text = "$ " + ((precioTotal += objInstru.precio) * (1 + (iva/100))).ToString("F2");
                         
                         maximo = maximo - cantidad;
                         lbl_stock.Text = "";
@@ -249,7 +249,7 @@ namespace capaPresentacion
 
                         cantidad = 0;
 
-                        lbl_total_instru.Text = totalsleccion.ToString();
+                        lbl_total_instru.Text = totalseleccion.ToString();
 
                         cmb_categoria.SelectedIndex = -1;
                         cmb_instrumento.Items.Clear();
@@ -316,6 +316,9 @@ namespace capaPresentacion
                 maximo = 0;
                 cantidad = 0;
                 precioTotal = 0;
+
+                totalseleccion = 0;
+                lbl_total_instru.Text = totalseleccion.ToString();
 
                 lbl_precio_total.Text = "$ " + precioTotal.ToString("F2");
                 cmb_categoria.SelectedIndex = -1;
