@@ -75,6 +75,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDPRACTICALBDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BDPRACTICALBDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPRACTICALBDataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BDPRACTICALBDataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPRACTICALBDataSet31.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BDPRACTICALBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPRACTICALBDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BDPRACTICALBDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPRACTICALBDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BDPRACTICALBDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPRACTICALBDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BDPRACTICALBDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPRACTICALBDataSet7.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Cedula.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -154,6 +184,30 @@
     <Compile Include="FRMREPORTE2.Designer.cs">
       <DependentUpon>FRMREPORTE2.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMREPORTE3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMREPORTE3.Designer.cs">
+      <DependentUpon>FRMREPORTE3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMREPORTE4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMREPORTE4.Designer.cs">
+      <DependentUpon>FRMREPORTE4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMREPORTE5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMREPORTE5.Designer.cs">
+      <DependentUpon>FRMREPORTE5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMREPORTE6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMREPORTE6.Designer.cs">
+      <DependentUpon>FRMREPORTE6.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMVERREPORTES.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +258,18 @@
     <EmbeddedResource Include="FRMREPORTE2.resx">
       <DependentUpon>FRMREPORTE2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRMREPORTE3.resx">
+      <DependentUpon>FRMREPORTE3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMREPORTE4.resx">
+      <DependentUpon>FRMREPORTE4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMREPORTE5.resx">
+      <DependentUpon>FRMREPORTE5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMREPORTE6.resx">
+      <DependentUpon>FRMREPORTE6.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMVERREPORTES.resx">
       <DependentUpon>FRMVERREPORTES.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +287,10 @@
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
+    <EmbeddedResource Include="Report6.rdlc" />
+    <EmbeddedResource Include="Report7.rdlc" />
+    <EmbeddedResource Include="Report8.rdlc" />
     <None Include="BDPRACTICALBDataSet.xsc">
       <DependentUpon>BDPRACTICALBDataSet.xsd</DependentUpon>
     </None>
@@ -242,6 +312,72 @@
     </None>
     <None Include="BDPRACTICALBDataSet1.xss">
       <DependentUpon>BDPRACTICALBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet21.xsc">
+      <DependentUpon>BDPRACTICALBDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDPRACTICALBDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDPRACTICALBDataSet21.xss">
+      <DependentUpon>BDPRACTICALBDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet31.xsc">
+      <DependentUpon>BDPRACTICALBDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet31.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDPRACTICALBDataSet31.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDPRACTICALBDataSet31.xss">
+      <DependentUpon>BDPRACTICALBDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet4.xsc">
+      <DependentUpon>BDPRACTICALBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDPRACTICALBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDPRACTICALBDataSet4.xss">
+      <DependentUpon>BDPRACTICALBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet5.xsc">
+      <DependentUpon>BDPRACTICALBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDPRACTICALBDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDPRACTICALBDataSet5.xss">
+      <DependentUpon>BDPRACTICALBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet6.xsc">
+      <DependentUpon>BDPRACTICALBDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDPRACTICALBDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDPRACTICALBDataSet6.xss">
+      <DependentUpon>BDPRACTICALBDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet7.xsc">
+      <DependentUpon>BDPRACTICALBDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="BDPRACTICALBDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDPRACTICALBDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDPRACTICALBDataSet7.xss">
+      <DependentUpon>BDPRACTICALBDataSet7.xsd</DependentUpon>
     </None>
     <None Include="obj\Debug\capaPresentacion.csproj.AssemblyReference.cache" />
     <None Include="obj\Debug\capaPresentacion.csproj.CoreCompileInputs.cache" />

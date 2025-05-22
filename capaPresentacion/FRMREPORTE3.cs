@@ -19,6 +19,8 @@ namespace capaPresentacion
 
         private void FRMREPORTE3_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'bDPRACTICALBDataSet2.VistaProductos' Puede moverla o quitarla según sea necesario.
+            this.vistaProductosTableAdapter.Fill(this.bDPRACTICALBDataSet2.VistaProductos);
 
             this.reportViewer1.RefreshReport();
         }

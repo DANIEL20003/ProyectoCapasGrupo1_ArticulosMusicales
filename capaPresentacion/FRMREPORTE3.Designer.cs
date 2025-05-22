@@ -32,18 +32,21 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.bDPRACTICALBDataSet2 = new capaPresentacion.BDPRACTICALBDataSet2();
-            this.bDPRACTICALBDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vistaProductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vistaProductosTableAdapter = new capaPresentacion.BDPRACTICALBDataSet2TableAdapters.VistaProductosTableAdapter();
+            this.vistaProductosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bDPRACTICALBDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDPRACTICALBDataSet2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaProductosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaProductosBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet2";
-            reportDataSource1.Value = this.bDPRACTICALBDataSet2BindingSource;
+            reportDataSource1.Name = "productos";
+            reportDataSource1.Value = this.vistaProductosBindingSource1;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "capaPresentacion.Report3.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "capaPresentacion.Report6.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -55,10 +58,19 @@
             this.bDPRACTICALBDataSet2.DataSetName = "BDPRACTICALBDataSet2";
             this.bDPRACTICALBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // bDPRACTICALBDataSet2BindingSource
+            // vistaProductosBindingSource
             // 
-            this.bDPRACTICALBDataSet2BindingSource.DataSource = this.bDPRACTICALBDataSet2;
-            this.bDPRACTICALBDataSet2BindingSource.Position = 0;
+            this.vistaProductosBindingSource.DataMember = "VistaProductos";
+            this.vistaProductosBindingSource.DataSource = this.bDPRACTICALBDataSet2;
+            // 
+            // vistaProductosTableAdapter
+            // 
+            this.vistaProductosTableAdapter.ClearBeforeFill = true;
+            // 
+            // vistaProductosBindingSource1
+            // 
+            this.vistaProductosBindingSource1.DataMember = "VistaProductos";
+            this.vistaProductosBindingSource1.DataSource = this.bDPRACTICALBDataSet2;
             // 
             // FRMREPORTE3
             // 
@@ -70,7 +82,8 @@
             this.Text = "FRMREPORTE3";
             this.Load += new System.EventHandler(this.FRMREPORTE3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bDPRACTICALBDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDPRACTICALBDataSet2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaProductosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaProductosBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -78,7 +91,9 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource bDPRACTICALBDataSet2BindingSource;
         private BDPRACTICALBDataSet2 bDPRACTICALBDataSet2;
+        private System.Windows.Forms.BindingSource vistaProductosBindingSource;
+        private BDPRACTICALBDataSet2TableAdapters.VistaProductosTableAdapter vistaProductosTableAdapter;
+        private System.Windows.Forms.BindingSource vistaProductosBindingSource1;
     }
 }
