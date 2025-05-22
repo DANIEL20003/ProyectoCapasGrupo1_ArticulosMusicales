@@ -46,6 +46,7 @@
             this.ptbAgregar = new System.Windows.Forms.PictureBox();
             this.ptbModificar = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.lbl_salir = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbVerReportes)).BeginInit();
@@ -269,12 +270,27 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Agregar";
             // 
+            // lbl_salir
+            // 
+            this.lbl_salir.AutoSize = true;
+            this.lbl_salir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_salir.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_salir.ForeColor = System.Drawing.Color.Firebrick;
+            this.lbl_salir.Location = new System.Drawing.Point(12, 390);
+            this.lbl_salir.Name = "lbl_salir";
+            this.lbl_salir.Size = new System.Drawing.Size(48, 22);
+            this.lbl_salir.TabIndex = 24;
+            this.lbl_salir.Text = "Salir";
+            this.lbl_salir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_salir.Click += new System.EventHandler(this.lbl_salir_Click);
+            // 
             // FRMMENUADMINISTRADOR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_salir);
             this.Controls.Add(this.linkAyuda);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -321,5 +337,6 @@
         private System.Windows.Forms.PictureBox ptbAgregar;
         private System.Windows.Forms.PictureBox ptbModificar;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_salir;
     }
 }

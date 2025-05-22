@@ -18,7 +18,7 @@ namespace capaPresentacion
 {
     public partial class Form1 : Form
     {
-        public int idCliente;
+        public static int ClienteIdActual { get; private set; }
         clasePuente objP = new clasePuente();
 
         List<Clientes> listaclientes = new List<Clientes>();
@@ -112,7 +112,7 @@ namespace capaPresentacion
                             if (txtusuario.Text == c.Usuario && txtcontrasenia.Text == c.Contraseña)
                             {
                                 band = true;
-                                idCliente = c.id_cliente;
+                                ClienteIdActual = c.id_cliente;
                                 using (FRMMENUCLIENTE objMenuCliente = new FRMMENUCLIENTE())
                                 {
                                     this.Hide();
