@@ -290,6 +290,10 @@
     <Folder Include="SqlServerTypes\x86\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaCom\CapaCom.csproj">
+      <Project>{54f0f0ef-f4da-41f4-9697-5b040982b9cf}</Project>
+      <Name>CapaCom</Name>
+    </ProjectReference>
     <ProjectReference Include="..\capaEntidades\capaEntidades.csproj">
       <Project>{e3932f36-c901-4786-ad52-f17e471e6b4d}</Project>
       <Name>capaEntidades</Name>

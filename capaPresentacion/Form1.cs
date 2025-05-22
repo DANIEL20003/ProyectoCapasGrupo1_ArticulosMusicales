@@ -8,12 +8,14 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaCom;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static capaPresentacion.FRMREGISTRO;
 
 using capaEntidades;
 using capaLogica;
 using System.Dynamic;
+using System.Runtime.Remoting.Messaging;
 namespace capaPresentacion
 {
     public partial class Form1 : Form
@@ -40,6 +42,8 @@ namespace capaPresentacion
             InitializeComponent();
             
         }
+
+        
 
         private void txtusuario_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -113,13 +117,16 @@ namespace capaPresentacion
                             {
                                 band = true;
                                 ClienteIdActual = c.id_cliente;
+                                DatosComun.ClienteId = ClienteIdActual;
                                 using (FRMMENUCLIENTE objMenuCliente = new FRMMENUCLIENTE())
                                 {
                                     this.Hide();
                                     objMenuCliente.ShowDialog();
                                     this.Show();
                                 }
+                                
                                 break;
+
                             }
                         }
                     }

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaCom;
 //
 using capaEntidades;
 
@@ -63,8 +64,9 @@ namespace capaDatos
         public DataTable GetDatosCarrito()
         {
             objConec.Abrir();
+            int idCliente = DatosComun.ClienteId;
             DataTable dt = new DataTable();
-            String consulta = @"SELECT C.id_cliente, C.codigo_producto, P.nombre_producto, P.marca, P.modelo, P.precio_producto, C.cantidad, C.fecha_agregado FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto";
+            String consulta = @"SELECT C.id_cliente, C.codigo_producto, P.nombre_producto, P.marca, P.modelo, P.precio_producto, C.cantidad, C.fecha_agregado FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto WHERE id_cliente = "+idCliente+"";
             SqlCommand sqlC = new SqlCommand(consulta, objConec.conectar);
             SqlDataAdapter da = new SqlDataAdapter(sqlC);
             da.Fill(dt);
