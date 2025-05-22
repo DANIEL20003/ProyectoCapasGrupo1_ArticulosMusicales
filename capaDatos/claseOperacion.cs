@@ -78,7 +78,8 @@ namespace capaDatos
         public double Precio_Total()
         {
             objConec.Abrir();
-            SqlCommand sqlC = new SqlCommand("SELECT SUM((P.precio_producto * C.cantidad)) AS totalP FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto", objConec.conectar);
+            int idCliente = DatosComun.ClienteId;
+            SqlCommand sqlC = new SqlCommand($"SELECT SUM((P.precio_producto * C.cantidad)) AS totalP FROM Carrito C INNER JOIN Productos P ON P.codigo_producto = C.codigo_producto WHERE id_cliente = {idCliente}", objConec.conectar);
             SqlDataReader reader = sqlC.ExecuteReader();
             if (reader.Read())
             {
