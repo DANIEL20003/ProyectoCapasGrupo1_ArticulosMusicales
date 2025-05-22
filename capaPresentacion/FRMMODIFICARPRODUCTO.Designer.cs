@@ -33,9 +33,11 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnModificar = new System.Windows.Forms.Button();
             this.gpbProducto = new System.Windows.Forms.GroupBox();
+            this.txbProveedor = new System.Windows.Forms.TextBox();
             this.txbCantidad = new System.Windows.Forms.TextBox();
             this.txbPrecio = new System.Windows.Forms.TextBox();
             this.ptbImagenInstrumento = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblDimension = new System.Windows.Forms.Label();
             this.lblMaterial = new System.Windows.Forms.Label();
@@ -63,8 +65,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txbCodigo = new System.Windows.Forms.TextBox();
             this.LBLT_codigo = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txbProveedor = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.gpbProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagenInstrumento)).BeginInit();
@@ -113,6 +113,7 @@
             this.btnModificar.TabIndex = 62;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // gpbProducto
             // 
@@ -153,6 +154,16 @@
             this.gpbProducto.TabIndex = 63;
             this.gpbProducto.TabStop = false;
             this.gpbProducto.Text = "Producto";
+            this.gpbProducto.Visible = false;
+            // 
+            // txbProveedor
+            // 
+            this.txbProveedor.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbProveedor.Location = new System.Drawing.Point(361, 163);
+            this.txbProveedor.Name = "txbProveedor";
+            this.txbProveedor.Size = new System.Drawing.Size(139, 25);
+            this.txbProveedor.TabIndex = 68;
+            this.txbProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbProveedor_KeyPress);
             // 
             // txbCantidad
             // 
@@ -161,6 +172,7 @@
             this.txbCantidad.Name = "txbCantidad";
             this.txbCantidad.Size = new System.Drawing.Size(93, 25);
             this.txbCantidad.TabIndex = 67;
+            this.txbCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCantidad_KeyPress);
             // 
             // txbPrecio
             // 
@@ -169,15 +181,25 @@
             this.txbPrecio.Name = "txbPrecio";
             this.txbPrecio.Size = new System.Drawing.Size(100, 25);
             this.txbPrecio.TabIndex = 66;
+            this.txbPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrecio_KeyPress);
             // 
             // ptbImagenInstrumento
             // 
-            this.ptbImagenInstrumento.Location = new System.Drawing.Point(620, 131);
+            this.ptbImagenInstrumento.Location = new System.Drawing.Point(591, 131);
             this.ptbImagenInstrumento.Name = "ptbImagenInstrumento";
             this.ptbImagenInstrumento.Size = new System.Drawing.Size(80, 80);
             this.ptbImagenInstrumento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbImagenInstrumento.TabIndex = 65;
             this.ptbImagenInstrumento.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(513, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 18);
+            this.label3.TabIndex = 64;
+            this.label3.Text = "Foto:";
             // 
             // btnCancelar
             // 
@@ -192,6 +214,7 @@
             this.btnCancelar.TabIndex = 63;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblDimension
             // 
@@ -431,6 +454,7 @@
             this.txbCodigo.Name = "txbCodigo";
             this.txbCodigo.Size = new System.Drawing.Size(261, 20);
             this.txbCodigo.TabIndex = 65;
+            this.txbCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCodigo_KeyPress);
             // 
             // LBLT_codigo
             // 
@@ -442,23 +466,6 @@
             this.LBLT_codigo.Size = new System.Drawing.Size(267, 25);
             this.LBLT_codigo.TabIndex = 64;
             this.LBLT_codigo.Text = "Ingrese el Código del producto:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(513, 131);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 18);
-            this.label3.TabIndex = 64;
-            this.label3.Text = "Foto:";
-            // 
-            // txbProveedor
-            // 
-            this.txbProveedor.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbProveedor.Location = new System.Drawing.Point(361, 163);
-            this.txbProveedor.Name = "txbProveedor";
-            this.txbProveedor.Size = new System.Drawing.Size(139, 25);
-            this.txbProveedor.TabIndex = 68;
             // 
             // FRMMODIFICARPRODUCTO
             // 
@@ -473,6 +480,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Name = "FRMMODIFICARPRODUCTO";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRMMODIFICARPRODUCTO";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

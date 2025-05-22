@@ -300,6 +300,7 @@ namespace capaDatos
 
                 cmd.ExecuteNonQuery();
             }
+            objConec.Cerrar();
 
             /*objConec.Abrir();
             SqlCommand sqlC = new SqlCommand("INSERT INTO Productos (codigo_producto, nombre_producto, marca, modelo, precio_producto, anio_fabricacion, id_iva, cantidad, id_categoriaYo, id_Proveedor, color, material, dimension, foto) VALUES ('" + instrumento.codInstru + "', '" + instrumento.nombre + "', '" + instrumento.marca + "', '" + instrumento.modelo + "', '" + instrumento.precio + "', '" + instrumento.anioFabrica + "', '" + instrumento.idIva + "', '" + instrumento.cantidad + "', '" + instrumento.idCatego + "', '" + instrumento.idProvee + "', '" + instrumento.color + "', '" + instrumento.material + "', '" + instrumento.dimension + "', '" + instrumento.foto + "')", objConec.conectar);
@@ -408,5 +409,12 @@ namespace capaDatos
             return VarDatos;
         }
 
+        public void modificarInstrumento(string codigo, decimal precio, int cantidad, string proveedor)
+        {
+            objConec.Abrir();
+            SqlCommand sqlC = new SqlCommand("UPDATE Productos SET precio_producto = '"+precio+"', cantidad = '"+cantidad+"', proveedor = '"+proveedor+"' WHERE codigo_producto = '"+codigo+"'", objConec.conectar);
+            sqlC.ExecuteNonQuery();
+            objConec.Cerrar();
+        }
     }
 }

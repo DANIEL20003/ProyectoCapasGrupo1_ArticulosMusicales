@@ -18,6 +18,7 @@ namespace capaPresentacion
 {
     public partial class FRMAGREGARPRODUCTO : Form
     {
+        
         clasePuente objP = new clasePuente();
         Instrumento objI = new Instrumento();
 
@@ -315,7 +316,7 @@ namespace capaPresentacion
                     else
                     {
                         //si no esta vacío continúa normalmente
-                        precio = decimal.Parse(txbPrecio.Text);
+                        precio = Math.Round(decimal.Parse(txbPrecio.Text), 2);
 
                         //si ingresa un precio de 0 pide una confirmacion para aceptar ese precio
                         if (precio == 0)
@@ -329,11 +330,13 @@ namespace capaPresentacion
                             }
                             else
                             {
+                                txbPrecio.Text = precio.ToString();
                                 txbAñoFabricacion.Focus();
                             }
                         }
                         else if (precio > 0)
                         {
+                            txbPrecio.Text = precio.ToString();
                             txbAñoFabricacion.Focus();
                         }
                         else
@@ -467,7 +470,7 @@ namespace capaPresentacion
 
             //ADVERTENCIA DE CONFIRMACION
             DialogResult resultado = MessageBox.Show(
-                "Los campos que se podrán editar posteriormente son: Precio, Cantidad y Proveedor, los demás campos serán permanentes \n¿Desea guardar los cambios?",
+                "Los campos de fábrica serán permanentes, posterior únicamente se podrán editar:  Precio, Cantidad y Proveedor \n¿Desea guardar los cambios?",
                 "Confirmación",
                 MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Question
@@ -531,6 +534,8 @@ namespace capaPresentacion
 
                     MessageBox.Show("Se agregó el producto correctamente", "Éxito",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -549,7 +554,7 @@ namespace capaPresentacion
         {
             openFileDialog1.FileName = "imagen.jpg";
 
-            openFileDialog1.Filter = "Imágenes JPG|*.jpg|Imágenes PNG|*.png";
+            openFileDialog1.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 try
