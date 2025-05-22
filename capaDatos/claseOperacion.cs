@@ -352,7 +352,6 @@ namespace capaDatos
                         Telefono = Convert.ToString(reader["Telefono"]),
                         Correo_electronico = Convert.ToString(reader["Correo Electronico"]),
                         Direccion = Convert.ToString(reader["Direccion"]),
-                        id_tipo_cliente = Convert.ToInt32(reader["Tipo Cliente"]),
                         Contraseña = Convert.ToString(reader["Contraseña"]),
                         Usuario = Convert.ToString(reader["Usuario"])
 
@@ -371,7 +370,7 @@ namespace capaDatos
         public void Insertar(Clientes c)
         {
             objConec.Abrir();
-            SqlCommand sqlC = new SqlCommand("Insert into Cliente(Nombre,Apellido,Cedula,Telefono,Correo_electronico,Direccion,id_tipo_cliente,Contraseña,Usuario) VALUES ('" + c.Nombre + "','" + c.Apellido + "','" + c.Cedula + "','" + c.Telefono + "','" + c.Correo_electronico + "','" + c.Direccion + "','" + c.id_tipo_cliente + "','" + c.Contraseña + "','"+c.Usuario+"')", objConec.conectar);
+            SqlCommand sqlC = new SqlCommand("Insert into Cliente(Nombre,Apellido,Cedula,Telefono,Correo_electronico,Direccion,Contraseña,Usuario) VALUES ('" + c.Nombre + "','" + c.Apellido + "','" + c.Cedula + "','" + c.Telefono + "','" + c.Correo_electronico + "','" + c.Direccion + "','" + c.Contraseña + "','"+c.Usuario+"')", objConec.conectar);
             sqlC.ExecuteNonQuery();
             objConec.Cerrar();
         }

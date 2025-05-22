@@ -42,7 +42,6 @@ namespace capaPresentacion
                 objCl.Telefono = txttelefono.Text;
                 objCl.Correo_electronico = txtEmail.Text;
                 objCl.Direccion = txtDireccion.Text;
-                objCl.id_tipo_cliente = int.Parse(cbxtipo.Text);
                 objCl.Contraseña = TXB_crearC.Text;
                 objCl.Usuario = txtusuario.Text;
 
@@ -140,7 +139,7 @@ namespace capaPresentacion
             if (e.KeyChar == (char)Keys.Enter)
             {
                 direccion = txtDireccion.Text.Trim();
-                cbxtipo.Focus();
+                txtusuario.Focus();
             }
         }
 
