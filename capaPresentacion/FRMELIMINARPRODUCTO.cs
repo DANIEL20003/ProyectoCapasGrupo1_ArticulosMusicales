@@ -34,7 +34,7 @@ namespace capaPresentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            codigoProducto = TB_codigoProducto.Text.Trim();
+            codigoProducto = TB_codigoProducto.Text;
 
             if (string.IsNullOrWhiteSpace(codigoProducto))
             {

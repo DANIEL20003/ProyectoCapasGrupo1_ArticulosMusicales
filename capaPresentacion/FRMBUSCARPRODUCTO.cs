@@ -26,7 +26,11 @@ namespace capaPresentacion
 
         private void TB_codigoProducto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnBuscar.PerformClick();
+            }
+            /*try
             {
                 if (e.KeyChar == (char)Keys.Enter)
                 {
@@ -47,7 +51,7 @@ namespace capaPresentacion
             {
                 MessageBox.Show("Por favor, ingrese un código", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 TB_codigoProducto.Clear();
-            }
+            }*/
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -56,10 +60,18 @@ namespace capaPresentacion
             {
                 codigoProducto = TB_codigoProducto.Text;
 
+                if (string.IsNullOrWhiteSpace(codigoProducto))
+                {
+                    MessageBox.Show("Por favor, ingrese un código de producto.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TB_codigoProducto.Clear();
+                    TB_codigoProducto.Focus();
+                    return;
+                }
+
                 if (operacion.infoInstrumento(codigoProducto) == null)
                 {
-                    MessageBox.Show("El código ingresado no existe" +
-                                    " en la base de datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    MessageBox.Show($"No se encontró ningún producto con el código: '{codigoProducto}'", "Producto no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TB_codigoProducto.Clear();
                     TB_codigoProducto.Clear();
                     return;
                 }

@@ -476,7 +476,7 @@ namespace capaPresentacion
 
             //ADVERTENCIA DE CONFIRMACION
             DialogResult resultado = MessageBox.Show(
-                "Los campos de fábrica serán permanentes, posterior únicamente se podrán editar:  Precio, Cantidad y Proveedor \n¿Desea guardar los cambios?",
+                "Los campos de fábrica serán permanentes, posteriormente únicamente se podrán editar:  Precio, Cantidad y Proveedor \n¿Desea guardar los cambios?",
                 "Confirmación",
                 MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Question

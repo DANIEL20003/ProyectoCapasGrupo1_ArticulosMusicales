@@ -36,9 +36,9 @@ namespace capaPresentacion
             // controla que el textbox no quede vacío
             if (string.IsNullOrWhiteSpace(txbCodigo.Text))
             {
-                MessageBox.Show("El código no puede estar vacío",
-                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txbCodigo.Focus(); // Devuelve el foco al TextBox
+                MessageBox.Show("Por favor, ingrese un código de producto.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txbCodigo.Focus();
+                return;
             }
             else
             {
@@ -47,8 +47,9 @@ namespace capaPresentacion
 
                 if (objI == null)
                 {
-                    MessageBox.Show("El código ingresado no existe en la base de datos", "Código no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"No se encontró ningún producto con el código: '{codigoInstrumento}'", "Producto no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txbCodigo.Clear();
+                    txbCodigo.Focus();
                     return;
                 }
                 else
@@ -93,29 +94,7 @@ namespace capaPresentacion
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                try
-                {
-                    //controla que el textbox no quede vacío
-                    if (string.IsNullOrWhiteSpace(txbCodigo.Text))
-                    {
-                        MessageBox.Show("El código no puede estar vacío",
-                            "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txbCodigo.Focus(); // Devuelve el foco al TextBox
-                    }
-                    else
-                    {
-                        //si no esta vacío continúa normalmente
-                        codigoInstrumento = txbCodigo.Text;
-                        btnBuscar.PerformClick();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error en el código:\n" + ex.Message, "Se presentó un error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txbCodigo.Clear();
-                    txbCodigo.Focus();
-                }
+                btnBuscar.PerformClick();
             }
         }
 
