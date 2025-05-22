@@ -38,7 +38,7 @@ namespace capaLogica
             DataTable datos = objOpera.GetDatosCarrito();
             return datos;
         }
-        
+
         public double obtenerpreciototal()
         {
             return objOpera.Precio_Total() * (1 + (objOpera.Obtener_Iva() / 100));
@@ -63,7 +63,7 @@ namespace capaLogica
         {
             return objOpera.obtenerIva(idIVA);
         }
-        
+
         public void insertCarrito(List<Carrito> listCarritos)
         {
             objOpera.insertarCarrito(listCarritos);
@@ -100,4 +100,5 @@ namespace capaLogica
             objOpera.modificarInstrumento(codigo, precio, cantidad, proveedor);
         }
 
+    }
 }
