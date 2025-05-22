@@ -42,6 +42,7 @@ namespace capaPresentacion
             }
             else
             {
+                codigoInstrumento = txbCodigo.Text;
                 objI = objP.infoInstrumento(codigoInstrumento);
 
                 if (objI == null)
