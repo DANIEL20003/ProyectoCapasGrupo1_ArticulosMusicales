@@ -78,7 +78,7 @@ namespace capaPresentacion
             // Obtener la ruta del directorio del proyecto (fuera de \bin\Debug)
             string rutaProyecto = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName;
             string rutaCarpeta = Path.Combine(rutaProyecto, "AYUDAS");
-            string rutaAyuda = Path.Combine(rutaCarpeta, "Manual de Administrador.htm");
+            string rutaAyuda = Path.Combine(rutaCarpeta, "Manual de Administrador.pdf");
 
             // Si la carpeta AYUDAS no existe, se la crea
             if (!Directory.Exists(rutaCarpeta))
